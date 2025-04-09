@@ -11,6 +11,7 @@
     brightnessctl #cli #system-tools
     chezmoi #cli #file-management
     cliphist #cli #clipboard-history
+    tmux
     cpio #cli #dependency
     cryptsetup #cli #security #system-tools
     darktable #gui #photo-editing

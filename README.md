@@ -5,7 +5,9 @@
 - missing modules
     - `cpufreq_stats`
 - tex
-   - fix reverse hyperlinks. [have a look at this](https://tex.stackexchange.com/questions/198969/linking-the-section-titles-to-toc-using-only-hyperref) 
+   - fix reverse hyperlinks. [have a look at this](https://tex.stackexchange.com/questions/198969/linking-the-section-titles-to-toc-using-only-hyperref)
+- i2c error. error is logged
+- Laptop usually takes a long time to shutdown 
 
 # To do
 

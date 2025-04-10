@@ -27,7 +27,6 @@
     grim #gui #screenshot #wayland
     hypridle #cli #wayland
     hyprlandPlugins.hyprspace #gui #hyprland
-    hyprlock #cli #lockscreen
     hyprpicker #cli #color-picker
     hyprpolkitagent #cli #polkit
     imagemagick #cli #image-tools

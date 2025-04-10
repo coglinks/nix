@@ -17,6 +17,7 @@
     lua-language-server #cli #lsp
     rocmPackages.llvm.clang #cli #compiler
     libsecret
+    git-credential-manager
     lua5_1 #cli #programming-language
     luarocks #cli #package-manager
     neovim #tui #text-editor

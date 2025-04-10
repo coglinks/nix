@@ -83,4 +83,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  
+  programs.git = {
+    extraConfig.credential.helper = "manager";
+    extraConfig.credential."https://github.com".username = "incog267";
+    extraConfig.credential.credentialStore = "cache";
+    enable = true;
+  };
 }

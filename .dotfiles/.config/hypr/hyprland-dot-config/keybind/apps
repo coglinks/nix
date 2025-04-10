@@ -1,6 +1,6 @@
 $files = nautilus
 $tfi = yazi
-$term = kitty
+$term = kitty tmux
 $browser = firefox
 # rofi App launcher
 #bindr = SUPER, SUPER_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window # Super Key to Launch rofi menu

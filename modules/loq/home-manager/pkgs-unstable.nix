@@ -5,8 +5,10 @@
     bat #cli #text-viewer #cat-with-syntax-highlighting
     bitwarden-desktop #gui #security
     blueman #gui 
+    feh
     borgbackup #cli #backup
     vorta
+    cava
     meld #gui #Visual diff and merge tool
     swaylock
     brightnessctl #cli #system-tools

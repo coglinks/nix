@@ -4,7 +4,9 @@
   home.packages = with pkgs-unstable; [
     bat #cli #text-viewer #cat-with-syntax-highlighting
     rclone
+    firefox
     borgbackup
+    browsh
     vorta
     rsync
     git #cli #vcs #git-tools

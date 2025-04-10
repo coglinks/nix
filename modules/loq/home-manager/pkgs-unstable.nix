@@ -8,6 +8,7 @@
     borgbackup #cli #backup
     vorta
     meld #gui #Visual diff and merge tool
+    swaylock
     brightnessctl #cli #system-tools
     chezmoi #cli #file-management
     cliphist #cli #clipboard-history

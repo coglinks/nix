@@ -6,9 +6,12 @@
     bitwarden-desktop #gui #security
     blueman #gui 
     feh
+    qimgv
     borgbackup #cli #backup
     vorta
     cava
+    gvfs
+    geeqie
     meld #gui #Visual diff and merge tool
     swaylock
     brightnessctl #cli #system-tools

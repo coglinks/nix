@@ -4,6 +4,7 @@
   home.packages = with pkgs-unstable; [
     bat #cli #text-viewer #cat-with-syntax-highlighting
     rclone
+    mystmd
     firefox
     borgbackup
     browsh
@@ -16,6 +17,7 @@
     lazygit #tui #vcs #git-tools
     lua-language-server #cli #lsp
     rocmPackages.llvm.clang #cli #compiler
+    topgrade
     libsecret
     git-credential-manager
     lua5_1 #cli #programming-language

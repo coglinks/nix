@@ -6,6 +6,7 @@
     rclone
     mystmd
     firefox
+    nodejs
     borgbackup
     browsh
     vorta

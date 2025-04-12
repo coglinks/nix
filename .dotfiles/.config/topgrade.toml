@@ -185,7 +185,7 @@
 # bootc = false
 
 # nix_arguments = "--flake"
-nix_arguments = "--impure"
+nix_arguments = "--impure --flake /home/incog267/nixos#nix-loq"
 
 # nix_env_arguments = "--prebuilt-only"
 

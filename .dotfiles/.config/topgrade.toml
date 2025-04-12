@@ -190,7 +190,7 @@ nix_arguments = "--impure"
 # nix_env_arguments = "--prebuilt-only"
 
 # Extra Home Manager arguments
-# home_manager_arguments = ["--flake", "file"]
+# home_manager_arguments = ["--flake /home/incog267/nixos#win-loq "]
 
 
 [git]

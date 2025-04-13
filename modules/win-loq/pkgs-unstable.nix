@@ -11,6 +11,7 @@
     less
     borgbackup
     browsh
+    feh
     vorta
     rsync
     git #cli #vcs #git-tools

@@ -91,7 +91,6 @@
           ./hardware-configuration.nix
           ./lanzaboote.nix
           ./modules/global/docker.nix
-          ./modules/global/fixes.nix
           ./modules/global/main-user.nix
           ./modules/loq/pkgs-stable.nix
           ./modules/loq/pkgs-unstable.nix

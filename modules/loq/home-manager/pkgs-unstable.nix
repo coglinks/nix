@@ -11,7 +11,6 @@
     vorta
     cava
     gvfs
-    ladybird
     geeqie
     meld #gui #Visual diff and merge tool
     swaylock

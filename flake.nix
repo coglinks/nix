@@ -103,6 +103,7 @@
           ./modules/loq/backup.nix
           ./modules/loq/nvidia.nix
           ./modules/loq/flatpak.nix
+          ./modules/loq/ollama.nix
           ./modules/global/main-user.nix
         ];
       };

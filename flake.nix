@@ -27,11 +27,14 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
+
 #    xremap-flake.url = "github:xremap/nix-flake";
   };
 
   outputs = {
     self,
+    nix-flatpak,
     nixpkgs-unstable,
     nixpkgs-stable,
     nixpkgs,
@@ -85,6 +88,7 @@
           inherit pkgs;
         };
         modules = [
+          nix-flatpak.nixosModules.nix-flatpak
           ./configuration.nix
           inputs.home-manager.nixosModules.default 
           ./configuration-unstable.nix
@@ -98,6 +102,7 @@
           ./modules/global/vm.nix
           ./modules/loq/backup.nix
           ./modules/loq/nvidia.nix
+          ./modules/loq/flatpak.nix
           ./modules/global/main-user.nix
         ];
       };

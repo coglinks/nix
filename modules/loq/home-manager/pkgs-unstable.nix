@@ -5,11 +5,13 @@
     bat #cli #text-viewer #cat-with-syntax-highlighting
     bitwarden-desktop #gui #security
     blueman #gui 
+    nixfmt-rfc-style
     feh
     qimgv
     borgbackup #cli #backup
     vorta
     cava
+    sonic-visualiser
     gvfs
     geeqie
     meld #gui #Visual diff and merge tool

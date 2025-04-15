@@ -1,5 +1,8 @@
-
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
+image/jpeg=org.gnome.Loupe.desktop
+
+[Added Associations]
+image/jpeg=feh.desktop;org.gnome.Loupe.desktop;

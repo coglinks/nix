@@ -5,6 +5,7 @@
     bat # cli #text-viewer #cat-with-syntax-highlighting
     bitwarden-desktop # gui #security
     blueman # gui
+    audacity
     nixfmt-rfc-style
     feh
     qimgv

@@ -1,4 +1,10 @@
-{ lib, inputs, config, pkgs-unstable, ... }:
+{
+  lib,
+  inputs,
+  config,
+  pkgs-unstable,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -6,19 +12,22 @@
   home.username = "incog267";
   home.homeDirectory = "/home/incog267";
 
- nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-        "vscode"
-        "nvidia-x11"
-        "google-chrome"
-        "steam"
-        "steam-unwrapped"
-        "discord"
-           ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "vscode"
+      "terraform"
+      "nvidia-x11"
+      "google-chrome"
+      "steam"
+      "steam-unwrapped"
+      "discord"
+    ];
   imports = [
     ./modules/global/home-manager/hyprland.nix
     ./modules/loq/home-manager/pkgs-unstable.nix
     ./modules/loq/home-manager/pkgs-stable.nix
-  ]; 
+  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -83,7 +92,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  
+
   programs.git = {
     extraConfig.credential.helper = "manager";
     extraConfig.credential."https://github.com".username = "incog267";

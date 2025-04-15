@@ -29,45 +29,55 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-stable,
+      home-manager,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         config = {
-          allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-            "vscode"
-            "nvidia-x11"
-            "google-chrome"
-            "steam"
-            "steam-unwrapped"
-            "cuda-merged"
-            "cuda_cuobjdump"
-            "cuda_nvcc"
-            "cuda_nvdisasm"
-            "cuda_nvprune"
-            "cuda_gdb"
-            "cuda_cccl"
-            "cuda_cudart"
-            "cuda_cupti"
-            "cuda_cuxxfilt"
-            "libcufft"
-            "libcurand"
-            "libcusolver"
-            "cuda_nvml_dev"
-            "cuda_nvrtc"
-            "cuda_nvtx"
-            "cuda_profiler_api"
-            "cuda_sanitizer_api"
-            "libcublas"
-            "cudatoolkit"
-            "discord"
-          ];
+          allowUnfreePredicate =
+            pkg:
+            builtins.elem (lib.getName pkg) [
+              "vscode"
+              "nvidia-x11"
+              "google-chrome"
+              "steam"
+              "steam-unwrapped"
+              "cuda-merged"
+              "cuda_cuobjdump"
+              "cuda_nvcc"
+              "cuda_nvdisasm"
+              "cuda_nvprune"
+              "cuda_gdb"
+              "cuda_cccl"
+              "cuda_cudart"
+              "cuda_cupti"
+              "cuda_cuxxfilt"
+              "libcufft"
+              "libcurand"
+              "libcusolver"
+              "cuda_nvml_dev"
+              "cuda_nvrtc"
+              "cuda_nvtx"
+              "cuda_profiler_api"
+              "cuda_sanitizer_api"
+              "libcublas"
+              "cudatoolkit"
+              "discord"
+            ];
         };
       };
       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
       lib = nixpkgs.lib;
-    in {
+    in
+    {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs pkgs pkgs-stable;

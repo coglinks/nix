@@ -1,15 +1,14 @@
-{ pkgs-unstable, ...}:
+{ pkgs-unstable, ... }:
 
 {
-   environment.systemPackages = 
-    with pkgs-unstable; [
-      win-virtio
-      seahorse
-      libsecret
-      pciutils
-      git-credential-manager
+  environment.systemPackages = with pkgs-unstable; [
+    win-virtio
+    seahorse
+    libsecret
+    pciutils
+    git-credential-manager
 
-      # support both 32-bit and 64-bit applications
+    # support both 32-bit and 64-bit applications
     wineWowPackages.stable
     # support 32-bit only
     wine
@@ -23,13 +22,12 @@
     # native wayland support (unstable)
     wineWowPackages.waylandFull
     (pkgs.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      })
-    )
-    ];
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
+  ];
 
-fonts.packages = with pkgs-unstable; [ 
-  nerd-fonts.iosevka-term
-  nerd-fonts.iosevka
+  fonts.packages = with pkgs-unstable; [
+    nerd-fonts.iosevka-term
+    nerd-fonts.iosevka
   ];
 }

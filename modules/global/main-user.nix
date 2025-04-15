@@ -1,17 +1,21 @@
-{ lib, config, pkgs-unstable, ... }:
+{
+  lib,
+  config,
+  pkgs-unstable,
+  ...
+}:
 
 let
   cfg = config.main-user;
 in
 {
   options.main-user = {
-    enable 
-      = lib.mkEnableOption "enable user module";
+    enable = lib.mkEnableOption "enable user module";
 
     userName = lib.mkOption {
       default = "mainuser";
       description = ''
-	incog267
+        	incog267
       '';
     };
   };

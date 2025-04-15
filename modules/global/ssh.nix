@@ -15,7 +15,7 @@
 
   services.fail2ban = {
     enable = false;
-   # Ban IP after 5 failures
+    # Ban IP after 5 failures
     maxretry = 5;
     ignoreIP = [
       # Whitelist
@@ -37,7 +37,7 @@
         logpath = "/var/log/httpd/error_log*";
         backend = "auto";
         findtime = 600;
-        bantime  = 600;
+        bantime = 600;
         maxretry = 5;
       };
     };

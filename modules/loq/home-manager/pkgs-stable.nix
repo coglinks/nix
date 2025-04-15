@@ -2,6 +2,6 @@
 
 {
   home.packages = with pkgs-unstable; [
-        hyprlock #cli #lockscreen
+    hyprlock # cli #lockscreen
   ];
 }

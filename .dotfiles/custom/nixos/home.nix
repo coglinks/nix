@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -19,19 +24,103 @@
     plugins = [
       inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
       inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-      ];
-    };
+    ];
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    vim neovim ddcutil pandoc hyprpicker discord kicad gimp darktable slurp libnotify jq grim swappy pamixer google-chrome chezmoi steam lutris libsecret libreoffice vscode git yazi	neovim pdftk pdfchain imagemagick texlive.combined.scheme-full stow zip stdenvNoCC unzip wl-clipboard rofi python3 pipx python312Packages.pip mesa wayland kdePackages.okular powertop ghostscript niv kitty libsForQt5.qtstyleplugin-kvantum hyprlock hypridle topgrade xournalpp firewalld cryptsetup man brightnessctl cmake gnumake meson cpio gcc cliphist swww ninja lshw playerctl pavucontrol pkg-config zoxide go wallust bitwarden-desktop cpio meson swaynotificationcenter seahorse networkmanager blueman networkmanager_dmenu networkmanagerapplet wayland-protocols zathura hyprpolkitagent hyprlandPlugins.hyprspace lua5_1 lua-language-server luarocks wget
-# waybar with vimjoyer's fix
+    vim
+    neovim
+    ddcutil
+    pandoc
+    hyprpicker
+    discord
+    kicad
+    gimp
+    darktable
+    slurp
+    libnotify
+    jq
+    grim
+    swappy
+    pamixer
+    google-chrome
+    chezmoi
+    steam
+    lutris
+    libsecret
+    libreoffice
+    vscode
+    git
+    yazi
+    neovim
+    pdftk
+    pdfchain
+    imagemagick
+    texlive.combined.scheme-full
+    stow
+    zip
+    stdenvNoCC
+    unzip
+    wl-clipboard
+    rofi
+    python3
+    pipx
+    python312Packages.pip
+    mesa
+    wayland
+    kdePackages.okular
+    powertop
+    ghostscript
+    niv
+    kitty
+    libsForQt5.qtstyleplugin-kvantum
+    hyprlock
+    hypridle
+    topgrade
+    xournalpp
+    firewalld
+    cryptsetup
+    man
+    brightnessctl
+    cmake
+    gnumake
+    meson
+    cpio
+    gcc
+    cliphist
+    swww
+    ninja
+    lshw
+    playerctl
+    pavucontrol
+    pkg-config
+    zoxide
+    go
+    wallust
+    bitwarden-desktop
+    cpio
+    meson
+    swaynotificationcenter
+    seahorse
+    networkmanager
+    blueman
+    networkmanager_dmenu
+    networkmanagerapplet
+    wayland-protocols
+    zathura
+    hyprpolkitagent
+    hyprlandPlugins.hyprspace
+    lua5_1
+    lua-language-server
+    luarocks
+    wget
+    # waybar with vimjoyer's fix
     (pkgs.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      })
-    )
-      # winetricks (all versions)
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
+    # winetricks (all versions)
     winetricks
     # native wayland support (unstable)
     wineWowPackages.waylandFull

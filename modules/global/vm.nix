@@ -7,8 +7,8 @@
     virt-manager.package = pkgs-stable.virt-manager;
   };
 
-services.spice-vdagentd.enable = true;
-services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
+  services.qemuGuest.enable = true;
 
   virtualisation = {
     waydroid = {

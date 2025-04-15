@@ -1,8 +1,8 @@
 # file: configuration.nix
 { pkgs, lib, ... }:
 let
-    sources = import ./nix/sources.nix;
-    lanzaboote = import sources.lanzaboote;
+  sources = import ./nix/sources.nix;
+  lanzaboote = import sources.lanzaboote;
 in
 {
   imports = [ lanzaboote.nixosModules.lanzaboote ];
@@ -23,8 +23,3 @@ in
     pkiBundle = "/var/lib/sbctl";
   };
 }
-
-
-
-
-

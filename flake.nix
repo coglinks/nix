@@ -68,6 +68,7 @@
             pkg:
             builtins.elem (lib.getName pkg) [
               "nvidia-x11"
+              "reaper"
               "nvidia-settings"
               "spotify"
               "terraform"
@@ -82,6 +83,8 @@
             pkg:
             builtins.elem (lib.getName pkg) [
               "vscode"
+              "reaper"
+              "spotify"
               "nvidia-x11"
               "nvidia-settings"
               "terraform"
@@ -124,7 +127,6 @@
           inherit pkgs;
         };
         modules = [
-          ./configuration-unstable.nix
           ./configuration.nix
           ./hardware-configuration.nix
           ./lanzaboote.nix

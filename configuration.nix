@@ -156,7 +156,7 @@
       "adb"
     ];
     packages = with pkgs-unstable; [
-      #  thunderbird
+        thunderbird
     ];
   };
 

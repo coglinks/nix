@@ -3,12 +3,25 @@
 {
   home.packages = with pkgs-unstable; [
     bat # cli #text-viewer #cat-with-syntax-highlighting
+    rclone
+    spicetify-cli
+    conda
+    htop
+    tree
+    spotify
+    mpv
+    libreoffice
+    devenv
+    nodejs_23
+    mystmd
+    ardour
     bitwarden-desktop # gui #security
     blueman # gui
     audacity
     nixfmt-rfc-style
     feh
     qimgv
+    reaper
     borgbackup # cli #backup
     vorta
     cava
@@ -41,7 +54,6 @@
     inkscape # gui #vector-editor
     inotify-tools # cli #filesystem
     jq # cli #json
-    jupyter # gui #notebook
     kdePackages.okular # gui
     kicad # gui #electronics
     git # cli #vcs #git-tools

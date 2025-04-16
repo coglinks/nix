@@ -16,6 +16,8 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "vscode"
+      "reaper"
+      "spotify"
       "terraform"
       "nvidia-x11"
       "google-chrome"

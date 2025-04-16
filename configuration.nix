@@ -153,6 +153,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "adb"
     ];
     packages = with pkgs-unstable; [
       #  thunderbird

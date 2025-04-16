@@ -3,6 +3,7 @@
 {
 
   programs = {
+    adb.enable = true;
     virt-manager.enable = true;
     virt-manager.package = pkgs-stable.virt-manager;
   };

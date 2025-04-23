@@ -2,9 +2,6 @@
 
 {
   environment.systemPackages = with pkgs-unstable; [
-    #dotnetCorePackages.sdk_9_0_1xx
-    #dotnetCorePackages.sdk_6_0_1xx
-    dotnetCorePackages.sdk_5_0
     # support both 32-bit and 64-bit applications
     wineWowPackages.stable
     # support 32-bit only

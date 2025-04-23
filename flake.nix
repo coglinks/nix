@@ -139,6 +139,7 @@
           ./modules/global/ssh.nix
           ./modules/global/vm.nix
           ./modules/global/wine.nix
+          ./modules/loq/hardware.nix
           ./modules/loq/backup.nix
           ./modules/loq/flatpak.nix
           ./modules/loq/nvidia.nix

@@ -2,7 +2,7 @@
   lib,
   inputs,
   config,
-  pkgs-unstable,
+  pkgs,
   ...
 }:
 
@@ -12,24 +12,11 @@
   home.username = "incogshift";
   home.homeDirectory = "/home/incogshift";
 
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "vscode"
-      "reaper"
-      "spotify"
-      "veracrypt"
-      "terraform"
-      "nvidia-x11"
-      "google-chrome"
-      "steam"
-      "steam-unwrapped"
-      "discord"
-    ];
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./modules/global/home-manager/hyprland.nix
-    ./modules/loq/home-manager/pkgs-unstable.nix
-    ./modules/loq/home-manager/pkgs-stable.nix
+    ./modules/loq/hm-pkgs.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -43,7 +30,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of

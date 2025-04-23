@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   programs.zsh.antidote = {
@@ -25,7 +25,7 @@
 "romkatv/powerlevel10k"
 	];		
   };
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     bat # cli #text-viewer #cat-with-syntax-highlighting
     rclone
     antidote

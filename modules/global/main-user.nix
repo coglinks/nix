@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs-unstable,
+  pkgs,
   ...
 }:
 
@@ -25,7 +25,7 @@ in
       isNormalUser = true;
       initialPassword = "12345";
       description = "main user";
-      shell = pkgs-unstable.zsh;
+      shell = pkgs.zsh;
     };
   };
 }

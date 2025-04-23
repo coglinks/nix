@@ -4,8 +4,6 @@
 
 {
   config,
-  pkgs-stable,
-  pkgs-unstable,
   pkgs,
   lib,
   inputs,
@@ -13,44 +11,24 @@
 }:
 
 {
-# These are commented out since i don't understand them
-  main-user.enable = true;
-  main-user.userName = "incogshift";
-  
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.incogshift = {
-    isNormalUser = true;
-    description = "main user";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "adb"
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./modules/global/docker.nix
+      ./modules/global/hardware.nix
+      ./modules/global/main-user.nix
+      ./modules/global/main-user.nix
+      ./modules/global/ssh.nix
+      ./modules/global/vm.nix
+      ./modules/global/wine.nix
+      ./modules/loq/hardware.nix
+      ./modules/loq/backup.nix
+      ./modules/loq/nvidia.nix
+      ./modules/loq/ollama.nix
+      ./modules/loq/pkgs.nix
+      ./modules/loq/network.nix
+      ./modules/loq/display.nix
     ];
-  };
-  home-manager = {
-    # also pass inputs to home-manager modules
-    extraSpecialArgs = {
-      inherit inputs;
-      inherit pkgs-unstable;
-    };
-    users = {
-      "incogshift" = import ./home.nix;
-    };
-    useUserPackages = true;
-  };
-
-  # Bootloader.
-  boot = {
-    initrd.systemd.enable = true;
-    loader = {
-      # this command is common in lanzaboote
-      #systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-  };
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings = {
     experimental-features = [
@@ -66,6 +44,28 @@
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
     ];
   };
+
+  security.rtkit.enable = true;
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+  };
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.initrd.luks.devices."luks-54ee877c-bd28-421e-a89f-cb368f632d0a".device = "/dev/disk/by-uuid/54ee877c-bd28-421e-a89f-cb368f632d0a";
+  networking.hostName = "nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Qatar";
@@ -85,21 +85,27 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
-
-  programs = {
-    firefox.enable = true;
-    zsh.enable = true;
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.incogshift = {
+    isNormalUser = true;
+    description = "incogshift";
+    extraGroups = [ "networkmanager" "wheel" "adb" ];
   };
 
-  security.rtkit.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
+  home-manager = {
+    # also pass inputs to home-manager modules
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit pkgs;
+    };
+    users = {
+      "incogshift" = import ./home.nix;
+    };
+    useUserPackages = true;
   };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -107,6 +113,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11";
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }

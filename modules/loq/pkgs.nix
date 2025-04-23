@@ -1,7 +1,7 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs-unstable; [
+  environment.systemPackages = with pkgs; [
     win-virtio
     seahorse
     sbctl
@@ -14,7 +14,7 @@
     }))
   ];
 
-  fonts.packages = with pkgs-unstable; [
+  fonts.packages = with pkgs; [
     nerd-fonts.iosevka-term
     nerd-fonts.iosevka
   ];

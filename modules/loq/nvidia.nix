@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  pkgs-unstable,
+  pkgs,
   ...
 }:
 
@@ -11,7 +11,7 @@
 {
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  environment.systemPackages = with pkgs-unstable; [
+  environment.systemPackages = with pkgs; [
     vulkan-tools
   ];
   hardware = {

@@ -1,11 +1,11 @@
-{ pkgs-stable, ... }:
+{ pkgs, ... }:
 
 {
 
   programs = {
     adb.enable = true;
     virt-manager.enable = true;
-    virt-manager.package = pkgs-stable.virt-manager;
+    virt-manager.package = pkgs.virt-manager;
   };
 
   services.spice-vdagentd.enable = true;
@@ -22,7 +22,7 @@
 
     libvirtd = {
       enable = true;
-      package = pkgs-stable.libvirt;
+      package = pkgs.libvirt;
       qemu = {
         swtpm = {
           enable = true;

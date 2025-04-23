@@ -1,9 +1,10 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     bat # cli #text-viewer #cat-with-syntax-highlighting
     rclone
+    hyprlock # cli #lockscreen
     veracrypt
     thunderbird
     spicetify-cli

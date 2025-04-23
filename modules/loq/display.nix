@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -23,7 +23,7 @@
   };
   # XDG portal
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs-unstable.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   environment = {
     sessionVariables = {

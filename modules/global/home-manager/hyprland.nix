@@ -2,7 +2,6 @@
   lib,
   inputs,
   config,
-  pkgs-unstable,
   pkgs,
   ...
 }:
@@ -31,7 +30,7 @@
     size = 16;
   };
 
-  #  home.packages = with pkgs-unstable; [
+  #  home.packages = with pkgs; [
   #    hyprlandPlugins.hyprspace
   #  ];
 

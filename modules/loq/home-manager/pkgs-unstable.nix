@@ -4,6 +4,7 @@
   home.packages = with pkgs-unstable; [
     bat # cli #text-viewer #cat-with-syntax-highlighting
     rclone
+    veracrypt
     spicetify-cli
     conda
     htop

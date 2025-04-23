@@ -18,6 +18,7 @@
       "vscode"
       "reaper"
       "spotify"
+      "veracrypt"
       "terraform"
       "nvidia-x11"
       "google-chrome"

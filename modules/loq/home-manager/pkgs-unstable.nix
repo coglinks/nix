@@ -5,6 +5,7 @@
     bat # cli #text-viewer #cat-with-syntax-highlighting
     rclone
     veracrypt
+    thunderbird
     spicetify-cli
     conda
     htop

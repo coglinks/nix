@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs-unstable; [
     win-virtio
     seahorse
+    sbctl
     libsecret
     pciutils
     git-credential-manager

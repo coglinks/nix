@@ -33,6 +33,11 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
 
     #    xremap-flake.url = "github:xremap/nix-flake";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -47,6 +52,7 @@
       flake-parts,
       treefmt-nix,
       systems,
+      lanzaboote,
       flake-compat,
       ...
     }@inputs:
@@ -131,7 +137,25 @@
         modules = [
           ./configuration.nix
           ./hardware-configuration.nix
-          ./lanzaboote.nix
+          lanzaboote.nixosModules.lanzaboote
+          ({ pkgs, lib, ... }: {
+
+            environment.systemPackages = [
+              # For debugging and troubleshooting Secure Boot.
+              pkgs.sbctl
+            ];
+
+            # Lanzaboote currently replaces the systemd-boot module.
+            # This setting is usually set to true in configuration.nix
+            # generated at installation time. So we force it to false
+            # for now.
+            boot.loader.systemd-boot.enable = lib.mkForce false;
+
+            boot.lanzaboote = {
+              enable = true;
+              pkiBundle = "/var/lib/sbctl";
+            };
+          })
           ./modules/global/docker.nix
           ./modules/global/hardware.nix
           ./modules/global/main-user.nix
@@ -146,6 +170,8 @@
           ./modules/loq/ollama.nix
           ./modules/loq/pkgs-stable.nix
           ./modules/loq/pkgs-unstable.nix
+          ./modules/loq/network.nix
+          ./modules/loq/display.nix
           inputs.home-manager.nixosModules.default
           nix-flatpak.nixosModules.nix-flatpak
         ];

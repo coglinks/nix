@@ -13,6 +13,10 @@
     };
   };
 
+  programs.gnupg.agent = {
+    enableSSHSupport = true;
+  };
+
   services.fail2ban = {
     enable = false;
     # Ban IP after 5 failures

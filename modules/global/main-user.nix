@@ -15,7 +15,7 @@ in
     userName = lib.mkOption {
       default = "mainuser";
       description = ''
-        	incog267
+        	incogshift
       '';
     };
   };

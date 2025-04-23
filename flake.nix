@@ -152,8 +152,8 @@
       homeConfigurations.clinc = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./modules/win-loq/home.nix
-          ./modules/win-loq/pkgs-unstable.nix
+          ./modules/clinc/home.nix
+          ./modules/clinc/pkgs-unstable.nix
         ];
         extraSpecialArgs = {
           inherit inputs;

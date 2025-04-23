@@ -8,8 +8,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "incog267";
-  home.homeDirectory = "/home/incog267";
+  home.username = "incogshift";
+  home.homeDirectory = "/home/incogshift";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -172,7 +172,7 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/incog267/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/incogshift/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     # EDITOR = "emacs";

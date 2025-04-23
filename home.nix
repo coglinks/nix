@@ -9,8 +9,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "incog267";
-  home.homeDirectory = "/home/incog267";
+  home.username = "incogshift";
+  home.homeDirectory = "/home/incogshift";
 
   nixpkgs.config.allowUnfreePredicate =
     pkg:
@@ -87,7 +87,7 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/incog267/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/incogshift/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
@@ -98,7 +98,7 @@
 
   programs.git = {
     extraConfig.credential.helper = "manager";
-    extraConfig.credential."https://github.com".username = "incog267";
+    extraConfig.credential."https://github.com".username = "incogshift";
     extraConfig.credential.credentialStore = "cache";
     enable = true;
   };

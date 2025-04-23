@@ -14,7 +14,7 @@
 
 {
   main-user.enable = true;
-  main-user.userName = "incog267";
+  main-user.userName = "incogshift";
 
   home-manager = {
     # also pass inputs to home-manager modules
@@ -23,7 +23,7 @@
       inherit pkgs-unstable;
     };
     users = {
-      "incog267" = import ./home.nix;
+      "incogshift" = import ./home.nix;
     };
     useUserPackages = true;
   };
@@ -147,7 +147,7 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.incog267 = {
+  users.users.incogshift = {
     isNormalUser = true;
     description = "main user";
     extraGroups = [
@@ -162,7 +162,7 @@
 
   # Enable automatic login for the user.
   #services.displayManager.autoLogin.enable = true;
-  #services.displayManager.autoLogin.user = "incog267";
+  #services.displayManager.autoLogin.user = "incogshift";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   #systemd.services."getty@tty1".enable = false;

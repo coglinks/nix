@@ -1,14 +1,14 @@
 { ... }:
 
 {
-  #  users.users.incog267 = {
+  #  users.users.incogshift = {
   #    extraGroups = [ "docker" ];
   #  };
 
   virtualisation.docker = {
     enable = false;
     daemon.settings = {
-      data-root = "home/incog267/dockerData-root";
+      data-root = "home/incogshift/dockerData-root";
     };
     rootless = {
       enable = true;

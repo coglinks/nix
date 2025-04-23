@@ -5,10 +5,10 @@
   systemd.user.services."rclone-sync" = {
     enable = true;
     script = ''
-      ${pkgs.rclone}/bin/rclone sync /home/incog267/clones/notes --exclude /home/incog267/clones/notes/.git gdrive-loq:loq-backup
+      ${pkgs.rclone}/bin/rclone sync /home/incogshift/clones/notes --exclude /home/incogshift/clones/notes/.git gdrive-loq:loq-backup
     '';
     serviceConfig = {
-      User = "incog267";
+      User = "incogshift";
     };
     wantedBy = [ "timers.target" ];
   };

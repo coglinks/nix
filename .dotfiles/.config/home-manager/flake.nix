@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of incog267";
+  description = "Home Manager configuration of incogshift";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -17,7 +17,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."incog267" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."incogshift" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,

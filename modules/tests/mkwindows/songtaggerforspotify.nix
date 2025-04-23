@@ -204,7 +204,7 @@ in mkWindowsApp rec {
     description = "Used for song tagging, playlist generation via metadata and tags in spotify";
     homepage = "https://github.com/BenediktAlkin/SongTaggerForSpotify";
     license = licenses.gpl3;
-    maintainers = with maintainers; [ incog267 ];
+    maintainers = with maintainers; [ incogshift ];
     platforms = [ "x86_64-linux" ];
   };
 } 

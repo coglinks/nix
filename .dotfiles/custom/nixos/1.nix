@@ -88,7 +88,7 @@
         ];
       };
 
-      homeConfigurations."incog267" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."incogshift" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home.nix ];
       };

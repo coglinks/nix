@@ -149,7 +149,7 @@
           nix-flatpak.nixosModules.nix-flatpak
         ];
       };
-      homeConfigurations.win-loq = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.clinc = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./modules/win-loq/home.nix

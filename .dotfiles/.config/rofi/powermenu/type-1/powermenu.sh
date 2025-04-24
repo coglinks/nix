@@ -10,28 +10,22 @@
 ## style-1   style-2   style-3   style-4   style-5
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu/type-1"
+dir="~/.config/rofi/powermenu/type-1"
 theme='style-1'
 
-# CMDs
-uptime="`uptime -p | sed -e 's/up //g'`"
-host=`hostname`
-
 # Options
-hibernate='⏾ Hibernate'
-shutdown='⏻ Shutdown'
-reboot='⭯ Reboot'
-lock=' Lock'
-suspend='󰒲 Suspend'
-logout='󰠚 Logout'
+hibernate=' | Hibernate'
+shutdown='⏻ | Shutdown'
+reboot=' | Reboot'
+lock=' | Lock'
+suspend='󰒲 | Suspend'
+logout='󰠚 | Logout'
 yes='Yes'
 no='No'
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "$host" \
-		-mesg "Uptime: $uptime" \
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -70,9 +64,7 @@ run_cmd() {
 			playerctl pause
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
 				hyprctl dispatch exit
-			fi
     elif [[ $1 == '--hibernate' ]]; then
       systemctl hibernate
 		fi

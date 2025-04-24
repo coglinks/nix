@@ -13,8 +13,8 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+@import                          "~/.config/rofi/launchers/type-3/shared/colors.rasi"
+@import                          "~/.config/rofi/launchers/type-3/shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -53,7 +53,7 @@ mainbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
@@ -62,24 +62,6 @@ inputbar {
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
-    children:                    [ "textbox-prompt-colon", "prompt"];
-}
-
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "";
-    padding:                     10px 14px;
-    border-radius:               10px;
-    background-color:            @urgent;
-    text-color:                  @background;
-}
-prompt {
-    enabled:                     true;
-    padding:                     10px;
-    border-radius:               10px;
-    background-color:            @active;
-    text-color:                  @background;
 }
 
 /*****----- Message -----*****/
@@ -115,7 +97,7 @@ error-message {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       5;
+    lines:                       6;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;

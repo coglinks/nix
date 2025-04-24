@@ -1,7 +1,7 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (waybar style) */
 
-@import "~/.config/rofi/config.rasi" 
+@import "~/.config/rofi/launchers/type-3/style-3.rasi" 
 
 /* ---- Mainbox ---- */
 mainbox {

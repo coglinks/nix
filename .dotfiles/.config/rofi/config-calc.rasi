@@ -2,7 +2,7 @@
 /* Main Config Calculator */
 /* Submitted by: https://github.com/JosephArmas */
 
-@import "~/.config/rofi/config.rasi" 
+@import "~/.config/rofi/launchers/type-3/style-3.rasi" 
 
 /* ---- Mainbox ---- */
 mainbox {

@@ -1,7 +1,7 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (wallpaper) */
 
-@import "~/.config/rofi/config.rasi"  
+@import "~/.config/rofi/launchers/type-3/style-3.rasi"  
 
 /* ---- Configuration ---- */ 
 configuration {
@@ -50,10 +50,6 @@ element {
   margin: 0px;
 }
 
-element selected.normal {
-  background-color: transparent;
-}
-
 element-icon {
     text-color:                  inherit;
     size:                        10%;
@@ -64,6 +60,6 @@ element-icon {
 element-text {
   vertical-align: 0.5;
   horizontal-align: 0.5;
-  padding: 10px;
-  margin: 0px;
+  padding: 6px;
+  margin: 6px;
 }

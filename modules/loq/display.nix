@@ -9,6 +9,18 @@
       xwayland.enable = true;
     };
   };
+
+  services.xremap = {
+    withHypr = true;
+    userName = "incogshift";
+    yamlConfig = ''
+      keymap:
+        - name: power;
+          remap:
+            super-z:
+              launch: ["$HOME/.config/rofi/launchers/type-3/launcher.sh"]
+    '';
+  };
   security.pam.services.hyprlock = { };
   # Enable the X11 windowing system.
   services.xserver.enable = true;

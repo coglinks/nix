@@ -27,6 +27,7 @@
       inputs.hyprland.follows = "hyprland";
     };
     #    xremap-flake.url = "github:xremap/nix-flake";
+    xremap-flake.url = "github:xremap/nix-flake";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
       # Optional but recommended to limit the size of your system closure.
@@ -68,6 +69,7 @@
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
+        inputs.xremap-flake.nixosModules.default
         inputs.home-manager.nixosModules.default
         {
           # Set all inputs parameters as special arguments for all submodules,

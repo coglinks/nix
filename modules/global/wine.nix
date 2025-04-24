@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     # support both 32-bit and 64-bit applications
-    wineWowPackages.stable
-    winetricks
+    pkgs.wineWowPackages.stable
+    pkgs-stable.winetricks
   ];
 }

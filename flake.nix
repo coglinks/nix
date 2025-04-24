@@ -21,6 +21,7 @@
       url = "github:raybbian/hyprtasking";
       inputs.hyprland.follows = "hyprland";
     };
+  
 
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -45,11 +46,13 @@
       lanzaboote,
       ... }@inputs: let
       
-    pkgs = nixpkgs;
+      system = "x86_64-linux";
+    pkgs = import nixpkgs {
+       inherit system;
+     };
     
     in {
     nixosConfigurations.loq = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect

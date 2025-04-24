@@ -25,10 +25,10 @@
       ./modules/loq/ollama.nix
       ./modules/loq/pkgs.nix
       ./modules/loq/network.nix
-      ./modules/loq/display.nix
+      ./modules/loq/display.nix 
     ];
 
-  # this allows you to access `pkgs-unstable` anywhere in your config
+  # this allows you to access `pkgs-stable` anywhere in your config
   _module.args.pkgs-stable = import inputs.nixpkgs-stable {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;

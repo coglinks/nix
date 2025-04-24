@@ -30,13 +30,13 @@
     size = 16;
   };
 
-  #  home.packages = with pkgs; [
-  #    hyprlandPlugins.hyprspace
-  #  ];
+    home.packages = with pkgs; [
+      #hyprlandPlugins.hyprspace
+    ];
 
-  #  wayland.windowManager.hyprland.plugins = [
-  #    inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-  #    inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
-  #  ];
+    wayland.windowManager.hyprland.plugins = [
+      #inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+      #inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
+    ];
 
 }

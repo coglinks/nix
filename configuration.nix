@@ -16,8 +16,6 @@
       ./hardware-configuration.nix
       ./modules/global/docker.nix
       ./modules/global/hardware.nix
-      ./modules/global/main-user.nix
-      ./modules/global/main-user.nix
       ./modules/global/ssh.nix
       ./modules/global/vm.nix
       ./modules/global/wine.nix
@@ -90,7 +88,9 @@
     isNormalUser = true;
     description = "incogshift";
     extraGroups = [ "networkmanager" "wheel" "adb" ];
+    #shell = zsh;
   };
+  programs.zsh.enable = true;
 
   home-manager = {
     # also pass inputs to home-manager modules

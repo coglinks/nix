@@ -125,4 +125,5 @@
   fonts.fontconfig = {
     enable = true;
   };
+  programs.firefox.enable = true;
 }

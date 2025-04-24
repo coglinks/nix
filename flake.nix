@@ -9,29 +9,26 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
     treefmt-nix.url = "github:numtide/treefmt-nix";
-
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprtasking = {
       url = "github:raybbian/hyprtasking";
       inputs.hyprland.follows = "hyprland";
     };
-  
-
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-
     #    xremap-flake.url = "github:xremap/nix-flake";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
-
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -43,6 +40,7 @@
       home-manager,
       hyprland,
       treefmt-nix,
+      ags,
       lanzaboote,
       ... }@inputs: let
       
@@ -52,6 +50,19 @@
      };
     
     in {
+    packages.${system}.default = ags.lib.bundle { 
+      inherit pkgs;
+      src = ./.;
+      name = "my-shell"; # name of executable
+      entry = "app.ts";
+      gtk4 = false;
+
+      # additional libraries and executables to add to gjs' runtime
+      extraPackages = [
+        # ags.packages.${system}.battery
+        # pkgs.fzf
+      ];
+    };
     nixosConfigurations.loq = nixpkgs.lib.nixosSystem {
       modules = [
         # Import the previous configuration.nix we used,

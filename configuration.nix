@@ -95,7 +95,7 @@
     isNormalUser = true;
     description = "incogshift";
     extraGroups = [ "networkmanager" "wheel" "adb" ];
-    #shell = zsh;
+    shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
 

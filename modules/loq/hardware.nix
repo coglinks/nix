@@ -1,12 +1,6 @@
 { ... }:
 
 {
-  swapDevices = [
-    {
-      device = "/dev/nvme0n1p3";
-      randomEncryption.enable = true;
-    }
-  ];
   # Configure hibernation with resume
   boot.kernelParams = [
     "resume=/dev/nvme0n1p3"

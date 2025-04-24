@@ -1,3 +1,4 @@
 #.dotfiles/.ssh/** filter=git-crypt diff=git-crypt
 #.dotfiles/.config/rclone/** filter=git-crypt diff=git-crypt
 .gitattributes !filter !diff
+*.jpg filter=lfs diff=lfs merge=lfs -text

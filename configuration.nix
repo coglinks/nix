@@ -28,6 +28,12 @@
       ./modules/loq/display.nix
     ];
 
+  # this allows you to access `pkgs-unstable` anywhere in your config
+  _module.args.pkgs-stable = import inputs.nixpkgs-stable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+
   nix.settings = {
     experimental-features = [
       "nix-command"

@@ -18,15 +18,18 @@
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprtasking = {
-      url = "github:raybbian/hyprtasking";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    #    xremap-flake.url = "github:xremap/nix-flake";
+    #hyprtasking = {
+    #  url = "github:raybbian/hyprtasking";
+    #  inputs.hyprland.follows = "hyprland";
+    #};
+    #Hyprspace = {
+    #  url = "github:KZDKM/Hyprspace";
+    #  inputs.hyprland.follows = "hyprland";
+    #};
+    #hyprland-plugins = {
+    #  url = "github:hyprwm/hyprland-plugins";
+    #  inputs.hyprland.follows = "hyprland";
+    #};
     xremap-flake.url = "github:xremap/nix-flake";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";

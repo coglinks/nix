@@ -51,4 +51,8 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  hardware.bluetooth.enable = true;
+
+
+  services.blueman.enable = true;
 }

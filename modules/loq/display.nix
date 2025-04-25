@@ -26,7 +26,14 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    package = pkgs.kdePackages.sddm;
+    theme = "${import ./sddm.nix { inherit pkgs; }}";
+    extraPackages = [ pkgs.sddm-astronaut ];
+  };
+
+  environment.systemPackages = with pkgs; [sddm-astronaut];
 
   # Configure keymap in X11
   services.xserver.xkb = {

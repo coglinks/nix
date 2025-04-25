@@ -5,6 +5,7 @@
   boot.kernelParams = [
     "resume=/dev/nvme0n1p3"
   ];
+  boot.initrd.systemd.enable = true;
   zramSwap.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;

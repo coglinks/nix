@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     tpm2-tss
+    gparted
     win-virtio
     seahorse
     sbctl

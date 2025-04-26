@@ -6,8 +6,10 @@
     rclone
     hyprlock # cli #lockscreen
     veracrypt
+    git-annex
     thunderbird
     spicetify-cli
+    nautilus
     conda
     htop
     tree

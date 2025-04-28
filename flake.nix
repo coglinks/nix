@@ -18,6 +18,11 @@
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      # optional, not necessary for the module
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #hyprtasking = {
     #  url = "github:raybbian/hyprtasking";
     #  inputs.hyprland.follows = "hyprland";
@@ -49,9 +54,7 @@
       ... }@inputs: let
       
       system = "x86_64-linux";
-    pkgs = import nixpkgs {
-       inherit system;
-     };
+      pkgs = nixpkgs.legacyPackages.${system};
     
     in {
     packages.${system}.default = ags.lib.bundle { 
@@ -74,6 +77,7 @@
         ./configuration.nix
         inputs.xremap-flake.nixosModules.default
         inputs.home-manager.nixosModules.default
+        inputs.sops-nix.nixosModules.sops
         {
           # Set all inputs parameters as special arguments for all submodules,
           # so you can directly use all dependencies in inputs in submodules

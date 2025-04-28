@@ -17,6 +17,7 @@
       ./modules/global/docker.nix
       ./modules/global/hardware.nix
       ./modules/global/ssh.nix
+      ./sops.nix
       ./modules/global/vm.nix
       ./modules/global/non-de/dependecies.nix
       ./modules/global/wine.nix

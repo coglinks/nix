@@ -1,0 +1,74 @@
+- input
+  - `sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/nvme0n1p3`
+- output
+```
+🔐 Please enter current passphrase for disk /dev/nvme0n1p3: ••••••••••••••     
+Failed to determine keyslot of JSON token 0, skipping: Wrong medium type       
+New TPM2 token enrolled as key slot 1.
+```
+- input
+  - `sudo cryptsetup luksDump /dev/nvme0n1p3`
+- output
+```
+LUKS header information
+Version:       	2
+Epoch:         	10
+Metadata area: 	16384 [bytes]
+Keyslots area: 	16744448 [bytes]
+UUID:          	82dc2399-d215-441e-aed4-1a488a1a1727
+Label:         	(no label)
+Subsystem:     	(no subsystem)
+Flags:       	(no flags)
+
+Data segments:
+  0: crypt
+	offset: 16777216 [bytes]
+	length: (whole device)
+	cipher: aes-xts-plain64
+	sector: 512 [bytes]
+
+Keyslots:
+  0: luks2
+	Key:        512 bits
+	Priority:   normal
+	Cipher:     aes-xts-plain64
+	Cipher key: 512 bits
+	PBKDF:      argon2id
+	Time cost:  4
+	Memory:     1048576
+	Threads:    4
+	Salt:       ea 9f 44 49 7c 48 08 5e b8 a4 62 d7 2d 32 2f 69 
+	            0b df 38 1e 99 26 3e 06 47 5f 5d ed 3b ea 6d 78 
+	AF stripes: 4000
+	AF hash:    sha256
+	Area offset:32768 [bytes]
+	Area length:258048 [bytes]
+	Digest ID:  0
+  1: luks2
+	Key:        512 bits
+	Priority:   normal
+	Cipher:     aes-xts-plain64
+	Cipher key: 512 bits
+	PBKDF:      pbkdf2
+	Hash:       sha512
+	Iterations: 1000
+	Salt:       23 6a 13 9d 2e 8b 4f c6 7e 3a 70 5b 5b 79 8e 9c 
+	            c9 8b 91 3e 39 a0 d7 d3 ca 9a c5 20 b1 b2 49 5b 
+	AF stripes: 4000
+	AF hash:    sha512
+	Area offset:290816 [bytes]
+	Area length:258048 [bytes]
+	Digest ID:  0
+Tokens:
+  0: systemd-tpm2
+  1: systemd-tpm2
+	Keyslot:    1
+Digests:
+  0: pbkdf2
+	Hash:       sha256
+	Iterations: 185917
+	Salt:       a5 fe af c8 0f 22 71 da 26 bf 33 ad b9 7c 30 3a 
+	            cd 6b 44 77 59 5c 58 a2 b1 c0 61 be 00 c6 f4 85 
+	Digest:     1a 32 fc fb bd 64 6c ac 8d 37 4e 64 cd 0c 50 cd 
+	            5c 76 03 7b 11 5e 3f 31 51 21 09 87 c7 4e 3c 04 
+```

@@ -17,6 +17,7 @@
   imports = [
     ./modules/global/home-manager/hyprland.nix
     ./modules/loq/hm-pkgs.nix
+    ./modules/global/home-manager/pkgs-essential.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

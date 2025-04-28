@@ -12,23 +12,23 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
       ./modules/global/docker.nix
       ./modules/global/hardware.nix
-      ./modules/global/ssh.nix
-      ./sops.nix
-      ./modules/global/vm.nix
       ./modules/global/non-de/dependecies.nix
+      ./modules/global/ssh.nix
+      ./modules/global/vm.nix
       ./modules/global/wine.nix
-      ./modules/loq/hardware.nix
       ./modules/loq/backup.nix
+      ./modules/loq/display.nix 
+      ./modules/loq/hardware.nix
+      ./modules/loq/network.nix
       ./modules/loq/nvidia.nix
       ./modules/loq/ollama.nix
-      ./modules/loq/security.nix
       ./modules/loq/pkgs.nix
-      ./modules/loq/network.nix
-      ./modules/loq/display.nix 
+      ./modules/loq/security.nix
+      ./sops.nix
     ];
 
   # this allows you to access `pkgs-stable` anywhere in your config

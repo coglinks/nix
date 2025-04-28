@@ -84,9 +84,13 @@
   programs.home-manager.enable = true;
 
   programs.git = {
-    extraConfig.credential.helper = "manager";
-    extraConfig.credential."https://github.com".username = "incogshift";
-    extraConfig.credential.credentialStore = "cache";
+    userName = "incogshift";
+    userEmail = "incog267@gmail.com";
+    extraConfig = {
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
+    };
     enable = true;
   };
 }

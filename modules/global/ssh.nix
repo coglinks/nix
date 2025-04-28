@@ -13,9 +13,7 @@
     };
   };
 
-  programs.gnupg.agent = {
-    enableSSHSupport = true;
-  };
+  programs.ssh.startAgent = true;
 
   services.fail2ban = {
     enable = false;

@@ -25,6 +25,7 @@
       ./modules/loq/backup.nix
       ./modules/loq/nvidia.nix
       ./modules/loq/ollama.nix
+      ./modules/loq/security.nix
       ./modules/loq/pkgs.nix
       ./modules/loq/network.nix
       ./modules/loq/display.nix 

@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     tpm2-tss
+    sops
+    age
     gparted
     win-virtio
     seahorse

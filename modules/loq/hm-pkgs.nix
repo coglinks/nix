@@ -61,12 +61,7 @@
     jq # cli #json
     kdePackages.okular # gui
     kicad # gui #electronics
-    git # cli #vcs #git-tools
-    git-lfs
-    git-crypt # cli #encryption #git-tools
-    git-remote-gcrypt # cli #encryption-plugin-for-git #git-tools
     kitty # gui #terminal
-    lazygit # tui #vcs #git-tools
     lua-language-server # cli #lsp
     lua5_1 # cli #programming-language
     luarocks # cli #package-manager

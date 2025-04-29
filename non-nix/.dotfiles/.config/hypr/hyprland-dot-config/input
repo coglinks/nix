@@ -1,0 +1,4 @@
+device {
+  name = ergo-m575-mouse
+  sensitivity = 0.8
+}

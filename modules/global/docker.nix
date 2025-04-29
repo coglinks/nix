@@ -1,10 +1,6 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  #  users.users.incogshift = {
-  #    extraGroups = [ "docker" ];
-  #  };
-
   virtualisation.docker = {
     enable = false;
     daemon.settings = {
@@ -16,8 +12,7 @@
     };
   };
 
-  #  systemd.user.services.docker = {
-  #    enable = true;
-  #    wantedBy = ["multi-user.target"];
-  #  };
+  environment.systemPackages = [
+    pkgs.lazydocker
+  ];
 }

@@ -1,0 +1,301 @@
+
+# trash-put -v
+
+trashed 'trash_history'        from_dir /home/incog267/.dotfiles/.config/ranger
+
+# trash-put -v
+
+trashed '3'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes
+         untrashed /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes/3
+
+# trash-put -v
+
+trashed '3'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes
+
+# trash-put -v
+
+trashed '4'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes
+
+# trash-put -v
+
+trashed '5'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes
+
+# trash-put -v
+
+trashed '2'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes
+
+# trash-put -v
+
+trashed '3'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes
+         untrashed /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes/3
+
+# trash-put -v
+
+trashed '4'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes
+
+# trash-put -v
+
+trashed '3'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.non-pdf/tes
+
+# trash-put -v
+
+trashed 'indent.log'        from_dir /mnt/st/myfiles/code/notes/math/converted-coursebook/tex
+
+# trash-put -v
+
+trashed 'tes'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/.converted-non-pdf/.non-pdf
+
+# trash-put -v
+
+trashed 'MT5-Parallel Circuits.zip' 'MT4-Series DC Circuits_F0222-1.zip' 'MT3-1_ Ohm'\''s Law_F2022.zip' 'MT2_2-Resistance.zip' 'AEEL1101-MT6-Series & Parallel Circuits.zip'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/tex-copy/tex
+
+# trash-put -v
+
+trashed 'indent.log' 'main.aux' 'main.idx' 'main.pdf' 'main.synctex.gz' 'MT5-Parallel Circuits.tex'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/tex-copy/tex/MT5-Parallel Circuits/acee1b1141eb0cc2
+
+# trash-put -v
+
+trashed 'AEEL1101-MT4-Series DC Circuits_F0222.pdf' 'AEEL1101-MT7-Methods of Analysis and Selected Topics dc.pptx'        from_dir /home/incog267/Downloads
+
+# trash-put -v
+
+trashed 'render.html'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/tex-copy/tex/MT5-Parallel Circuits/acee1b1141eb0cc2
+
+# trash-put -v
+
+trashed 'LuaSnip'        from_dir /home/incog267/.dotfiles/.config/nvim
+
+# trash-put -v
+
+trashed 'lua' 'init.lua'        from_dir /home/incog267/.dotfiles/.config/nvim
+
+# trash-put -v
+
+trashed 'nvim-old'        from_dir /home/incog267/.config
+
+# trash-put -v
+
+trashed '.git'        from_dir /home/incog267/.config/nvim
+
+# trash-put -v
+
+trashed '.gitignore'        from_dir /home/incog267/.config/nvim
+
+# trash-put -v
+
+trashed '.neoconf.json'        from_dir /home/incog267/.config/nvim
+
+# trash-put -v
+
+trashed 'nvim.bak'        from_dir /home/incog267/.config
+
+# trash-put -v
+
+trashed 'main.aux' 'main.idx' 'main.pdf' 'main.synctex.gz' 'main.tex' 'md-html-converter.sh' 'mt5-parallel-circuits.html'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/tex-copy/tex/MT5-Parallel Circuits/acee1b1141eb0cc2
+
+# trash-put -v
+
+trashed 'acee1b1141eb0cc2'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/tex-copy/tex/MT5-Parallel Circuits
+
+# trash-put -v
+
+trashed 'tex'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/tex-copy
+
+# trash-put -v
+
+trashed 'MT5-Parallel Circuits-old.md'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/md/MT5-Parallel Circuits/acee1b1141eb0cc2
+
+# trash-put -v
+
+trashed 'c82b204646475562'        from_dir /mnt/st/myfiles/code/notes/phy/notes-udst/md-copy/MT4-Series DC Circuits_F0222-1
+
+# trash-put -v
+
+trashed '.git'        from_dir /home/incog267/.clones/rofi
+
+# trash-put -v
+
+trashed 'rofi'        from_dir /home/incog267/.dotfiles/.config
+
+# trash-put -v
+
+trashed 'rofi'        from_dir /home/incog267/.clones
+
+# trash-put -v
+
+trashed '.git'        from_dir /home/incog267/.config/alacritty/themes
+
+# trash-put -v
+
+trashed 'Week 7_Basic Concept of Chemical Bonding CHEM1010.zip_'        from_dir /home/incog267/.clones/notes/chem/udst-files/md
+
+# trash-put -v
+
+trashed 'w-9.md'        from_dir /home/incog267/.clones/notes/chem/udst-files/md
+
+# trash-put -v
+
+trashed 'AEEL1101-MT6-Series & Parallel Circuits.zip'        from_dir /home/incog267/.clones/notes/phy/notes-udst/md
+
+# trash-put -v
+
+trashed 'MT2_2-Resistance.zip'        from_dir /home/incog267/.clones/notes/phy/notes-udst/md
+
+# trash-put -v
+
+trashed 'MT3-1_ Ohm'\''s Law_F2022.zip'        from_dir /home/incog267/.clones/notes/phy/notes-udst/md
+
+# trash-put -v
+
+trashed 'MT4-Series DC Circuits_F0222-1.zip'        from_dir /home/incog267/.clones/notes/phy/notes-udst/md
+
+# trash-put -v
+
+trashed 'MT5-Parallel Circuits.zip'        from_dir /home/incog267/.clones/notes/phy/notes-udst/md
+
+# trash-put -v
+
+trashed 'MT7-Methods of Analysis and Selected Topics dc.zip'        from_dir /home/incog267/.clones/notes/phy/notes-udst/md
+
+# trash-put -v
+
+trashed '00536ef3c6304131'        from_dir /home/incog267/.clones/notes/phy/notes-udst/md/MT6-Series & Parallel Circuits
+
+# trash-put -v
+
+trashed 'tes'        from_dir /home/incog267/.clones/notes/phy/notes-udst/.non-pdf
+
+# trash-put -v
+
+trashed '.converted-non-pdf'        from_dir /home/incog267/.clones/notes/phy/notes-udst
+
+# trash-put -v
+
+trashed 'Week 7_Basic Concept of Chemical Bonding CHEM1010.zip' 'Weeks 9-11_Chemical Reactions and Stoichiometry CHEM1010.zip'        from_dir /home/incog267/.clones/notes/chem/udst-files/md
+
+# trash-put -v
+
+trashed 'nvim'        from_dir /home/incog267
+
+# trash-put -v
+
+trashed 'alacritty'        from_dir /home/incog267/.dotfiles
+
+# trash-put -v
+
+trashed 'hypr'        from_dir /home/incog267/.dotfiles
+
+# trash-put -v
+
+trashed 'nvim'        from_dir /home/incog267/.dotfiles
+
+# trash-put -v
+
+trashed 'ranger'        from_dir /home/incog267/.dotfiles
+
+# trash-put -v
+
+trashed 'rclone'        from_dir /home/incog267/.dotfiles
+
+# trash-put -v
+
+trashed 'rofi'        from_dir /home/incog267/.dotfiles
+
+# trash-put -v
+
+trashed 'waybar'        from_dir /home/incog267/.dotfiles
+
+# trash-put -v
+
+trashed 'Screenshot_01-Mar_16-02-43_29245.png'        from_dir /home/incog267/Pictures/Screenshots
+
+# trash-put -v
+
+trashed 'Screenshot_01-Mar_16-02-48_26137.png' 'Screenshot_01-Mar_16-08-06_6451.png'        from_dir /home/incog267/.clones/notes/chem/udst-files/md/Week 7_Basic Concept of Chemical Bonding CHEM1010/images
+
+# trash-put -v
+
+trashed 'Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646.pdf'        from_dir /home/incog267/.clones/notes/math
+
+# trash-put -v
+
+trashed 'Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646.zip'        from_dir /home/incog267/.clones/notes/math/math-udst-notes/udst notes
+
+# trash-put -v
+
+trashed 'a450d8f3857937d5'        from_dir /home/incog267/.clones/notes/math/math-udst-notes/udst notes/Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646
+
+# trash-put -v
+
+trashed 'images' 'Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646.md'        from_dir /home/incog267/.clones/notes/math/math-udst-notes/md/Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646
+         untrashed /home/incog267/.clones/notes/math/math-udst-notes/md/Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646/images' 'Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646.md
+         untrashed /home/incog267/.clones/notes/math/math-udst-notes/md/Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646/images' 'Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646.md
+
+# trash-put -v
+
+trashed 'failed-converted-coursebook' 'failed2-converted-coursebook'        from_dir /home/incog267/.clones/notes/math/udst-notes
+         untrashed /home/incog267/.clones/notes/math/udst-notes/failed-converted-coursebook' 'failed2-converted-coursebook
+
+# trash-put -v
+
+trashed 'Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646' 'Math 1020 Fall 2024 Course Notes (1) Copy (3) 2_250124_122646.zip'        from_dir /home/incog267/.clones/notes/math/udst-notes/md
+
+# trash-put -v
+
+trashed 'home'        from_dir /home/incog267/.dotfiles
+
+# trash-put -v
+
+trashed 'etc'        from_dir /tmp/backup
+
+# trash-put -v
+
+trashed 'english.pdf' 'english.synctex.gz'        from_dir /home/incog267/.clones/notes/eng/latex
+
+# trash-put -v
+
+trashed 'english.pdf' 'english.synctex.gz' 'indent.log'        from_dir /home/incog267/.clones/notes/eng/latex
+
+# trash-put -v
+
+trashed 't'        from_dir /home/incog267/.clones/notes/eng
+
+# trash-put -v
+
+trashed 'english.aux' 'english.fdb_latexmk' 'english.fls' 'english.idx' 'english.ilg' 'english.ind' 'english.log' 'english.pdf' 'english.synctex.gz' 'english.toc' 'indent.log'        from_dir /home/incog267/.clones/notes/eng/latex
+
+# trash-put -v
+
+trashed '-' '2' 'How' 'on' 'Paraphrase' 'Tips' 'to'        from_dir /home/incog267/.clones/notes/eng/udst-docs/4-advanced-reading-skills/paraphrasing-techniques
+
+# trash-put -v
+
+trashed 'AEEL1201_Lab#7_Series-Parallel circuits.odt'        from_dir /home/incog267/Downloads
+
+# trash-put -v
+
+trashed 'quarto-1.6.42-checksums.txt'        from_dir /home/incog267/Downloads
+
+# trash-put -v
+
+trashed 'quarto-1.6.42-linux-amd64.tar.gz'        from_dir /home/incog267/Downloads
+
+# trash-put -v
+
+trashed 'Tips on How to Paraphrase-1.pdf'        from_dir /home/incog267/.clones/notes/eng/udst-docs/4-advanced-reading-skills/paraphrasing-techniques/2-Tips on How to Paraphrase
+
+# trash-put -v
+
+trashed 'Finding Key Concepts in Sentences AK.docx' 'Finding Key Concepts in Sentences.docx' 'Understanding Paraphrase.pdf'        from_dir /home/incog267/.clones/notes/eng/udst-docs/4-advanced-reading-skills/paraphrasing-techniques/is/1-understanding-paraphrase
+
+# trash-put -v
+
+trashed 'Tips on How to Paraphrase.pdf' 'Writing Paraphrased Statements - Practice 1 AK.docx' 'Writing Paraphrased Statements - Practice 1.docx' 'Writing Paraphrased Statements - Practice 2.docx'        from_dir /home/incog267/.clones/notes/eng/udst-docs/4-advanced-reading-skills/paraphrasing-techniques/is/2-Tips on How to Paraphrase
+
+# trash-put -v
+
+trashed 'Incorporating Signal Phrases AK.docx' 'Incorporating Signal Phrases.docx' 'Signal Phrases in Paraphrase.pdf' 'webpage'        from_dir /home/incog267/.clones/notes/eng/udst-docs/4-advanced-reading-skills/paraphrasing-techniques/is/3 - Signal Phrases in Paraphrase
+
+# trash-put -v
+
+trashed 'Week 10 Evaluating Paraphrase.pdf' 'Week 10 Evaluating Paraphrased Passages AK.docx' 'Week 10 Evaluating Paraphrased Passages.docx'        from_dir /home/incog267/.clones/notes/eng/udst-docs/4-advanced-reading-skills/paraphrasing-techniques/is/4 - Evaluating Paraphrase

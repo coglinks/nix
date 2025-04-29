@@ -1,0 +1,324 @@
+
+# this file might have an error
+
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
+# Default Keybinds
+# visit https://wiki.hyprland.org/Configuring/Binds/ for more info
+
+$mainMod = SUPER
+
+# Default
+$scriptsDir = $HOME/.config/hypr/scripts
+$configs = $HOME/.config/hypr/configs
+# User
+$UserConfigs = $HOME/.config/hypr/UserConfigs
+$UserScripts = $HOME/.config/hypr/UserScripts
+$suspend = swaylock & sleep 0.5; systemctl suspend
+
+# app keybinds
+source=/home/incog267/.config/hypr/hyprland-dot-config/keybinds
+
+bind = CTRL ALT, Delete, exec, hyprctl dispatch exit 0
+bind = SUPER, Q, killactive,
+bind = SUPER, F, fullscreen
+bind = SUPER SHIFT, Q, exec, $scriptsDir/KillActiveProcess.sh
+bind = SUPER SHIFT, F, togglefloating,
+bind = SUPER ALT, F, exec, hyprctl dispatch workspaceopt allfloat
+bind = CTRL ALT, L, exec, swaylock &
+bind = SUPER ALT, S, exec, systemctl poweroff
+bind = CTRL ALT, P, exec, $scriptsDir/Wlogout.sh # power menu
+
+# FEATURES / EXTRAS
+bind = SUPER, H, exec, $scriptsDir/KeyHints.sh # help file
+bind = SUPER ALT, R, exec, $scriptsDir/Refresh.sh # Refresh waybar, swaync, rofi
+bind = SUPER ALT, E, exec, $scriptsDir/RofiEmoji.sh # emoji menu
+bind = SUPER, S, exec, $suspend
+#bind = SUPER SHIFT, B, exec, $scriptsDir/ChangeBlur.sh # Toggle blur settings 
+#bind = SUPER SHIFT, G, exec, $scriptsDir/GameMode.sh # Toggle animations ON/OFF
+bind = SUPER ALT, L, exec, $scriptsDir/ChangeLayout.sh # Toggle Master or Dwindle Layout
+bind = SUPER ALT, V, exec, $scriptsDir/ClipManager.sh # Clipboard Manager
+bind = SUPER SHIFT, N, exec, swaync-client -t -sw # swayNC notification panel
+
+# FEATURES / EXTRAS (UserScripts)
+bind = SUPER, E, exec, alacritty -e ranger ~/.config/hypr # Quick Edit Hyprland Settings
+bind = SUPER SHIFT, M, exec, $UserScripts/RofiBeats.sh # online music using rofi
+bind = SUPER, W, exec, $UserScripts/WallpaperSelect.sh # Select wallpaper to apply
+bind = SUPER SHIFT, W, exec, $UserScripts/WallpaperEffects.sh # Wallpaper Effects by imagemagick
+bind = CTRL ALT, W, exec, $UserScripts/WallpaperRandom.sh # Random wallpapers
+bind = SUPER ALT, O, exec, hyprctl setprop active opaque toggle # disable opacity on active window
+bind = SUPER SHIFT, K, exec, $scriptsDir/KeyBinds.sh # search keybinds via rofi
+# Waybar / Bar related
+bind = SUPER, B, exec, pkill -SIGUSR1 waybar # Toggle hide/show waybar 
+bind = SUPER CTRL, B, exec, $scriptsDir/WaybarStyles.sh # Waybar Styles Menu
+bind = SUPER ALT, B, exec, $scriptsDir/WaybarLayout.sh # Waybar Layout Menu
+
+# Dwindle Layout
+bind = SUPER SHIFT, I, togglesplit # only works on dwindle layout
+bind = SUPER, P, pseudo, # dwindle
+
+# Master Layout
+bind = SUPER CTRL, D, layoutmsg, removemaster
+bind = SUPER, I, layoutmsg, addmaster
+bind = SUPER, J, layoutmsg, cyclenext
+bind = SUPER, K, layoutmsg, cycleprev
+bind = SUPER CTRL, Return, layoutmsg, swapwithmaster
+
+# Works on either layout (Master or Dwindle)
+bind = SUPER, M, exec, hyprctl dispatch splitratio 0.3
+
+# group
+bind = SUPER, G, togglegroup # toggle group
+bind = SUPER CTRL, tab, changegroupactive  # change focus to another window
+
+ # Cycle windows if floating bring to top
+bind = ALT, tab, cyclenext
+#bind = ALT, tab, bringactivetotop  
+
+# Special Keys / Hot Keys
+bindel = , xf86audioraisevolume, exec, $scriptsDir/Volume.sh --inc # volume up
+bindel = , xf86audiolowervolume, exec, $scriptsDir/Volume.sh --dec # volume down
+bindl = , xf86AudioMicMute, exec, $scriptsDir/Volume.sh --toggle-mic # mic mute
+bindl = , xf86audiomute, exec, $scriptsDir/Volume.sh --toggle # mute
+bindl = , xf86Sleep, exec, systemctl suspend  # sleep button 
+bindl = , xf86Rfkill, exec, $scriptsDir/AirplaneMode.sh # Airplane mode
+
+# media controls using keyboards
+bindl = , xf86AudioPlayPause, exec, $scriptsDir/MediaCtrl.sh --pause
+bindl = , xf86AudioPause, exec, $scriptsDir/MediaCtrl.sh --pause
+bindl = , xf86AudioPlay, exec, $scriptsDir/MediaCtrl.sh --pause
+bindl = , xf86AudioNext, exec, $scriptsDir/MediaCtrl.sh --nxt 
+bindl = , xf86AudioPrev, exec, $scriptsDir/MediaCtrl.sh --prv
+bindl = , xf86audiostop, exec, $scriptsDir/MediaCtrl.sh --stop
+
+# Screenshot keybindings NOTE: You may need to press Fn key as well
+bind = SUPER, Print, exec, $scriptsDir/ScreenShot.sh --now  # screenshot
+bind = SUPER SHIFT, Print, exec, $scriptsDir/ScreenShot.sh --area # screenshot (area)
+#bind = SUPER CTRL, Print, exec, $scriptsDir/ScreenShot.sh --in5 # screenshot  (5 secs delay)
+#bind = SUPER CTRL SHIFT, Print, exec, $scriptsDir/ScreenShot.sh --in10 # screenshot (10 secs delay)
+bind = ALT, Print, exec, $scriptsDir/ScreenShot.sh --active # screenshot (active window only)
+
+# screenshot with swappy (another screenshot tool)
+# bind = SUPER SHIFT, S, exec, $scriptsDir/ScreenShot.sh --swappy #screenshot (swappy)
+
+# Resize windows
+binde = SUPER SHIFT, left, resizeactive,-50 0
+binde = SUPER SHIFT, right, resizeactive,50 0
+binde = SUPER SHIFT, up, resizeactive,0 -50
+binde = SUPER SHIFT, down, resizeactive,0 50
+
+# Move windows
+bind = SUPER CTRL, left, movewindow, l
+bind = SUPER CTRL, right, movewindow, r
+bind = SUPER CTRL, up, movewindow, u
+bind = SUPER CTRL, down, movewindow, d
+
+# Move focus with mainMod + arrow keys
+bind = SUPER, left, movefocus, l
+bind = SUPER, right, movefocus, r
+bind = SUPER, up, movefocus, u
+bind = SUPER, down, movefocus, d
+
+# Workspaces related
+bind = SUPER, tab, workspace, m+1
+bind = SUPER SHIFT, tab, workspace, m-1
+
+# Special workspace
+bind = SUPER SHIFT, U, movetoworkspace, special
+bind = SUPER, U, togglespecialworkspace,
+
+# The following mappings use the key codes to better support various keyboard layouts
+# 1 is code:10, 2 is code 11, etc
+# Switch workspaces with mainMod + [0-9] 
+bind = SUPER, code:10, workspace, 1
+bind = SUPER, code:11, workspace, 2
+bind = SUPER, code:12, workspace, 3
+bind = SUPER, code:13, workspace, 4
+bind = SUPER, code:14, workspace, 5
+bind = SUPER, code:15, workspace, 6
+bind = SUPER, code:16, workspace, 7
+bind = SUPER, code:17, workspace, 8
+bind = SUPER, code:18, workspace, 9
+bind = SUPER, code:19, workspace, 10
+
+# Move active window and follow to workspace mainMod + SHIFT [0-9]
+bind = SUPER SHIFT, code:10, movetoworkspace, 1
+bind = SUPER SHIFT, code:11, movetoworkspace, 2
+bind = SUPER SHIFT, code:12, movetoworkspace, 3
+bind = SUPER SHIFT, code:13, movetoworkspace, 4
+bind = SUPER SHIFT, code:14, movetoworkspace, 5
+bind = SUPER SHIFT, code:15, movetoworkspace, 6
+bind = SUPER SHIFT, code:16, movetoworkspace, 7
+bind = SUPER SHIFT, code:17, movetoworkspace, 8
+bind = SUPER SHIFT, code:18, movetoworkspace, 9
+bind = SUPER SHIFT, code:19, movetoworkspace, 10
+bind = SUPER SHIFT, bracketleft, movetoworkspace, -1 # brackets [ or ]
+bind = SUPER SHIFT, bracketright, movetoworkspace, +1
+
+# Move active window to a workspace silently mainMod + CTRL [0-9]
+bind = SUPER CTRL, code:10, movetoworkspacesilent, 1
+bind = SUPER CTRL, code:11, movetoworkspacesilent, 2
+bind = SUPER CTRL, code:12, movetoworkspacesilent, 3
+bind = SUPER CTRL, code:13, movetoworkspacesilent, 4
+bind = SUPER CTRL, code:14, movetoworkspacesilent, 5
+bind = SUPER CTRL, code:15, movetoworkspacesilent, 6
+bind = SUPER CTRL, code:16, movetoworkspacesilent, 7
+bind = SUPER CTRL, code:17, movetoworkspacesilent, 8
+bind = SUPER CTRL, code:18, movetoworkspacesilent, 9
+bind = SUPER CTRL, code:19, movetoworkspacesilent, 10
+bind = SUPER CTRL, bracketleft, movetoworkspacesilent, -1 # brackets [ or ]
+bind = SUPER CTRL, bracketright, movetoworkspacesilent, +1
+
+# Scroll through existing workspaces with mainMod + scroll
+bind = SUPER, mouse_down, workspace, e+1
+bind = SUPER, mouse_up, workspace, e-1
+bind = SUPER, period, workspace, e+1
+bind = SUPER, comma, workspace, e-1
+
+# Move/resize windows with mainMod + LMB/RMB and dragging
+bindm = SUPER, mouse:272, movewindow
+bindm = SUPER, mouse:273, resizewindow
+
+# plugins
+#bind = SUPER, A, hyprexpo:expo, toggle # can be: toggle, off/disable or on/enable
+bind = SUPER, grave, overview:toggle
+
+bind = SUPER, A, hyprtasking:toggle, cursor
+bind = SUPER SHIFT, A, hyprtasking:toggle, all
+
+bind = SUPER, X, hyprtasking:killhovered
+
+bind = SUPER, H, hyprtasking:move, left
+bind = SUPER, J, hyprtasking:move, down
+bind = SUPER, K, hyprtasking:move, up
+bind = SUPER, L, hyprtasking:move, right
+
+plugin {
+    hyprtasking {
+        layout = grid
+
+        gap_size = 0
+        bg_color = 0xff26233a
+        border_size = 1
+        exit_behavior = active interacted original hovered
+
+        gestures {
+            enabled = false
+            open_fingers = 3
+            open_distance = 300
+            open_positive = true
+        }
+
+        grid {
+            rows = 3
+            cols = 3
+        }
+
+        linear {
+            height = 400
+            scroll_speed = 1.1
+            blur = 0
+        }
+    }
+}
+
+# workspaces - Monitor rules
+# https://wiki.hyprland.org/Configuring/Workspace-Rules/
+# SUPER E - Workspace-Rules 
+# See ~/.config/hypr/UserConfigs/WorkspaceRules.conf
+
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
+
+# See https://wiki.hyprland.org/Configuring/Keywords/ for more variable settings
+# These configs are mostly for laptops. This is addemdum to Keybinds.conf
+
+$scriptsDir = $HOME/.config/hypr/scripts
+$UserConfigs = $HOME/.config/hypr/UserConfigs
+
+# for disabling Touchpad. hyprctl devices to get device name. 
+$Touchpad_Device=asue1209:00-04f3:319f-touchpad
+
+binde = , xf86KbdBrightnessDown, exec, $scriptsDir/BrightnessKbd.sh --dec # decrease keyboard brightness
+binde = , xf86KbdBrightnessUp, exec, $scriptsDir/BrightnessKbd.sh --inc # increase keyboard brightness
+bind = , xf86Launch1, exec, rog-control-center # ASUS Armory crate button
+bind = , xf86Launch3, exec, asusctl led-mode -n # FN+F4 Switch keyboard RGB profile 
+bind = , xf86Launch4, exec, asusctl profile -n  # FN+F5 change of fan profiles (Quite, Balance, Performance)
+binde = , xf86MonBrightnessDown, exec, $scriptsDir/Brightness.sh --dec # decrease monitor brightness
+binde = , xf86MonBrightnessUp, exec, $scriptsDir/Brightness.sh --inc # increase monitor brightness
+bind = , xf86TouchpadToggle, exec, $scriptsDir/TouchPad.sh # disable touchpad
+
+# Screenshot keybindings using F6 (no PrinSrc button)
+bind = SUPER, F6, exec, $scriptsDir/ScreenShot.sh --now # screenshot
+bind = SUPER SHIFT, F6, exec, $scriptsDir/ScreenShot.sh --area # screenshot (area)
+bind = SUPER CTRL, F6, exec, $scriptsDir/ScreenShot.sh --in5 # # screenshot (5 secs delay)
+bind = SUPER ALT, F6, exec, $scriptsDir/ScreenShot.sh --in10 # screenshot (10 secs delay)
+bind = ALT, F6, exec, $scriptsDir/ScreenShot.sh --active # screenshot (active window only)
+
+$TOUCHPAD_ENABLED = true
+device {
+  name = $Touchpad_Device
+  enabled = $TOUCHPAD_ENABLED
+}
+# Below are useful when you are connecting your laptop in external display
+# Suggest you edit below for your laptop display
+# From WIKI This is to disable laptop monitor when lid is closed.
+# consult https://wiki.hyprland.org/hyprland-wiki/pages/Configuring/Binds/#switches
+#bindl = , switch:off:Lid Switch,exec,hyprctl keyword monitor "eDP-1, preferred, auto, 1"
+#bindl = , switch:on:Lid Switch,exec,hyprctl keyword monitor "eDP-1, disable"
+
+
+# WARNING! Using this method has some caveats!! USE THIS PART WITH SOME CAUTION!
+# CONS of doing this, is that you need to set up your wallpaper (SUPER W) and choose wallpaper.
+# CAVEATS! Sometimes the Main Laptop Monitor DOES NOT have display that it needs to re-connect your external monitor
+# One work around is to ensure that before shutting down laptop, MAKE SURE your laptop lid is OPEN!!
+# Make sure to comment (put # on the both the bindl = , switch ......) above
+# NOTE: Display for laptop are being generated into LaptopDisplay.conf
+# This part is to be use if you do not want your main laptop monitor to wake up during say wallpaper change etc
+
+#bindl = , switch:off:Lid Switch,exec,echo "monitor = eDP-1, preferred, auto, 1" > $UserConfigs/LaptopDisplay.conf
+#bindl = , switch:on:Lid Switch,exec,echo "monitor = eDP-1, disable" > $UserConfigs/LaptopDisplay.conf
+
+# for laptop-lid action (to erase the last entry)
+#exec-once = echo "monitor = eDP-1, preferred, auto, 1" > $HOME/.config/hypr/UserConfigs/LaptopDisplay.conf
+#
+# NOTE, THIS FILE IS BEING USED by disabling Laptop display monitor behaviour when closing lid.
+# See notes on Laptops.conf
+
+#monitor = eDP-1, preferred, auto, 1
+
+
+
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
+# This is where you put your own keybinds. Be Mindful to check as well ~/.config/hypr/configs/Keybinds.conf to avoid conflict
+# if you think I should replace the Pre-defined Keybinds in ~/.config/hypr/configs/Keybinds.conf , submit an issue or let me know in DC and present me a valid reason as to why, such as conflicting with global shortcuts, etc etc
+
+# See https://wiki.hyprland.org/Configuring/Keywords/ for more settings and variables
+# See also Laptops.conf for laptops keybinds 
+
+$files = nautilus
+$term = alacritty
+$scriptsDir = $HOME/.config/hypr/scripts
+$UserScripts = $HOME/.config/hypr/UserScripts
+
+# rofi App launcher
+#bindr = SUPER, SUPER_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window # Super Key to Launch rofi menu
+bind = SUPER, D, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window #Main Menu
+
+
+bind = SUPER, Return, exec, $term  #terminal
+bind = SUPER, T, exec, $files #file manager
+
+bind = SUPER ALT, C, exec, $UserScripts/RofiCalc.sh # calculator (qalculate)
+
+# pyprland
+bind = SUPER SHIFT, Return, exec, pypr toggle term # Dropdown terminal
+bind = SUPER, Z, exec, pypr zoom # Toggle Desktop Zoom
+
+bind = SUPER SHIFT, O, exec, $UserScripts/ZshChangeTheme.sh # Change oh-my-zsh theme
+bindn = ALT_L, SHIFT_L, exec, $scriptsDir/SwitchKeyboardLayout.sh # Change keyboard layout
+
+# For passthrough keyboard into a VM
+# bind = SUPER ALT, P, submap, passthru
+#submap = passthru
+# to unbind
+#bind = SUPER ALT, P, submap, reset
+#submap = reset

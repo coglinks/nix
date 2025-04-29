@@ -1,0 +1,18 @@
+# flatpak
+# flatpak install bitwarden (idk if bitwarden is in official arch repos)
+
+## post installation
+# hyprpm
+hyprpm update
+hyprpm add  https://github.com/raybbian/hyprtasking
+hyprpm add https://github.com/KZDKM/Hyprspace
+hyprpm enable Hyprspace
+hyprpm enable hyprtasking
+
+# sbctl (some cmds pending)
+sbctl status
+sbctl --create-keys
+sbctl --enroll-keys -m
+sbctl verify
+
+# pending: yazi wallust

@@ -1,0 +1,10 @@
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
+# Default Keybinds
+# visit https://wiki.hyprland.org/Configuring/Binds/ for more info
+
+source=keybind/apps
+source=keybind/apps-custom
+#source=keybind/plugins
+source=keybind/system
+source=keybind/window
+source=keybind/workspace

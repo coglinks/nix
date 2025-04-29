@@ -1,0 +1,19 @@
+❯ udiskie&
+[1] 56861
+/st/nix main* ⇡                                                       19:33:52
+❯ Traceback (most recent call last):
+  File "/nix/store/65191718rgphg4v16d5nnd80l10n54ga-udiskie-2.5.7/lib/python3.12/site-packages/udiskie/cli.py", line 222, in _start_async_tasks
+    self.udisks = await udiskie.udisks2.Daemon.create()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/65191718rgphg4v16d5nnd80l10n54ga-udiskie-2.5.7/lib/python3.12/site-packages/udiskie/udisks2.py", line 714, in create
+    version = await cls.get_version()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/65191718rgphg4v16d5nnd80l10n54ga-udiskie-2.5.7/lib/python3.12/site-packages/udiskie/udisks2.py", line 725, in get_version
+    version = await dbus.call(manager._proxy, 'Get', '(ss)', (
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/65191718rgphg4v16d5nnd80l10n54ga-udiskie-2.5.7/lib/python3.12/site-packages/udiskie/dbus.py", line 49, in call
+    value = proxy.call_finish(result)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+gi.repository.GLib.GError: g-dbus-error-quark: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable (2)
+
+[1]  + exit 1     udiskie

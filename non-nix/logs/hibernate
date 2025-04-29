@@ -1,0 +1,2 @@
+❯ systemctl hibernate                                        
+Call to Hibernate failed: Specified resume device is missing or is not an active swap device

@@ -2,9 +2,12 @@
 
 {
   # Configure hibernation with resume
-  boot.kernelParams = [
-    "resume=/dev/nvme0n1p3"
-  ];
+  #boot.kernelParams = [
+  #  "resume=/dev/nvme0n1p3"
+  #];
+  
+  #boot.resumeDevice = "/dev/disk/by-uuid/60d58fec-52a7-4599-a5d7-0dafe15e53ae";
+  
   boot.initrd.systemd.enable = true;
   zramSwap.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).

@@ -79,7 +79,6 @@
     networkmanager_dmenu # gui #network
     networkmanagerapplet # gui #network
     ninja # cli #build-system
-    niv # cli #nix
     pamixer # cli #audio
     pandoc # cli #converter
     pavucontrol # gui #audio
@@ -90,7 +89,6 @@
     playerctl # cli #media
     powertop # cli #power
     rclone # cli #cloud
-    rocmPackages.llvm.clang # cli #compiler
     rofi # gui #launcher
     slurp # cli #screenshot
     steam # gui #gaming

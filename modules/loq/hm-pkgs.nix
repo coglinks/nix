@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,6 +7,7 @@
     hyprlock # cli #lockscreen
     veracrypt
     git-annex
+    nixd
     thunderbird
     spicetify-cli
     nautilus
@@ -123,4 +124,6 @@
     enable = true;
   };
   programs.firefox.enable = true;
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 }

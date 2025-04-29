@@ -11,11 +11,7 @@
 }:
 
 {
-  imports =
-    [
-# "./modules/global": modules made to be used by many systems
-# "./modules/<hostname>": modules made to be used by specific hosts
-
+  imports = [
       ./modules/global/docker.nix
       ./modules/global/nix.nix
       ./modules/global/ollama.nix
@@ -45,7 +41,7 @@
 
       # For wayland, xwayland, display managers, window managers, lockscreens
       ./modules/loq/display.nix
-    ];
+  ];
   
 # What follows is base system setup
 

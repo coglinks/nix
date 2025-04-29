@@ -1,7 +1,7 @@
 {
   description = "A simple NixOS flake";
 
-  inputs = {
+  inputs = rec {
     # NixOS official package source, using the nixos-24.11 branch here
     #nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -11,7 +11,7 @@
     };
     treefmt-nix.url = "github:numtide/treefmt-nix";
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "github:hyprwm/Hyprland/v0.46.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
@@ -23,10 +23,10 @@
       # optional, not necessary for the module
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #hyprtasking = {
-    #  url = "github:raybbian/hyprtasking";
-    #  inputs.hyprland.follows = "hyprland";
-    #};
+    hyprtasking = {
+      url = "github:raybbian/hyprtasking";
+      inputs.hyprland.follows = "hyprland";
+    };
     #Hyprspace = {
     #  url = "github:KZDKM/Hyprspace";
     #  inputs.hyprland.follows = "hyprland";
@@ -51,49 +51,46 @@
       treefmt-nix,
       ags,
       lanzaboote,
-      ... }@inputs: let
-      
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    
-    in {
-    packages.${system}.default = ags.lib.bundle { 
+      ... }@inputs:
+  let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    packages.${system}.default = ags.lib.bundle {
       inherit pkgs;
       src = ./.;
-      name = "my-shell"; # name of executable
+      name = "my-shell";
       entry = "app.ts";
       gtk4 = false;
 
-      # additional libraries and executables to add to gjs' runtime
       extraPackages = [
         # ags.packages.${system}.battery
         # pkgs.fzf
       ];
     };
+
     nixosConfigurations.loq = nixpkgs.lib.nixosSystem {
+      system = system;
       modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
         ./configuration.nix
         inputs.xremap-flake.nixosModules.default
         inputs.home-manager.nixosModules.default
         inputs.sops-nix.nixosModules.sops
+        lanzaboote.nixosModules.lanzaboote
         {
-          # Set all inputs parameters as special arguments for all submodules,
-          # so you can directly use all dependencies in inputs in submodules
-          _module.args = { 
+          _module.args = {
             inherit inputs;
           };
         }
-        lanzaboote.nixosModules.lanzaboote
       ];
     };
-      homeConfigurations.clinc = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./modules/clinc/home.nix
-          ./modules/clinc/pkgs.nix
-        ];
-      };
-     };
+
+    homeConfigurations.clinc = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./modules/clinc/home.nix
+        ./modules/clinc/pkgs.nix
+      ];
+    };
+  };
 }

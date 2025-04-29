@@ -4,7 +4,7 @@
 
 source=keybind/apps
 source=keybind/apps-custom
-#source=keybind/plugins
+source=plugins
 source=keybind/system
 source=keybind/window
 source=keybind/workspace

@@ -12,32 +12,32 @@ plugin {
 #        gesture_Negative = true # positive = swipe down. Negative = swipe up.
 #    }
 
-    hyprtasking {
-        layout = grid
-
-        gap_size = 0
-        bg_color = 0xff26233a
-        border_size = 1
-        exit_behavior = active interacted original hovered
-
-        gestures {
-            enabled = false
-            open_fingers = 3
-            open_distance = 300
-            open_positive = true
-        }
-
-        grid {
-            rows = 3
-            cols = 3
-        }
-
-        linear {
-            height = 400
-            scroll_speed = 1.1
-            blur = 0
-        }
-    }
+#    hyprtasking {
+#        layout = grid
+#
+#        gap_size = 0
+#        bg_color = 0xff26233a
+#        border_size = 1
+#        exit_behavior = active interacted original hovered
+#
+#        gestures {
+#            enabled = false
+#            open_fingers = 3
+#            open_distance = 300
+#            open_positive = true
+#        }
+#
+#        grid {
+#            rows = 3
+#            cols = 3
+#        }
+#
+#        linear {
+#            height = 400
+#            scroll_speed = 1.1
+#            blur = 0
+#        }
+#    }
 
   }
 
@@ -45,14 +45,14 @@ plugin {
 #bind = SUPER, A, hyprexpo:expo, toggle # can be: toggle, off/disable or on/enable
 bind = SUPER, grave, overview:toggle
 
-bind = SUPER, A, hyprtasking:toggle, cursor
-bind = SUPER SHIFT, A, hyprtasking:toggle, all
+#bind = SUPER, A, hyprtasking:toggle, cursor
+#bind = SUPER SHIFT, A, hyprtasking:toggle, all
 
-bind = SUPER, X, hyprtasking:killhovered
+#bind = SUPER, X, hyprtasking:killhovered
 
-bind = SUPER, H, hyprtasking:move, left
-bind = SUPER, J, hyprtasking:move, down
-bind = SUPER, K, hyprtasking:move, up
-bind = SUPER, L, hyprtasking:move, right
+#bind = SUPER, H, hyprtasking:move, left
+#bind = SUPER, J, hyprtasking:move, down
+#bind = SUPER, K, hyprtasking:move, up
+#bind = SUPER, L, hyprtasking:move, right
 
 

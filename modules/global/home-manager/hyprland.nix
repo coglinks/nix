@@ -1,5 +1,6 @@
 {
   lib,
+  self,
   inputs,
   config,
   pkgs,
@@ -31,10 +32,12 @@
   };
 
     home.packages = with pkgs; [
-      #hyprlandPlugins.hyprspace
+      #
     ];
 
     wayland.windowManager.hyprland.plugins = [
+      pkgs.hyprlandPlugins.hyprspace
+      (pkgs.callPackage ./plugin.nix {})
       #inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
       #inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
     ];

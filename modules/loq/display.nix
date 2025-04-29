@@ -18,6 +18,8 @@
 
   security.pam.services.hyprlock = { };
 
+  services.xserver.desktopManager.gnome.enable = true;
+
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm;
@@ -27,7 +29,7 @@
 
   environment.systemPackages = with pkgs; [sddm-astronaut];
 
-services.xserver.enable = true;
+  services.xserver.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {

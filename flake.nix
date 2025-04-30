@@ -11,7 +11,7 @@
     };
     treefmt-nix.url = "github:numtide/treefmt-nix";
     hyprland = {
-      url = "github:hyprwm/Hyprland/v0.46.2";
+      url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
@@ -23,6 +23,11 @@
       # optional, not necessary for the module
       inputs.nixpkgs.follows = "nixpkgs";
     };
+  # The following hyprland source is the one recommended for hyprtasking
+    #hyprland = {
+    #  url = "github:hyprwm/Hyprland/v0.46.2";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     hyprtasking = {
       url = "github:raybbian/hyprtasking";
       inputs.hyprland.follows = "hyprland";
@@ -31,10 +36,10 @@
     #  url = "github:KZDKM/Hyprspace";
     #  inputs.hyprland.follows = "hyprland";
     #};
-    #hyprland-plugins = {
-    #  url = "github:hyprwm/hyprland-plugins";
-    #  inputs.hyprland.follows = "hyprland";
-    #};
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     xremap-flake.url = "github:xremap/nix-flake";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";

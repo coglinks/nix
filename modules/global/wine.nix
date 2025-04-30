@@ -1,9 +1,10 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # support both 32-bit and 64-bit applications
-    pkgs.wineWowPackages.stable
-    pkgs.winetricks
+    wineWowPackages.stable
+    winetricks
+    protontricks
   ];
 }

@@ -5,7 +5,9 @@
     bat # cli #text-viewer #cat-with-syntax-highlighting
     rclone
     hyprlock # cli #lockscreen
+    scarab
     veracrypt
+    itch
     git-annex
     nixd
     thunderbird

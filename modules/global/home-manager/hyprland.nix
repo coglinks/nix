@@ -38,8 +38,8 @@
     wayland.windowManager.hyprland.plugins = [
       pkgs.hyprlandPlugins.hyprspace
       #(pkgs.callPackage ./plugin.nix {})
-      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      #inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
     ];
 
 }

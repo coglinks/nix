@@ -10,10 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     treefmt-nix.url = "github:numtide/treefmt-nix";
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     ags = {
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,15 +19,19 @@
       # optional, not necessary for the module
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   # The following hyprland source is the one recommended for hyprtasking
     #hyprland = {
     #  url = "github:hyprwm/Hyprland/v0.46.2";
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
-    hyprtasking = {
-      url = "github:raybbian/hyprtasking";
-      inputs.hyprland.follows = "hyprland";
-    };
+    #hyprtasking = {
+    #  url = "github:raybbian/hyprtasking";
+    #  inputs.hyprland.follows = "hyprland";
+    #};
     #Hyprspace = {
     #  url = "github:KZDKM/Hyprspace";
     #  inputs.hyprland.follows = "hyprland";

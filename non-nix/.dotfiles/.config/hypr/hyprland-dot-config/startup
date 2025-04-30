@@ -26,6 +26,7 @@ exec-once = waybar &
 exec-once = nm-applet --indicator &
 exec-once = swaync -s "/home/incog267/.dotfiles/.config/swaync/style.css" -c "/home/incog267/.dotfiles/.config/swaync/config.json" &
 exec-once = ags &
+exec-once = udiskie &
 # removed since im on nixos
 #exec-once = hyprpm reload -n &
 

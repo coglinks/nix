@@ -19,15 +19,15 @@
       # optional, not necessary for the module
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #hyprland = {
-    #  url = "github:hyprwm/Hyprland";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
-  # The following hyprland source is the one recommended for hyprtasking
     hyprland = {
-      url = "github:hyprwm/Hyprland/v0.46.2";
+      url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+  # The following hyprland source is the one recommended for hyprtasking
+    #hyprland = {
+    #  url = "github:hyprwm/Hyprland/v0.46.2";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     hyprtasking = {
       url = "github:raybbian/hyprtasking";
       inputs.hyprland.follows = "hyprland";

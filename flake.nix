@@ -46,6 +46,10 @@
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -81,6 +85,7 @@
         inputs.xremap-flake.nixosModules.default
         inputs.home-manager.nixosModules.default
         inputs.sops-nix.nixosModules.sops
+        inputs.nix-flatpak.nixosModules.nix-flatpak
         lanzaboote.nixosModules.lanzaboote
         {
           _module.args = {

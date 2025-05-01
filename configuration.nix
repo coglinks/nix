@@ -23,6 +23,8 @@
       ./modules/loq/nvidia.nix
       ./modules/loq/security.nix
 
+      # Declarative flatpak packages
+      ./modules/loq/flatpak.nix
       # For programs available via root
       ./modules/loq/pkgs.nix
 

@@ -42,7 +42,7 @@ plugin {
   }
 
 # plugins
-#bind = SUPER, A, hyprexpo:expo, toggle # can be: toggle, off/disable or on/enable
+bind = SUPER, A, hyprexpo:expo, toggle # can be: toggle, off/disable or on/enable
 bind = SUPER, grave, overview:toggle
 
 #bind = SUPER, A, hyprtasking:toggle, cursor

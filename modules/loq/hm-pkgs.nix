@@ -6,7 +6,6 @@
     rclone
     hyprlock # cli #lockscreen
     timewarrior
-    scarab
     veracrypt
     git-annex
     nixd

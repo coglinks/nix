@@ -36,7 +36,6 @@
     ];
 
     wayland.windowManager.hyprland.plugins = [
-      pkgs.hyprlandPlugins.hyprspace
       pkgs.hyprlandPlugins.hyprexpo
       #(pkgs.callPackage ./plugin.nix {})
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo

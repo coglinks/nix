@@ -36,10 +36,10 @@
     ];
 
     wayland.windowManager.hyprland.plugins = [
-      pkgs.hyprlandPlugins.hyprexpo
+      #pkgs.hyprlandPlugins.hyprexpo
       #(pkgs.callPackage ./plugin.nix {})
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      #inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
+      inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
     ];
 
 }

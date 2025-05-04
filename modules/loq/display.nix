@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hyprland, system, ... }:
 
 {
 
@@ -10,6 +10,7 @@
   };
   programs = {
     hyprland = {
+      package = hyprland.packages.${system}.default;
       enable = true;
       withUWSM = true;
       xwayland.enable = true;

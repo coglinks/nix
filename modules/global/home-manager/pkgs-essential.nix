@@ -2,40 +2,40 @@
 
 {
   home.packages = with pkgs; [
-    udiskie
-    bat # cli #text-viewer #cat-with-syntax-highlighting
-    rclone
     antidote
-    mystmd
-    firefox
-    git-lfs
-    nodejs
-    less
+    bat # cli #text-viewer #cat-with-syntax-highlighting
     borgbackup
     browsh
     feh
-    vorta
-    rsync
+    firefox
     git # cli #vcs #git-tools
+    git-credential-manager
     git-crypt # cli #encryption #git-tools
+    git-lfs
     git-remote-gcrypt # cli #encryption-plugin-for-git #git-tools
     kitty # gui #terminal
     lazygit # tui #vcs #git-tools
-    lua-language-server # cli #lsp
-    rocmPackages.llvm.clang # cli #compiler
-    topgrade
+    less
     libsecret
-    git-credential-manager
+    lua-language-server # cli #lsp
     lua5_1 # cli #programming-language
     luarocks # cli #package-manager
+    mystmd
     neovim # tui #text-editor
     nerd-fonts.iosevka # cli #fonts
     nerd-fonts.iosevka-term # cli #fonts
+    nodejs
     pandoc # cli #converter
+    rclone
+    rocmPackages.llvm.clang # cli #compiler
+    rsync
     stow # cli #dotfiles
     tokei # cli #coding
+    topgrade
     trash-cli # cli #file-management
+    udiskie
     vim # tui #text-editor
+    vorta
     yazi # tui #file-mgr
     zoxide # tui
   ];

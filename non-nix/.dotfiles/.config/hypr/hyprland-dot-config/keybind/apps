@@ -1,17 +1,13 @@
-$files = nautilus
-$tfi = yazi
-$term = kitty
-$browser = firefox
 # rofi App launcher
 #bindr = SUPER, SUPER_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window # Super Key to Launch rofi menu
 bind = ALT, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window #Main Menu
 
-bind = SUPER, Return, exec, $term #terminal
-bind = SUPER, T, exec, $files #file manager
+bind = SUPER, Return, exec, $terminal #terminal
+bind = SUPER, T, exec, $file-manager #file manager
 bind = SUPER, B, exec, $browser
 
 
-bind = SUPER, E, exec, $term -e $tfi ~/.clones/notes # Quick Edit Settings
+bind = SUPER, E, exec, $terminal -e $terminal-file-manager ~/nix # Quick Edit Settings
 # Waybar / Bar related
 bind = SUPER SHIFT, B, exec, pkill -SIGUSR1 waybar # Toggle hide/show Waybar
 #bind = SUPER CTRL, B, exec, $scriptsDir/WaybarStyles.sh # Waybar Styles Menu

@@ -26,6 +26,7 @@
   # The following hyprland source is the one recommended for hyprtasking
     hyprland = {
       url = "github:hyprwm/Hyprland/v0.48.0";
+      #url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprtasking = {
@@ -88,6 +89,7 @@
             inherit inputs;
             inherit hyprland;
             inherit system;
+            inherit lanzaboote;
           };
         }
       ];

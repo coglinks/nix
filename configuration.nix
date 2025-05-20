@@ -28,8 +28,8 @@
       # For programs available via root
       ./modules/loq/pkgs.nix
 
-      # For managing secrets
-      ./sops.nix
+      # For managing secrets # incomplete
+#      ./sops.nix
 
       #./modules/loq/backup.nix #incomplete
 
@@ -39,6 +39,7 @@
       ./modules/global/hardware.nix
       ./modules/loq/hardware.nix
       ./modules/global/boot.nix
+      ./modules/global/lanzaboote.nix
       ./modules/loq/keyboard.nix
 
       # For wayland, xwayland, display managers, window managers, lockscreens

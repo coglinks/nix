@@ -7,6 +7,7 @@
     borgbackup
     browsh
     feh
+    vlock
     firefox
     git # cli #vcs #git-tools
     git-credential-manager

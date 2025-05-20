@@ -8,6 +8,8 @@
   #  inherit (config.nixpkgs) config;
   #};
 
+  home-manager.backupFileExtension = "hm-backup";
+
   nix.settings = {
     experimental-features = [
       "nix-command"

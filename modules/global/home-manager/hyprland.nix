@@ -19,7 +19,7 @@
     package = null;
     portalPackage = null;
     extraConfig = ''
-      source = ./hyprland.conf.hm-bkp
+      source = ./hyprland.conf.hm-backup
     '';
   };
 

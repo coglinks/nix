@@ -6,7 +6,7 @@ $browser = firefox
 #bindr = SUPER, SUPER_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window # Super Key to Launch rofi menu
 bind = ALT, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window #Main Menu
 
-bind = SUPER, Return, exec, $term tmux  #terminal
+bind = SUPER, Return, exec, $term #terminal
 bind = SUPER, T, exec, $files #file manager
 bind = SUPER, B, exec, $browser
 

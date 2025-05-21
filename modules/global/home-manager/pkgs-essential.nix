@@ -7,6 +7,7 @@
     borgbackup
     browsh
     feh
+    htop
     vlock
     firefox
     git # cli #vcs #git-tools

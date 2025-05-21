@@ -11,6 +11,7 @@
     nixd
     thunderbird
     spicetify-cli
+    gnome-sound-recorder
     nautilus
     conda
     htop

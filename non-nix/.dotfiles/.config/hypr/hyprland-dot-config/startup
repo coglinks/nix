@@ -27,8 +27,10 @@ exec-once = nm-applet --indicator &
 exec-once = swaync -s "/home/incog267/.dotfiles/.config/swaync/style.css" -c "/home/incog267/.dotfiles/.config/swaync/config.json" &
 exec-once = ags &
 exec-once = udiskie &
-# removed since im on nixos
-#exec-once = hyprpm reload -n &
+exec-once = [workspace 9 silent] spotify
+exec-once = [workspace 9 silent] youtube-music
+exec-once = [workspace 8 silent] $terminal -e $terminal-file-manager ~/nix # Quick Edit Settings 
+exec-once = [workspace 1] $browser
 
 #exec-once = blueman-applet & 
 #exec-once = rog-control-center &
@@ -36,9 +38,6 @@ exec-once = udiskie &
 #clipboard manager
 exec-once = wl-paste --type text --watch cliphist store 
 exec-once = wl-paste --type image --watch cliphist store
-
-# Rainbow borders
-#exec-once = $UserScripts/RainbowBorders.sh &
 
 # Starting hypridle to start hyprlock
 exec-once = hypridle &

@@ -19,6 +19,7 @@
     ./modules/global/home-manager/hyprland.nix
     ./modules/global/home-manager/pkgs-essential.nix
     ./modules/loq/hm-pkgs.nix
+    ./non-nix/symlink.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

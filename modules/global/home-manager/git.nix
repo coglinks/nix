@@ -9,6 +9,7 @@
         }/bin/git-credential-libsecret";
     };
     enable = true;
+    lfs.enable = true;
   };
   home.packages = with pkgs; [
     git # cli #vcs #git-tools

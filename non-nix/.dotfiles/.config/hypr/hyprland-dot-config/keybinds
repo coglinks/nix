@@ -2,6 +2,11 @@
 # Default Keybinds
 # visit https://wiki.hyprland.org/Configuring/Binds/ for more info
 
+$file-manager = nautilus
+$terminal-file-manager = yazi
+$terminal = kitty
+$browser = firefox
+
 source=keybind/apps
 source=keybind/apps-custom
 source=plugins

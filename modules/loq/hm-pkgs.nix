@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     bat # cli #text-viewer #cat-with-syntax-highlighting
+    inputs.iwmenu.packages.${pkgs.system}.default
+    inputs.bzmenu.packages.${pkgs.system}.default
     rclone
     hyprlock # cli #lockscreen
     timewarrior
@@ -91,7 +93,7 @@
     playerctl # cli #media
     powertop # cli #power
     rclone # cli #cloud
-    rofi # gui #launcher
+    rofi-wayland # gui #launcher
     slurp # cli #screenshot
     steam # gui #gaming
     stow # cli #dotfiles

@@ -46,6 +46,14 @@
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
     };
+    iwmenu = {
+      url = "github:e-tho/iwmenu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    bzmenu = {
+      url = "github:e-tho/bzmenu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

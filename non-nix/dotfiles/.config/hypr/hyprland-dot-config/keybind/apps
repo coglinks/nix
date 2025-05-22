@@ -1,6 +1,6 @@
 # rofi App launcher
 #bindr = SUPER, SUPER_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window # Super Key to Launch rofi menu
-bind = ALT, SPACE, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window #Main Menu
+bind = ALT, SPACE, exec, ~/.config/rofi/launchers/type-3/launcher.sh
 
 bind = SUPER, Return, exec, $terminal #terminal
 bind = SUPER, T, exec, $file-manager #file manager

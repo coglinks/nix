@@ -1,8 +1,7 @@
 $scriptsDir=~/.config/hypr/scripts
 $UserScripts=~/.config/hypr/UserScripts
 # rofi App launcher
-#bindr = SUPER, SUPER_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window # Super Key to Launch rofi menu
-bind = SUPER, D, exec, ~/.config/rofi/launchers/type-3/launcher.sh 
+#bindr = SUPER, SUPER_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window # Super Key to Launch rofi menu 
 
 bind = SUPER SHIFT, O, exec, $UserScripts/ZshChangeTheme.sh # Change oh-my-zsh theme
 #bindn = ALT_L, SHIFT_L, exec, $scriptsDir/SwitchKeyboardLayout.sh # Change keyboard layout

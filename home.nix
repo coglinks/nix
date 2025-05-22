@@ -20,6 +20,7 @@
     ./modules/global/home-manager/pkgs-essential.nix
     ./modules/loq/hm-pkgs.nix
     ./non-nix/symlink.nix
+    ./non-nix/programs/desktop-entries.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

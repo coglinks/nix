@@ -5,6 +5,7 @@
     bat # cli #text-viewer #cat-with-syntax-highlighting
     inputs.iwmenu.packages.${pkgs.system}.default
     inputs.bzmenu.packages.${pkgs.system}.default
+    libnotify
     rclone
     inputs.astal.packages.${system}.default
     hyprlock # cli #lockscreen

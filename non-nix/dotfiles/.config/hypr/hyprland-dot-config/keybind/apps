@@ -15,7 +15,7 @@ bind = SUPER SHIFT, B, exec, pkill -SIGUSR1 waybar # Toggle hide/show Waybar
 
 # pyprland
 bind = SUPER SHIFT, Return, exec, pypr toggle term # Dropdown terminal
-bind = SUPER, Z, exec, pypr zoom # Toggle Desktop Zoom
+#bind = SUPER, Z, exec, pypr zoom # Toggle Desktop Zoom
 
 
 #bind = SUPER ALT, C, exec, $UserScripts/RofiCalc.sh # calculator (qalculate)

@@ -11,11 +11,11 @@ bind = SUPER ALT, F, exec, hyprctl dispatch workspaceopt allfloat
 bind = SUPER SHIFT, N, exec, swaync-client -t -sw # swayNC notification panel
 
 # Power
+bind = SUPER, Z, exec, ~/st/nix/non-nix/dotfiles/.config/rofi/powermenu/type-1/powermenu.sh
 bind = SUPER, L, exec, hyprlock &
-bind = SUPER ALT, S, exec, systemctl poweroff
 #bind = CTRL ALT, P, exec, $scriptsDir/Wlogout.sh # power menu
 bind = SUPER, S, exec, hyprlock & sleep 0.5; systemctl suspend
-bind = SUPER SHIFT, S, exec, reboot
+
 
 $Touchpad_Device=asue1209:00-04f3:319f-touchpad
 $TOUCHPAD_ENABLED = true

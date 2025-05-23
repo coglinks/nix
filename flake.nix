@@ -10,10 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     treefmt-nix.url = "github:numtide/treefmt-nix";
-    ags = {
-      url = "github:aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       # optional, not necessary for the module
@@ -54,6 +50,14 @@
       url = "github:e-tho/bzmenu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -62,6 +66,7 @@
       home-manager,
       hyprland,
       treefmt-nix,
+      astal,
       ags,
       lanzaboote,
       ... }@inputs:
@@ -69,17 +74,26 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    packages.${system}.default = ags.lib.bundle {
-      inherit pkgs;
-      src = ./.;
+    packages.${system}. default = pkgs.stdenvNoCC.mkDerivation rec {
       name = "my-shell";
-      entry = "app.ts";
-      gtk4 = false;
+      src = ./.;
 
-      extraPackages = [
-        # ags.packages.${system}.battery
-        # pkgs.fzf
+      nativeBuildInputs = [
+        ags.packages.${system}.default
+        pkgs.wrapGAppsHook
+        pkgs.gobject-introspection
       ];
+
+      buildInputs = with astal.packages.${system}; [
+        astal3
+        io
+        # any other package
+      ];
+
+      installPhase = ''
+        mkdir -p $out/bin
+        ags bundle app.ts $out/bin/${name}
+      '';
     };
 
     nixosConfigurations.loq = nixpkgs.lib.nixosSystem {

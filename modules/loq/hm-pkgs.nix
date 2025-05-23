@@ -6,6 +6,7 @@
     inputs.iwmenu.packages.${pkgs.system}.default
     inputs.bzmenu.packages.${pkgs.system}.default
     rclone
+    inputs.astal.packages.${system}.default
     hyprlock # cli #lockscreen
     timewarrior
     veracrypt

@@ -16,7 +16,10 @@
       xwayland.enable = true;
     };
   };
-
+  security.pam.services.hyprland.enableGnomeKeyring = true;
+  services.seatd.enable = true;
+  security.polkit.enable = true;
+  
   security.pam.services.hyprlock = { };
 
   services.xserver.desktopManager.gnome.enable = true;

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Configure hibernation with resume
@@ -12,6 +12,12 @@
   zramSwap.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+  environment.systemPackages = with pkgs; [
+    libinput-gestures
+  ];
+  services.udev.extraRules = ''
+KERNEL=="event*", SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", TAG+="uaccess"
+    '';
 
   # Enable power management for hibernation
   powerManagement.enable = true;
@@ -55,8 +61,7 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
   hardware.bluetooth.enable = true;
-
-
   services.blueman.enable = true;
 }

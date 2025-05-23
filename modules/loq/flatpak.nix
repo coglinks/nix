@@ -9,6 +9,7 @@
     }];
     packages = [
       "io.itch.itch"
+      "com.github.hluk.copyq"
     ];
     update.auto.enable = true;
   };

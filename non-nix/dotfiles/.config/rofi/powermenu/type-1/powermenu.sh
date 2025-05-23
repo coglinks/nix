@@ -14,18 +14,25 @@ dir="~/.config/rofi/powermenu/type-1"
 theme='style-1'
 
 # Options
-hibernate=' | Hibernate'
-shutdown='⏻ | Shutdown'
-reboot=' | Reboot'
-lock=' | Lock'
-suspend='󰒲 | Suspend'
-logout='󰠚 | Logout'
+
+hibernatesh="h"
+shutdownsh="p"
+rebootsh="r"
+logoutsh="l"
+
+hibernate="${hibernatesh}) 󰒲 | Hibernate"
+shutdown="${shutdownsh}) ⏻ | Poweroff"
+reboot="${rebootsh})  | Reboot"
+lock="${locksh})  | Lock"
+suspend="${suspendsh}) 󰒲 | Suspend"
+logout="${logoutsh}) 󰠚 | Logout"
 yes='Yes'
 no='No'
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
+    -matching prefix \
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -49,7 +56,13 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown\n$hibernate" | rofi_cmd
+	echo -e "$logout\n$reboot\n$shutdown\n$hibernate" | \
+		rofi -dmenu \
+		-theme "${dir}/${theme}.rasi" \
+		-kb-custom-1 "${logoutsh}" \
+		-kb-custom-2 "${rebootsh}" \
+		-kb-custom-3 "${shutdownsh}" \
+		-kb-custom-4 "${hibernatesh}"
 }
 
 # Execute Command
@@ -76,26 +89,10 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-    $shutdown)
-		run_cmd --shutdown
-        ;;
-    $reboot)
-		run_cmd --reboot
-        ;;
-    $lock)
-		if [[ -x '/etc/profiles/per-user/incogshift/bin/hyprlock' ]]; then
-			hyprlock
-    else
-      exit 0
-		fi
-        ;;
-    $suspend)
-		run_cmd --suspend
-        ;;
-    $logout)
-		run_cmd --logout
-        ;;
-    $hibernate)
-    run_cmd --hibernate
-        ;;
+    *Shutdown*) run_cmd --shutdown ;;
+    *Reboot*) run_cmd --reboot ;;
+    *Lock*) [[ -x '/etc/profiles/per-user/incogshift/bin/hyprlock' ]] && hyprlock ;;
+    *Suspend*) run_cmd --suspend ;;
+    *Logout*) run_cmd --logout ;;
+    *Hibernate*) run_cmd --hibernate ;;
 esac

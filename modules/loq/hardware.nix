@@ -16,7 +16,8 @@
     libinput-gestures
   ];
   services.udev.extraRules = ''
-KERNEL=="event*", SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", TAG+="uaccess"
+      KERNEL=="event*", SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", TAG+="uaccess"
+      KERNEL=="uinput", GROUP="input", TAG+="uaccess"
     '';
 
   # Enable power management for hibernation

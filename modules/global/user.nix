@@ -5,7 +5,7 @@
   users.users.incogshift = {
     isNormalUser = true;
     description = "incogshift";
-    extraGroups = [ "networkmanager" "wheel" "adb" ];
+    extraGroups = [ "networkmanager" "wheel" "adb" "input" ];
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;

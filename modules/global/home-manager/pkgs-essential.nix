@@ -7,6 +7,7 @@
     borgbackup
     browsh
     feh
+    tealdeer
     htop
     vlock
     firefox

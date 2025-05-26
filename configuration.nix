@@ -15,6 +15,7 @@
       ./modules/global/docker.nix
       ./modules/global/nix.nix
       ./modules/global/ollama.nix
+      ./modules/global/services.nix
       ./modules/global/ssh.nix
       ./modules/global/user.nix
       ./modules/global/vm.nix

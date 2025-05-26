@@ -1,4 +1,4 @@
-## File structure
+0;0o0## File structure
 
 - `./modules/global`: contains common modules made to be used by many systems
 - `./modules/<hostname>`: contains modules made to be used by specific hosts

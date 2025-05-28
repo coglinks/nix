@@ -4,10 +4,12 @@
   home.packages = with pkgs; [
     bat # cli #text-viewer #cat-with-syntax-highlighting
     inputs.iwmenu.packages.${pkgs.system}.default
+    xclip
     inputs.bzmenu.packages.${pkgs.system}.default
     libnotify
     rclone
     inputs.astal.packages.${system}.default
+    hyprshot
     hyprlock # cli #lockscreen
     timewarrior
     veracrypt

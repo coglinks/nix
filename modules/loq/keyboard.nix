@@ -2,14 +2,13 @@
 
 {
   services.xremap = {
+    enable = false;
     withHypr = true;
     userName = "incogshift";
     yamlConfig = ''
       keymap:
         - name: power;
           remap:
-            super-z:
-              launch: ["$HOME/.config/rofi/launchers/type-3/launcher.sh"]
     '';
   };
   # Select internationalisation properties.

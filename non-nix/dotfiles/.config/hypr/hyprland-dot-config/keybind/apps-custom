@@ -8,7 +8,7 @@ bind = SUPER SHIFT, O, exec, $UserScripts/ZshChangeTheme.sh # Change oh-my-zsh t
 
 # Screenshot keybindings NOTE: You may need to press Fn key as well
 bind = SUPER, Print, exec, $scriptsDir/ScreenShot.sh --now  # screenshot
-bind = SUPER SHIFT, Print, exec, $scriptsDir/ScreenShot.sh --area # screenshot (area)
+bind = SUPER SHIFT, S, exec, $scriptsDir/screenshot.sh
 bind = SUPER CTRL, Print, exec, $scriptsDir/ScreenShot.sh --in5 # screenshot  (5 secs delay)
 bind = SUPER CTRL SHIFT, Print, exec, $scriptsDir/ScreenShot.sh --in10 # screenshot (10 secs delay)
 bind = ALT, Print, exec, $scriptsDir/ScreenShot.sh --active # screenshot (active window only)

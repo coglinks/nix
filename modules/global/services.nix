@@ -11,7 +11,7 @@
 
   systemd.services."git-repo-backup" = {
     script = ''
-      ${pkgs.gnutar}/bin/tar cvf /home/incogshift/st/gitrepos.tar /home/incogshift/st/nix /home/incogshift/st/notes
+      ${pkgs.gnutar}/bin/tar cvf /home/incogshift/backup/gitrepos.tar /home/incogshift/st/nix /home/incogshift/st/notes
     '';
     serviceConfig = {
       Type = "oneshot";

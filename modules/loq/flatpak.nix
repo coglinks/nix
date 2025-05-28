@@ -10,6 +10,7 @@
     packages = [
       "io.itch.itch"
       "com.github.hluk.copyq"
+      "com.github.Matoking.protontricks"
     ];
     update.auto.enable = true;
   };

@@ -9,6 +9,7 @@
     feh
     tealdeer
     htop
+    file
     vlock
     firefox
     git # cli #vcs #git-tools

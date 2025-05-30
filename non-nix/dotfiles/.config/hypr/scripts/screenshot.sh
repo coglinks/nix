@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
-hyprshot -m region --clipboard-only
-
 tmpimg=$(mktemp --suffix=.png)
 
-wl-paste > "$tmpimg"
-
-xclip -selection clipboard -i "$tmpimg"
-
-xclip -selection clipboard -o > "$tmpimg"
-
-file "$tmpimg"
-
-rm "$tmpimg"
+grim -g "$(slurp)" "$tmpimg" && {
+    wl-copy < "$tmpimg"
+    xclip -selection clipboard -t image/png -i "$tmpimg"
+    file "$tmpimg"
+    rm "$tmpimg"
+}
 

@@ -1,7 +1,13 @@
 { pkgs, ... }:
 
 {
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
+  };
   environment.systemPackages = with pkgs; [
+    libsForQt5.qt5ct
+    kdePackages.qt6ct
     tpm2-tss
     sops
     age

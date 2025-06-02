@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     bat # cli #text-viewer #cat-with-syntax-highlighting
-    obs-studio
     inputs.iwmenu.packages.${pkgs.system}.default
     xclip
     inputs.bzmenu.packages.${pkgs.system}.default

@@ -9,18 +9,17 @@
 # https://wiki.nixos.org/wiki/NVIDIA
 
 {
+  # OpenGL
+  hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   environment.systemPackages = with pkgs; [
     vulkan-tools
   ];
-  hardware = {
-    # Opengl
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
-  };
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -49,13 +48,31 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    prime = {
-      #offload.enable = true;
-      sync.enable = true;
+  };
+  
+  hardware.nvidia.prime.offload = {
+    enable = true;
+    enableOffloadCmd = true;
+  };
+  #hardware.nvidia.prime.sync.enable = true;
+  
+  hardware.nvidia.prime = {
       # Correct the Bus ID values as per your system
       intelBusId = "PCI:0:2:0"; # Intel GPU Bus ID
       nvidiaBusId = "PCI:1:0:0"; # NVIDIA GPU Bus ID
+  };
+
+  specialisation = {
+    gaming-time.configuration = {
+
+      hardware.nvidia = {
+        prime.sync.enable = lib.mkForce true;
+        prime.offload = {
+          enable = lib.mkForce false;
+          enableOffloadCmd = lib.mkForce false;
+        };
+      };
+
     };
   };
 }

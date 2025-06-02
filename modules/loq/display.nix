@@ -16,6 +16,13 @@
       xwayland.enable = true;
     };
   };
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
   security.pam.services.hyprland.enableGnomeKeyring = true;
   services.seatd.enable = true;
   security.polkit.enable = true;
@@ -40,8 +47,4 @@
     layout = "us";
     variant = "";
   };
-
-  # XDG portal
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }

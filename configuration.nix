@@ -19,7 +19,7 @@
       ./modules/global/ssh.nix
       ./modules/global/user.nix
       ./modules/global/vm.nix
-      ./modules/global/wine.nix
+      ./modules/global/gaming.nix
       ./modules/loq/network.nix
       ./modules/loq/nvidia.nix
       ./modules/loq/security.nix

@@ -74,7 +74,6 @@
     lua-language-server # cli #lsp
     lua5_1 # cli #programming-language
     luarocks # cli #package-manager
-    lutris # gui #gaming
     man # cli
     mellowplayer # gui #music
     mesa # cli #graphics
@@ -99,7 +98,6 @@
     rclone # cli #cloud
     rofi-wayland # gui #launcher
     slurp # cli #screenshot
-    steam # gui #gaming
     stow # cli #dotfiles
     swappy # gui #screenshot
     swaynotificationcenter # gui #notifications

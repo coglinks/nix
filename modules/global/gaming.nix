@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     mangohud
     protonup
+    lumafly
     lutris
     heroic
     bottles

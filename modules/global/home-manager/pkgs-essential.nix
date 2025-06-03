@@ -3,15 +3,14 @@
 {
   home.packages = with pkgs; [
     antidote
-    bat # cli #text-viewer #cat-with-syntax-highlighting
-    borgbackup
+    bat # cli #text-viewer #cat-with-syntax-highlighting 
     browsh
     feh
     tealdeer
+    gnumake
     htop
     file
     vlock
-    firefox
     git # cli #vcs #git-tools
     git-credential-manager
     git-crypt # cli #encryption #git-tools

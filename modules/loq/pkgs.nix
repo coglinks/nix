@@ -5,9 +5,14 @@
     enable = true;
     enableVirtualCamera = true;
   };
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox-esr;
+  };
   environment.systemPackages = with pkgs; [
     libsForQt5.qt5ct
     kdePackages.qt6ct
+    borgbackup
     tpm2-tss
     sops
     age

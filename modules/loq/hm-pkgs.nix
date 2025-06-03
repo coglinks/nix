@@ -5,6 +5,8 @@
     bat # cli #text-viewer #cat-with-syntax-highlighting
     inputs.iwmenu.packages.${pkgs.system}.default
     xclip
+    copyq
+    ianny
     inputs.bzmenu.packages.${pkgs.system}.default
     libnotify
     rclone
@@ -127,7 +129,6 @@
   fonts.fontconfig = {
     enable = true;
   };
-  programs.firefox.enable = true;
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 }

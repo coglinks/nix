@@ -5,7 +5,7 @@
 $file-manager = nautilus
 $terminal-file-manager = yazi
 $terminal = kitty
-$browser = firefox
+$browser = firefox-esr
 
 source=keybind/apps
 source=keybind/apps-custom

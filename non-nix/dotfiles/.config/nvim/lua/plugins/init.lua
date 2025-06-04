@@ -150,19 +150,6 @@ return {
   end
 },
 
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "cd app && yarn install",
-    ft = { "markdown" }, -- Load only for Markdown files
-    cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
-    config = function()
-        vim.g.mkdp_auto_start = 1  -- Automatically start preview
-        vim.g.mkdp_refresh_slow = 1
-        vim.g.mkdp_filetypes = { "markdown" } -- Ensure it loads only for Markdown
-        vim.g.mkdp_theme = "dark"
-    end
-  },
-
    {
    	"nvim-treesitter/nvim-treesitter",
    	opts = {

@@ -9,6 +9,12 @@
     enable = true;
     package = pkgs.firefox-esr;
   };
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 4";
+    flake = "/home/incogshift/st/nix#loq";
+  };
   environment.systemPackages = with pkgs; [
     libsForQt5.qt5ct
     kdePackages.qt6ct

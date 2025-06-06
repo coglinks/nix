@@ -5,6 +5,7 @@
     bat # cli #text-viewer #cat-with-syntax-highlighting
     inputs.iwmenu.packages.${pkgs.system}.default
     xclip
+    chatterino7
     copyq
     ianny
     inputs.bzmenu.packages.${pkgs.system}.default

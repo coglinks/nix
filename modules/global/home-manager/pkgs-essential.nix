@@ -40,6 +40,7 @@
     vim # tui #text-editor
     vorta
     yazi # tui #file-mgr
+    libgcc #nvim dependancy
     zoxide # tui
   ];
 }

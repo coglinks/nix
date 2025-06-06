@@ -50,11 +50,11 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   
-  hardware.nvidia.prime.offload = {
-    enable = true;
-    enableOffloadCmd = true;
-  };
-  #hardware.nvidia.prime.sync.enable = true;
+#  hardware.nvidia.prime.offload = {
+#    enable = true;
+#    enableOffloadCmd = true;
+#  };
+  hardware.nvidia.prime.sync.enable = true;
   
   hardware.nvidia.prime = {
       # Correct the Bus ID values as per your system
@@ -62,17 +62,17 @@
       nvidiaBusId = "PCI:1:0:0"; # NVIDIA GPU Bus ID
   };
 
-  specialisation = {
-    gaming-time.configuration = {
-
-      hardware.nvidia = {
-        prime.sync.enable = lib.mkForce true;
-        prime.offload = {
-          enable = lib.mkForce false;
-          enableOffloadCmd = lib.mkForce false;
-        };
-      };
-
-    };
-  };
+#  specialisation = {
+#    gaming-time.configuration = {
+#
+#      hardware.nvidia = {
+#        prime.sync.enable = lib.mkForce true;
+#        prime.offload = {
+#          enable = lib.mkForce false;
+#          enableOffloadCmd = lib.mkForce false;
+#        };
+#      };
+#
+#    };
+#  };
 }

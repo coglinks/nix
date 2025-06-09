@@ -10,7 +10,7 @@
 ## style-1   style-2   style-3   style-4   style-5
 
 # Current Theme
-dir="~/.config/rofi/powermenu/type-1"
+dir="$HOME/.config/rofi/powermenu/type-1"
 theme='style-1'
 
 # Options
@@ -23,8 +23,6 @@ logoutsh="l"
 hibernate="${hibernatesh}) 󰒲 | Hibernate"
 shutdown="${shutdownsh}) ⏻ | Poweroff"
 reboot="${rebootsh})  | Reboot"
-lock="${locksh})  | Lock"
-suspend="${suspendsh}) 󰒲 | Suspend"
 logout="${logoutsh}) 󰠚 | Logout"
 yes='Yes'
 no='No'
@@ -69,17 +67,14 @@ run_rofi() {
 run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
-		if [[ $1 == '--shutdown' ]]; then
-			systemctl poweroff
+		if [[ $1 == '--logout' ]]; then
+			hyprctl dispatch exit
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
-		elif [[ $1 == '--suspend' ]]; then
-			playerctl pause
-			systemctl suspend
-		elif [[ $1 == '--logout' ]]; then
-				hyprctl dispatch exit
-    elif [[ $1 == '--hibernate' ]]; then
-      systemctl hibernate
+		elif [[ $1 == '--shutdown' ]]; then
+			systemctl poweroff
+		elif [[ $1 == '--hibernate' ]]; then
+			systemctl hibernate
 		fi
 	else
 		exit 0
@@ -89,10 +84,8 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-    *Shutdown*) run_cmd --shutdown ;;
-    *Reboot*) run_cmd --reboot ;;
-    *Lock*) [[ -x '/etc/profiles/per-user/incogshift/bin/hyprlock' ]] && hyprlock ;;
-    *Suspend*) run_cmd --suspend ;;
     *Logout*) run_cmd --logout ;;
+    *Reboot*) run_cmd --reboot ;;
+    *Shutdown*) run_cmd --shutdown ;;
     *Hibernate*) run_cmd --hibernate ;;
 esac

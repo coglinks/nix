@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     bat # cli #text-viewer #cat-with-syntax-highlighting
     inputs.iwmenu.packages.${pkgs.system}.default
+		wlogout
     xclip
     chatterino7
     copyq

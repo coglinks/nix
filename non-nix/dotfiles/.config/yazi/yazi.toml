@@ -30,9 +30,6 @@ ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
-edtwo = [ 
-  { run = 'code "$@"', desc = "$EDITOR", block = true, for = "unix" },
-]
 edit = [
 	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
 	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
@@ -82,10 +79,10 @@ append_rules = [
 	{ name = "*", use = [ "open", "reveal" ] },
 ]  
 prepend_rules = [
-  { name = "*.tex", use = [ "edtwo", "edit", "open", "reveal" ] },
-  { name = "*.sty", use = [ "edtwo", "edit", "open", "reveal" ] },
-  { name = "*.md", use = [ "edtwo", "edit", "open", "reveal" ] },
-  { name = "*.qmd", use = [ "edtwo", "edit", "open", "reveal" ] }
+  { name = "*.tex", use = [ "edit", "open", "reveal" ] },
+  { name = "*.sty", use = [ "edit", "open", "reveal" ] },
+  { name = "*.md", use = [ "edit", "open", "reveal" ] },
+  { name = "*.qmd", use = [ "edit", "open", "reveal" ] }
 ]
 
 [tasks]

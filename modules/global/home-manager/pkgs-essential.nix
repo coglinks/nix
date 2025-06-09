@@ -1,6 +1,20 @@
 { pkgs, ... }:
 
 {
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+viAlias = true;
+    extraPackages = with pkgs; [
+      # Language server packages (executables)
+			lua-language-server
+			tree-sitter
+			libgcc
+			marksman
+			python313Packages.pylatexenc
+			luajitPackages.jsregexp
+    ];
+  };
   home.packages = with pkgs; [
     antidote
     bat # cli #text-viewer #cat-with-syntax-highlighting 
@@ -24,7 +38,6 @@
     lua5_1 # cli #programming-language
     luarocks # cli #package-manager
     mystmd
-    neovim # tui #text-editor
     nerd-fonts.iosevka # cli #fonts
     nerd-fonts.iosevka-term # cli #fonts
     nodejs

@@ -82,7 +82,6 @@
     mesa # cli #graphics
     mesa-demos # cli #collection-of-demos-and-test-programs-for-opengl-and-mesa
     meson # cli #build-system
-    neovim # tui #text-editor
     nerd-fonts.iosevka # cli #fonts
     nerd-fonts.iosevka-term # cli #fonts
     networkmanager # cli #network

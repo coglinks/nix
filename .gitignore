@@ -1,9 +1,0 @@
-non-nix/dotfiles/.vscode/extensions
-non-nix/dotfiles/.config/fontconfig/conf.d/52-hm-default-fonts.conf
-non-nix/dotfiles/.config/fontconfig/conf.d/10-hm-fonts.conf
-non-nix/dotfiles/.config/hypr/hyprland.conf
-non-nix/dotfiles/.ssh/
-non-nix/dotfiles/.config/rclone.conf
-non-nix/dotfiles/.config/hypr/wallpaper_effects/.wallpaper_current
-non-nix/dotfiles/.config/rofi/.current_wallpaper
-non-nix/dotfiles/.config/nvim/lazy-lock.json

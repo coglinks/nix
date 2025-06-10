@@ -1,9 +1,0 @@
-# .sops.yaml
-
-keys:
-  - &admin_fairoos 356643B465F4565D4B6C47DF72EC8D1594EA3571
-creation_rules:
-  - path_regex: secrets/example.yaml$
-    key_groups:
-      - pgp:
-        - *admin_fairoos

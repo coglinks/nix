@@ -1,6 +1,0 @@
-❯ wine winecfg  
-002c:fixme:actctx:parse_depend_manifests Could not find dependent assembly L"Microsoft.Windows.Common-Controls" (6.0.0.0)
-wine: Unhandled page fault on write access to 0000000140020928 at address 00006FFFFFF55318 (thread 002c), starting debugger...
-002c:err:seh:start_debugger Couldn't start debugger L"winedbg --auto 40 116" (2)
-Read the Wine Developers Guide on how to set up winedbg or another debugger
-wine: could not load kernel32.dll, status c0000135

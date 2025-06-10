@@ -24,10 +24,10 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-		#hyprtasking = {
-		#  url = "github:raybbian/hyprtasking";
-			#inputs.nixpkgs.follows = "nixpkgs";
-		#};
+		hyprtasking = {
+		  url = "github:raybbian/hyprtasking";
+			inputs.hyprland.follows = "hyprland";
+		};
     xremap-flake.url = "github:xremap/nix-flake";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";

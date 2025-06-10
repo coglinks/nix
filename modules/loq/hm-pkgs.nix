@@ -30,7 +30,6 @@
     mpv
     libreoffice
     devenv
-    nodejs_23
     mystmd
     ardour
     bitwarden-desktop # gui #security

@@ -29,7 +29,7 @@
   
   security.pam.services.hyprlock = { };
 
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   services.displayManager.sddm = {
     enable = true;

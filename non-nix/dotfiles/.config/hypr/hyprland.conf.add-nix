@@ -1,39 +1,17 @@
-# Sourcing external config files
-source = ./hyprland-dot-config/settings
-
-# input settings
-source = ./hyprland-dot-config/input
-
 # Keybinds
-source = ./hyprland-dot-config/keybinds
-
-# interaction Settings
-source = ./hyprland-dot-config/interaction
+source = ./hyprland-dot-config/keybinds.conf
 
 # general
-source = ./hyprland-dot-config/general
+source = ./hyprland-dot-config/general.conf
 
-# environmental variables
-source = ./hyprland-dot-config/env
-
-# Startup
-source = ./hyprland-dot-config/startup
+# Startup and environmental variables
+source = ./hyprland-dot-config/startup.conf
 
 # Plugins
-#source = ./hyprland-dot-config/plugins
-
-# Window rules
-source = ./hyprland-dot-config/window_rules
+source = ./hyprland-dot-config/plugins.conf
 
 # monitor-rules
-source = ./hyprland-dot-config/monitor
-
-# workspace rules
-source = ./hyprland-dot-config/workspace
+source = ./hyprland-dot-config/hardware.conf
 
 # Decoration and Animations Settings
-source = ./hyprland-dot-config/decor
-
-# modules ( things like cursors, etc)
-source = ./hyprland-dot-config/modules
-
+source = ./hyprland-dot-config/decor.conf

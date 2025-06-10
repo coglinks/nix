@@ -6,12 +6,11 @@
 pkill yad || true
 
 # Define the config files
-KEYBINDS_CONF="$HOME/.config/hypr/configs/Keybinds.conf"
-USER_KEYBINDS_CONF="$HOME/.config/hypr/UserConfigs/UserKeybinds.conf"
+KEYBINDS_CONF="$HOME/st/nix/non-nix/dotfiles/.config/hypr/hyprland-dot-config/keybinds.conf"
 LAPTOP_CONF="$HOME/.config/hypr/UserConfigs/Laptop.conf"
 
 # Combine the contents of the keybinds files and filter for keybinds
-KEYBINDS=$(cat "$KEYBINDS_CONF" "$USER_KEYBINDS_CONF" | grep -E '^(bind|bindl|binde|bindm)')
+KEYBINDS=$(grep -E '^\s*(bind[lmer]?|binds)' $KEYBINDS_CONF | sed 's/^\s*bind\s*=\s*//' || echo fail)
 
 # Check if Laptop.conf exists and add its keybinds if present
 if [[ -f "$LAPTOP_CONF" ]]; then

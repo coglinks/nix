@@ -4,22 +4,9 @@
 /* NOTE: This is only for Custom Modules */
 /* Custom Modules like weather browser, tty, file manager at the beginning */
 
-{
-"custom/weather": {
-	"format": "{}",
-	"format-alt": "{alt}: {}",
-	"format-alt-click": "click",
-	"interval": 3600,
-	"return-type": "json",
-	"exec": "$HOME/.config/hypr/UserScripts/Weather.sh",
-	//"exec": "$HOME/.config/hypr/UserScripts/Weather.py",
-	"exec-if": "ping wttr.in -c1",
-	"tooltip": true,
-},
-
 "custom/file_manager": {
 	"format": " ",
-	"on-click": "thunar",
+	"on-click": "yazi",
 	"tooltip": true,
 	"tooltip-format": "File Manager",
 },
@@ -38,13 +25,6 @@
 	"tooltip-format": "Launch Browser",
 },
 
-"custom/settings": {
-	"format": " ",
-	"on-click": "$HOME/.config/hypr/UserScripts/QuickEdit.sh",
-	"tooltip": true,
-	"tooltip-format": "Launch Quick Edit",
-},
-
 "custom/cycle_wall": {
 	"format": " ",
 	"on-click": "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh",
@@ -55,8 +35,8 @@
 },
 
 "custom/hint": {
-	"format": "󰺁 HINT!",
-	"on-click": "$HOME/.config/hypr/scripts/KeyHints.sh",
+	"format": "KEYS?",
+	"on-click": "$HOME/st/nix/non-nix/dotfiles/.config/hypr/scripts/KeyBinds.sh",
 	"on-click-right": "$HOME/.config/hypr/scripts/KeyBinds.sh",
 	"tooltip": true,
 	"tooltip-format": "Left Click: Quick Tips\nRight Click: Keybinds",
@@ -88,13 +68,6 @@
 	"on-click-middle": "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh",
 	"tooltip": true,
 	"tooltip-format": "Left Click: Switch Dark-Light Themes\nMiddle Click: Wallpaper Menu\nRight Click: Waybar Styles Menu",
-},
-
-"custom/lock": {
-	"format": "󰌾",
-	"on-click": "$HOME/.config/hypr/scripts/LockScreen.sh",
-	"tooltip": true,
-	"tooltip-format": "󰷛 Screen Lock",
 },
 
 "custom/menu": {

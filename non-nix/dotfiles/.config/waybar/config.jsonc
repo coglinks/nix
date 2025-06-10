@@ -3,10 +3,10 @@
 // ### DEFAULT v4 (Laptop)  - Top ### //
 {
 "include": [
-  "$HOME/.config/waybar/Modules",
-  "$HOME/.config/waybar/ModulesWorkspaces",
-  "$HOME/.config/waybar/ModulesCustom",
-  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/Modules.jsonc",
+  "$HOME/.config/waybar/ModulesWorkspaces.jsonc",
+  "$HOME/.config/waybar/ModulesCustom.jsonc",
+  "$HOME/.config/waybar/ModulesGroups.jsonc",
   ],
 "layer": "top",
 //"mode": "dock",
@@ -27,7 +27,6 @@
 	"custom/separator#blank",
 	"group/laptop",
 	"custom/separator#line",
-	"custom/weather",
 	],
 
 "modules-center": [

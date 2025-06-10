@@ -5,11 +5,11 @@
 // HYPRLAND WORKSPACES. CHOOSE as desired and place on waybar configs
 
 {
-  // General workspace configuration
-  "workspaces": {
-    "format": "{name}",       // Display workspace name or number
-    "empty-workspaces": false, // Exclude empty workspaces from the display
-    "show-only-visible": true, // Only show visible workspaces
-    "active-only": true,
- }
+	// General workspace configuration
+	"workspaces": {
+		"format": "{name}", // Display workspace name or number
+		"empty-workspaces": false, // Exclude empty workspaces from the display
+		"show-only-visible": true, // Only show visible workspaces
+		"active-only": true
+	}
 }

@@ -13,6 +13,7 @@ viAlias = true;
 			deno
 			marksman
 			python313Packages.pylatexenc
+			biome
 			luajitPackages.jsregexp
     ];
   };

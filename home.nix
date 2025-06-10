@@ -21,7 +21,6 @@
     ./modules/loq/hm-pkgs.nix
 #    ./non-nix/symlink.nix
     ./non-nix/programs/desktop-entries.nix
-		lib.filesystem.listFilesRecursive ./modules/hm-global
   ];
 
   # This value determines the Home Manager release that your configuration is

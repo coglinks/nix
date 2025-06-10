@@ -61,6 +61,10 @@
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+		inputs.nypkgs = {
+			url = "github:yunfachi/nypkgs";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
   };
 
   outputs = {
@@ -72,10 +76,12 @@
       astal,
       ags,
       lanzaboote,
+			nypkgs,
       ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+		ylib = nypkgs.lib.${system};
   in {
     packages.${system}. default = pkgs.stdenvNoCC.mkDerivation rec {
       name = "my-shell";
@@ -114,6 +120,7 @@
             inherit hyprland;
             inherit system;
             inherit lanzaboote;
+						inherit ylib;
           };
         }
       ];
@@ -121,10 +128,17 @@
 
     homeConfigurations.clinc = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [
-        ./modules/clinc/home.nix
-        ./modules/clinc/pkgs.nix
-      ];
+			inherit ylib;
+			modules = [
+				./modules/clinc/home.nix
+				./modules/clinc/pkgs.nix
+				({ ylib, ... }: {
+					imports = ylib.umport {
+						paths = [ ./modules/hm-global ];
+						recursive = true;
+					};
+				})
+			];
     };
   };
 }

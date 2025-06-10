@@ -13,7 +13,6 @@ viAlias = true;
 			deno
 			marksman
 			python313Packages.pylatexenc
-			biome
 			luajitPackages.jsregexp
     ];
   };
@@ -21,6 +20,7 @@ viAlias = true;
     antidote
     bat # cli #text-viewer #cat-with-syntax-highlighting 
     browsh
+		biome
     feh
     tealdeer
     gnumake

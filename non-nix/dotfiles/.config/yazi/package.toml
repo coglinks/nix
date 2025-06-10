@@ -3,6 +3,11 @@ use = "Lil-Dank/lazygit"
 rev = "9f924e3"
 hash = "2b0c33928986f126d5c5a4cac31a6b46"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "63f9650"
+hash = "bf6f074cd41ee33c3360341d168f9733"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-latte"
 rev = "c023460"

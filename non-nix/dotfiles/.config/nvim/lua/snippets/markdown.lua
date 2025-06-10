@@ -1,5 +1,3 @@
-return {
-	config = function ()
 		local ls = require("luasnip")
 		local s = ls.snippet
 		local sn = ls.snippet_node
@@ -32,12 +30,12 @@ return {
 		ls.add_snippets('tex', {
 			s('align', fmt(
 				[[
-				\$\$
-				\begin{{{}}}
-					{}
-				\end{{{}}}
-				]], { i(1), i(0), rep(1) }
+				\$\$\n
+				\begin{align}\n
+				\t {}\n
+				\end{align}\n
+				\$\$\n
+				{}
+				]], { i(0),i(2) }
 			))
 		})
-	end
-}

@@ -10,6 +10,7 @@ viAlias = true;
 			lua-language-server
 			tree-sitter
 			libgcc
+			deno
 			marksman
 			python313Packages.pylatexenc
 			luajitPackages.jsregexp

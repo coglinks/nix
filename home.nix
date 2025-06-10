@@ -21,6 +21,7 @@
     ./modules/loq/hm-pkgs.nix
 #    ./non-nix/symlink.nix
     ./non-nix/programs/desktop-entries.nix
+		./modules/hm-global/default-apps.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

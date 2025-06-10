@@ -11,8 +11,6 @@
   # Optional, hint Electron apps to use Wayland:
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  #  programs.kitty.enable = true;
-  #
   wayland.windowManager.hyprland = {
     enable = true;
     # set the Hyprland and XDPH packages to null to use the ones from the NixOS module
@@ -36,8 +34,6 @@
     ];
 
     wayland.windowManager.hyprland.plugins = [
-			#pkgs.hyprlandPlugins.hyprexpo
-      #(pkgs.callPackage ./plugin.nix {})
 			inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
     ];
 

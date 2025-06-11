@@ -1,24 +1,33 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-viAlias = true;
-    extraPackages = with pkgs; [
-      # Language server packages (executables)
-			lua-language-server
-			tree-sitter
-			libgcc
-			deno
-			marksman
-			python313Packages.pylatexenc
-			luajitPackages.jsregexp
-    ];
-  };
+		viAlias = true;
+		plugins = [
+				{
+					plugin = pkgs.vimPlugins.sqlite-lua;
+					config = "let g:sqlite_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}'";
+				}
+		];
+		extraLuaConfig = ''
+		dofile(vim.fn.stdpath("config") .. "/user-init.lua")
+		'';
+	};
+
   home.packages = with pkgs; [
     antidote
     bat # cli #text-viewer #cat-with-syntax-highlighting 
+		lua-language-server
+		tree-sitter
+		aider-chat
+		sqlite
+		libgcc
+		deno
+		marksman
+		python313Packages.pylatexenc
+		luajitPackages.jsregexp
     browsh
 		biome
     feh

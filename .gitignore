@@ -7,3 +7,4 @@ non-nix/dotfiles/.config/rclone.conf
 non-nix/dotfiles/.config/hypr/wallpaper_effects/.wallpaper_current
 non-nix/dotfiles/.config/rofi/.current_wallpaper
 non-nix/dotfiles/.config/nvim/lazy-lock.json
+non-nix/dotfiles/.config/nvim/init.lua

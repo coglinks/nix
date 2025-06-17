@@ -2,8 +2,6 @@
   description = "A simple NixOS flake";
 
   inputs = rec {
-    # NixOS official package source, using the nixos-24.11 branch here
-    #nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -15,19 +13,16 @@
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      # optional, not necessary for the module
       inputs.nixpkgs.follows = "nixpkgs";
     };
-		# The following hyprland source is the one recommended for hyprtasking
     hyprland = {
-			#url = "github:hyprwm/Hyprland/v0.48.0";
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-		hyprtasking = {
-		  url = "github:raybbian/hyprtasking";
-			inputs.hyprland.follows = "hyprland";
-		};
+    hyprtasking = {
+      url = "github:raybbian/hyprtasking";
+      inputs.hyprland.follows = "hyprland";
+    };
     xremap-flake.url = "github:xremap/nix-flake";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
@@ -66,20 +61,20 @@
       lanzaboote,
       ... }@inputs:
   let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    linux64-system = "x86_64-linux";
+    linux64-pkgs = nixpkgs.legacyPackages.${linux64-system};
   in {
-    packages.${system}. default = pkgs.stdenvNoCC.mkDerivation rec {
+    packages.${linux64-system}.default = linux64-pkgs.stdenvNoCC.mkDerivation rec {
       name = "my-shell";
       src = ./.;
 
       nativeBuildInputs = [
-        ags.packages.${system}.default
-        pkgs.wrapGAppsHook
-        pkgs.gobject-introspection
+        ags.packages.${linux64-system}.default
+        linux64-pkgs.wrapGAppsHook
+        linux64-pkgs.gobject-introspection
       ];
 
-      buildInputs = with astal.packages.${system}; [
+      buildInputs = with astal.packages.${linux64-system}; [
         astal3
         io
         # any other package
@@ -87,12 +82,12 @@
 
       installPhase = ''
         mkdir -p $out/bin
-        ags bundle app.ts $out/bin/${name}
+        ${ags.packages.${linux64-system}.default}/bin/ags bundle app.ts $out/bin/${name}
       '';
     };
 
     nixosConfigurations.loq = nixpkgs.lib.nixosSystem {
-      system = system;
+      system = linux64-system;
       modules = [
         ./configuration.nix
         inputs.xremap-flake.nixosModules.default
@@ -104,7 +99,7 @@
           _module.args = {
             inherit inputs;
             inherit hyprland;
-            inherit system;
+            system = linux64-system;
             inherit lanzaboote;
           };
         }
@@ -112,7 +107,7 @@
     };
 
     homeConfigurations.clinc = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+      pkgs = linux64-pkgs;
       modules = [
         ./modules/clinc/home.nix
         ./modules/clinc/pkgs.nix

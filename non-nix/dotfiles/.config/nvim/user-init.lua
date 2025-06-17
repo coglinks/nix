@@ -166,8 +166,10 @@ vim.o.list = true
 
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.termguicolors = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.expandtab = true     -- Use spaces instead of tabs
+vim.opt.shiftwidth = 2       -- Size of an indent
+vim.opt.tabstop = 2          -- Number of spaces tabs count for
+vim.opt.softtabstop = 2      -- Number of spaces a <Tab> inserts
 
 
 -- Preview substitutions live, as you type!

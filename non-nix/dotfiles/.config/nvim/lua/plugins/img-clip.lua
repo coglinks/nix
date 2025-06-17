@@ -87,6 +87,19 @@ return {
 
     -- filetype specific options
     filetypes = {
+			quarto = {
+				url_encode_path = true,
+template = [[
+::: {.center}
+![$FILE_NAME]($FILE_PATH){#$FILE_NAME width=300}
+$CURSOR
+:::
+]], ---@type string
+
+				drag_and_drop = {
+					download_images = false,
+				},
+			},
       markdown = {
         -- encode spaces and special characters in file path
         url_encode_path = true, ---@type boolean
@@ -104,7 +117,12 @@ return {
         --
         -- -- This will dynamically configure the alternative text to show the
         -- -- same that you configured as the "file_name" above
-        template = '<img src="$FILE_PATH" width=300 alt="$FILE_NAME">', ---@type string
+        template = [[
+<figure style="text-align: center;">
+  <img src="$FILE_PATH" alt="$FILE_NAME" width="300">
+  <figcaption>$CURSOR</figcaption>
+</figure>
+]], ---@type string
       },
     },
   },

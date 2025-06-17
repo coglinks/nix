@@ -23,15 +23,6 @@ return {
       },
     },
   },
-
-  {
-      'jmbuhr/otter.nvim',
-      dependencies = {
-        'nvim-treesitter/nvim-treesitter',
-      },
-      opts = {},
-  },
-
   -- These are some examples, uncomment them if you want to see them work!
 
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).

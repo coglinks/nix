@@ -7,8 +7,20 @@ return {
     opts = {
       library = {
         -- Load luvit types when the `vim.uv` word is found
-        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
       },
     },
+  },
+	{ 'Bilal2453/luvit-meta', lazy = true }, -- optional `vim.uv` typings
+  {
+		'jmbuhr/otter.nvim',
+    dev = false,
+    dependencies = {
+      {
+        'neovim/nvim-lspconfig',
+        'nvim-treesitter/nvim-treesitter',
+      },
+    },
+    opts = {},
   }
 }

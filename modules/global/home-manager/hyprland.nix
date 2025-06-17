@@ -30,7 +30,8 @@
   };
 
     home.packages = with pkgs; [
-      #
+      wayfreeze
+			killall
     ];
 
     wayland.windowManager.hyprland.plugins = [

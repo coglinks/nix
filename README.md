@@ -10,10 +10,12 @@
 - tex
    - fix reverse hyperlinks. [have a look at this](https://tex.stackexchange.com/questions/198969/linking-the-section-titles-to-toc-using-only-hyperref)
 - Errors logged in "non-nix/logs" dir
+- I changed the default location of the `hardware configuration.nix`. But I didn't setup a method for nix to recognise the file as `hardware configuration.nix`.
 
 ## To do
 
-Learn how to use utilise papirus-icon-theme
+- Learn how to use utilise papirus-icon-theme
+- nvim doesn't beep when i press esc repeatedly in normal mode
 
 ## Common setups and fixes
 
@@ -21,8 +23,8 @@ Learn how to use utilise papirus-icon-theme
 
 - Cmd to set partition to unlock at boot:
 
-```
-# systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/sdax
+```bash
+sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/nvme0n1px
 ```
 
 - When above setup breaks:
@@ -32,14 +34,19 @@ Learn how to use utilise papirus-icon-theme
 Here's how to cleanup the broken parts:
 
 Extract info on the device to check which token and which key it uses:
+
+```bash
+sudo cryptsetup luksDump /dev/nvme0n1px
 ```
-# cryptsetup luksDump /dev/sdax
-```
+
 For the keyslot:
+
+```bash
+sudo cryptsetup luksKillSlot /dev/nvme0n1px <keyslotNo>
 ```
-# cryptsetup luksKillSlot /dev/sdax <keyslot no>
-```
+
 For the token:
-```
-# cryptsetup token remove --token-id <token no> /dev/sdax
+
+```bash
+sudo cryptsetup token remove --token-id <tokenNo> /dev/nvme0n1px
 ```

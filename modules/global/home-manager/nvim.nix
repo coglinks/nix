@@ -37,7 +37,4 @@
     lua5_1 # cli #programming-language
     luarocks # cli #package-manager
 	];
-
-	# Fallback
-	programs.vim.enable = true;
 }

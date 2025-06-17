@@ -111,7 +111,6 @@
     tpm2-tss # cli #security
     trash-cli # cli #file-management
     unzip # cli #compression-tool
-    vim # tui #text-editor
     vscode # gui #ide
     wallust # gui #wallpaper
     wayland # cli #display-server

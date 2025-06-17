@@ -9,6 +9,7 @@
     enable = true;
     package = pkgs.firefox-esr;
   };
+  programs.vim.enable = true;
   programs.nh = {
     enable = true;
     clean.enable = true;

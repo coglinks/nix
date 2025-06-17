@@ -35,6 +35,11 @@ edit = [
 	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
 	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
 ]
+
+edit-new = [
+	{ run = 'kitty ${EDITOR:-vi} "$@" &', desc = "kitty $EDITOR", block = true, for = "unix" },
+]
+
 open = [
 	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
 	{ run = 'open "$@"',                    desc = "Open", for = "macos" },
@@ -61,9 +66,9 @@ play = [
 [open]
 append_rules = [
 	# Folder
-	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	{ name = "*/", use = [ "edit", "edit-new", "open", "reveal" ] },
 	# Text
-	{ mime = "text/*", use = [ "edit", "reveal" ] },
+	{ mime = "text/*", use = [ "edit", "edit-new", "reveal" ] },
 	# Image
 	{ mime = "image/*", use = [ "open", "reveal" ] },
 	# Media
@@ -71,18 +76,18 @@ append_rules = [
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
 	# JSON
-	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
-	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
+	{ mime = "application/{json,ndjson}", use = [ "edit", "edit-new", "reveal" ] },
+	{ mime = "*/javascript", use = [ "edit", "edit-new", "reveal" ] },
 	# Empty file
-	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
+	{ mime = "inode/empty", use = [ "edit", "edit-new", "reveal" ] },
 	# Fallback
 	{ name = "*", use = [ "open", "reveal" ] },
 ]  
 prepend_rules = [
-  { name = "*.tex", use = [ "edit", "open", "reveal" ] },
-  { name = "*.sty", use = [ "edit", "open", "reveal" ] },
-  { name = "*.md", use = [ "edit", "open", "reveal" ] },
-  { name = "*.qmd", use = [ "edit", "open", "reveal" ] }
+  { name = "*.tex", use = [ "edit", "edit-new", "open", "reveal" ] },
+  { name = "*.sty", use = [ "edit", "edit-new", "open", "reveal" ] },
+  { name = "*.md", use = [ "edit", "edit-new", "open", "reveal" ] },
+  { name = "*.qmd", use = [ "edit", "edit-new", "open", "reveal" ] }
 ]
 
 [tasks]

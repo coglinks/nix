@@ -30,4 +30,33 @@
     yazi # tui #file-mgr
     zoxide # tui
   ];
+  programs.tmux = {
+  enable = true;
+  plugins = with pkgs; [
+      tmuxPlugins.resurrect
+      tmuxPlugins.continuum
+      tmuxPlugins.tmux-sessionx
+    ];
+  keyMode = "vi";
+  newSession = false;
+  extraConfig = ''
+    #- [t] - NOTE: Tools
+
+    bind "t" switch-client -T "TOOLS" \; display-message "TOOLS: [g]-Lazygit"
+    bind -T "TOOLS" "g" display-popup -w "100%" -h "100%" -d "#{pane_current_path}" -E "lazygit"
+
+    # NOTE: Preferences
+
+    set -g mouse on
+
+    # image.nvim setup
+
+    set -gq allow-passthrough on
+    set -g visual-activity off
+
+    ## plugin setups
+
+    set -g @sessionx-bind 'o'
+  '';
+  };
 }

@@ -1,15 +1,19 @@
 { ... }:
 
 {
-  services.xremap = {
-    enable = false;
-    withHypr = true;
-    userName = "incogshift";
-    yamlConfig = ''
-      keymap:
-        - name: power;
-          remap:
-    '';
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "048d:c996:20fedd66" ];
+        settings = {
+          main = {
+            "leftshift+leftmeta+f23" = "rightcontrol";
+          };
+          otherlayer = {};
+        };
+      };
+    };
   };
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

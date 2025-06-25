@@ -23,7 +23,6 @@
       url = "github:raybbian/hyprtasking";
       inputs.hyprland.follows = "hyprland";
     };
-    xremap-flake.url = "github:xremap/nix-flake";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
       # Optional but recommended to limit the size of your system closure.
@@ -90,7 +89,6 @@
       system = linux64-system;
       modules = [
         ./configuration.nix
-        inputs.xremap-flake.nixosModules.default
         inputs.home-manager.nixosModules.default
         inputs.sops-nix.nixosModules.sops
         inputs.nix-flatpak.nixosModules.nix-flatpak

@@ -4,17 +4,20 @@
 {
   programs.neovim = {
     enable = true;
+    extraLuaPackages = ps: [ ps.magick ];
+    extraPackages = [ pkgs.imagemagick ];
     defaultEditor = true;
     viAlias = true;
     plugins = [
-        pkgs.vimPlugins.image-nvim
-        {
-          plugin = pkgs.vimPlugins.sqlite-lua;
-          config = "let g:sqlite_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}'";
-        }
-        {
-          plugin = pkgs.vimPlugins.blink-cmp;
-        }
+      pkgs.vimPlugins.image-nvim
+      pkgs.vimPlugins.markview-nvim
+      {
+        plugin = pkgs.vimPlugins.sqlite-lua;
+        config = "let g:sqlite_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}'";
+      }
+      {
+        plugin = pkgs.vimPlugins.blink-cmp;
+      }
     ];
     extraLuaConfig = ''
     dofile(vim.fn.stdpath("config") .. "/user-init.lua")

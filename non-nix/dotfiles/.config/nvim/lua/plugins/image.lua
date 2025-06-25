@@ -61,7 +61,7 @@ return {
             -- it will be laggy and will take time for the initial load
             only_render_image_at_cursor = true,
             -- markdown extensions (ie. quarto) can go here
-            filetypes = { "markdown", "vimwiki" },
+            filetypes = { "markdown", "vimwiki", "quarto" },
           },
           neorg = {
             enabled = true,

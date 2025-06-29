@@ -7,7 +7,7 @@
   };
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-esr;
+    package = pkgs.firefox;
   };
   programs.vim.enable = true;
   environment.systemPackages = with pkgs; [

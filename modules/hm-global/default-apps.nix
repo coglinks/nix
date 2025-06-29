@@ -4,11 +4,11 @@
 	xdg.mimeApps = {
 		enable = true;
 		defaultApplications = {
-			"text/html" = "firefox-esr.desktop";
-			"x-scheme-handler/http" = "firefox-esr.desktop";
-			"x-scheme-handler/https" = "firefox-esr.desktop";
-			"x-scheme-handler/about" = "firefox-esr.desktop";
-			"x-scheme-handler/unknown" = "firefox-esr.desktop";
+			"text/html" = "firefox.desktop";
+			"x-scheme-handler/http" = "firefox.desktop";
+			"x-scheme-handler/https" = "firefox.desktop";
+			"x-scheme-handler/about" = "firefox.desktop";
+			"x-scheme-handler/unknown" = "firefox.desktop";
 			"application/pdf"="org.pwmt.zathura.desktop";
 			"image/jpeg"="feh.desktop";
 			"image/png"="feh.desktop";

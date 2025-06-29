@@ -16,5 +16,6 @@
     lazygit # tui #vcs #git-tools
     git-remote-gcrypt # cli #encryption-plugin-for-git #git-tools
     git-credential-manager
+    git-annex-remote-rclone
   ];
 }

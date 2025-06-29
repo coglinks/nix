@@ -105,6 +105,7 @@
     };
 
     homeConfigurations.clinc = home-manager.lib.homeManagerConfiguration {
+      system = linux64-system;
       pkgs = linux64-pkgs;
       modules = [
         ./modules/clinc/home.nix

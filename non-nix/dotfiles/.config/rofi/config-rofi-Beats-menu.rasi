@@ -37,7 +37,7 @@ listview {
 
 /* ---- Element ---- */
 element-icon {
-  	size: 0%;
+    size: 0%;
 }
 element-text {
     horizontal-align: 0.5;

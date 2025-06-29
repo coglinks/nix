@@ -5,9 +5,9 @@
 
 /* ---- Window ---- */
 window {
-	width: 40%;
-	//orientation: horizontal;
-	height: inherit;
+  width: 40%;
+  //orientation: horizontal;
+  height: inherit;
     y-offset: 10px;
     location: north;
     children: [ "entry", "message" ];
@@ -17,9 +17,9 @@ window {
 
 /* ---- Entry ---- */ 
 entry {
-	expand: true;
-	placeholder: " 🔎 Google Search";
-	horizontal-align: 0.5;
-	padding: 15px;
-	border-radius: inherit;
+  expand: true;
+  placeholder: " 🔎 Google Search";
+  horizontal-align: 0.5;
+  padding: 15px;
+  border-radius: inherit;
 }

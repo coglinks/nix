@@ -22,12 +22,12 @@ return {
   },
   config = function()
     require("snacks").setup()
-	end,
-	keys = {
-		-- Top Pickers & Explorer
-		{ "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-		{ "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
-		-- Find
-		{ "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
-	}
+  end,
+  keys = {
+    -- Top Pickers & Explorer
+    { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+    { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+    -- Find
+    { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
+  }
 }

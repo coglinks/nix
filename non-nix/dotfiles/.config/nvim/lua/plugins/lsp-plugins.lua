@@ -11,9 +11,9 @@ return {
       },
     },
   },
-	{ 'Bilal2453/luvit-meta', lazy = true }, -- optional `vim.uv` typings
+  { 'Bilal2453/luvit-meta', lazy = true }, -- optional `vim.uv` typings
   {
-		'jmbuhr/otter.nvim',
+    'jmbuhr/otter.nvim',
     dev = false,
     dependencies = {
       {

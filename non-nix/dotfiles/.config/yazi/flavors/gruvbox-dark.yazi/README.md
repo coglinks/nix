@@ -3,7 +3,7 @@
 </div>
 
 <h3 align="center">
-	Gruvbox Dark Flavor for <a href="https://github.com/sxyazi/yazi">Yazi</a>
+  Gruvbox Dark Flavor for <a href="https://github.com/sxyazi/yazi">Yazi</a>
 </h3>
 
 ## 👀 Preview

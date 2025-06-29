@@ -150,21 +150,21 @@ title_error = { fg = "#d20f39" }
 [filetype]
 
 rules = [
-	# Images
-	{ mime = "image/*", fg = "#179299" },
+  # Images
+  { mime = "image/*", fg = "#179299" },
 
-	# Media
-	{ mime = "{audio,video}/*", fg = "#df8e1d" },
+  # Media
+  { mime = "{audio,video}/*", fg = "#df8e1d" },
 
-	# Archives
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ea76cb" },
+  # Archives
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ea76cb" },
 
-	# Documents
-	{ mime = "application/{pdf,doc,rtf}", fg = "#40a02b" },
+  # Documents
+  { mime = "application/{pdf,doc,rtf}", fg = "#40a02b" },
 
-	# Fallback
-	{ name = "*", fg = "#4c4f69" },
-	{ name = "*/", fg = "#1e66f5" }
+  # Fallback
+  { name = "*", fg = "#4c4f69" },
+  { name = "*/", fg = "#1e66f5" }
 ]
 
 # : }}}

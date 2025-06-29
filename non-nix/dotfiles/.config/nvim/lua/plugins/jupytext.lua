@@ -2,19 +2,19 @@
 -- and convert back behind the scenes
 
 return {
-	'GCBallesteros/jupytext.nvim',
-	opts = {
-		custom_language_formatting = {
-			python = {
-				extension = 'qmd',
-				style = 'quarto',
-				force_ft = 'quarto',
-			},
-			r = {
-				extension = 'qmd',
-				style = 'quarto',
-				force_ft = 'quarto',
-			},
-		},
-	},
+  'GCBallesteros/jupytext.nvim',
+  opts = {
+    custom_language_formatting = {
+      python = {
+        extension = 'qmd',
+        style = 'quarto',
+        force_ft = 'quarto',
+      },
+      r = {
+        extension = 'qmd',
+        style = 'quarto',
+        force_ft = 'quarto',
+      },
+    },
+  },
 }

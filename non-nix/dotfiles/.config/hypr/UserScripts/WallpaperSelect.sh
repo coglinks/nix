@@ -68,7 +68,7 @@ main() {
 
   # Random choice case
   if [[ "$choice" == "$RANDOM_PIC_NAME" ]]; then
-	swww img -o "$focused_monitor" "$RANDOM_PIC" $SWWW_PARAMS;
+  swww img -o "$focused_monitor" "$RANDOM_PIC" $SWWW_PARAMS;
     sleep 2
     "$SCRIPTSDIR/WallustSwww.sh"
     sleep 0.5

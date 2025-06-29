@@ -37,7 +37,7 @@ element {
 }
 
 element-icon {
-  	size: 0%;
+    size: 0%;
 }
 
 element-text {

@@ -23,7 +23,7 @@
 # others
 "qoomon/zsh-lazyload"
 "romkatv/powerlevel10k"
-	];		
+  ];    
   };
   fonts.fontconfig = {
     enable = true;

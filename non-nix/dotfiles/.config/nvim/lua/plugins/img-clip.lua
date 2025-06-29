@@ -87,8 +87,8 @@ return {
 
     -- filetype specific options
     filetypes = {
-			quarto = {
-				url_encode_path = true,
+      quarto = {
+        url_encode_path = true,
 template = [[
 ::: {.center}
 ![$FILE_NAME]($FILE_PATH){#$FILE_NAME width=300}
@@ -96,10 +96,10 @@ $CURSOR
 :::
 ]], ---@type string
 
-				drag_and_drop = {
-					download_images = false,
-				},
-			},
+        drag_and_drop = {
+          download_images = false,
+        },
+      },
       markdown = {
         -- encode spaces and special characters in file path
         url_encode_path = true, ---@type boolean

@@ -56,8 +56,8 @@ play_local_music() {
   # Find the corresponding file path based on user's choice and set that to play the song then continue on the list
   for (( i=0; i<"${#filenames[@]}"; ++i )); do
     if [ "${filenames[$i]}" = "$choice" ]; then
-		
-	    notification "$choice"
+    
+      notification "$choice"
 
       # Play the selected local music file using mpv
       mpv --playlist-start="$i" --loop-playlist --vid=no  "${local_music[@]}"

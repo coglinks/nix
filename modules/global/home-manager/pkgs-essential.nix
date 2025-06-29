@@ -5,7 +5,7 @@
     antidote
     bat # cli #text-viewer #cat-with-syntax-highlighting 
     browsh
-		biome
+    biome
     feh
     tealdeer
     gnumake

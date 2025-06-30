@@ -13,6 +13,12 @@ vim.keymap.set("n", "<leader>id", function()
 			return image_path
 		end
 
+  -- Try Quarto/Markdown ![alt](path){...}
+  image_path = line:match("%[.-%]%((.-)%)%s*{%.*}")
+  if image_path then
+    return image_path
+  end
+
 		-- Try Markdown ![alt](...)
 		image_path = line:match("%[.-%]%((.-)%)")
 		return image_path

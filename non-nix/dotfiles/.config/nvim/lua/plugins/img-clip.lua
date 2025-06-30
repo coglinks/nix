@@ -90,10 +90,7 @@ return {
       quarto = {
         url_encode_path = true,
 template = [[
-::: {.center}
-![$FILE_NAME]($FILE_PATH){#$FILE_NAME width=300}
-$CURSOR
-:::
+![$CURSOR]($FILE_PATH){#fig-$FILE_NAME_NO_EXT align=center width=300 alt=$FILE_NAME}
 ]], ---@type string
 
         drag_and_drop = {

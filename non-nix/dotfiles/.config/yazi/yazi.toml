@@ -86,6 +86,7 @@ append_rules = [
 prepend_rules = [
   { name = "*.tex", use = [ "edit", "edit-new", "open", "reveal" ] },
   { name = "*.sty", use = [ "edit", "edit-new", "open", "reveal" ] },
+  { name = "*.html", use = [ "open", "edit-new", "edit", "reveal" ] },
   { name = "*.md", use = [ "edit", "edit-new", "open", "reveal" ] },
   { name = "*.qmd", use = [ "edit", "edit-new", "open", "reveal" ] }
 ]

@@ -29,6 +29,14 @@
     vorta
     yazi # tui #file-mgr
     zoxide # tui
+    quarto
+    # molten-nvim dependencies
+      python313Packages.jupyter-core
+      python313Packages.pynvim
+      python313Packages.jupyter-client
+      python313Packages.plotly
+      python313Packages.kaleido
+      python313Packages.cairosvg
   ];
   programs.tmux = {
   enable = true;

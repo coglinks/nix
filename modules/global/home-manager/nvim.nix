@@ -8,28 +8,28 @@
     extraPackages = [ pkgs.imagemagick ];
     defaultEditor = true;
     viAlias = true;
-    plugins = [
-      pkgs.vimPlugins.image-nvim
-      pkgs.vimPlugins.markview-nvim
-      pkgs.vimPlugins.quarto-nvim
-      pkgs.vimPlugins.blink-cmp
-      pkgs.vimPlugins.jupytext-nvim
-      pkgs.vimPlugins.mason-nvim
-      pkgs.vimPlugins.molten-nvim
-      pkgs.vimPlugins.snacks-nvim
-      pkgs.vimPlugins.telescope-nvim
-      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-      pkgs.vimPlugins.fzf-lua
-      pkgs.vimPlugins.outline-nvim
+    plugins = with pkgs.vimPlugins; [
+      image-nvim
+      markview-nvim
+      quarto-nvim
+      lazy-nvim
+      blink-cmp
+      jupytext-nvim
+      mason-nvim
+      molten-nvim
+      snacks-nvim
+      telescope-nvim
+      nvim-treesitter.withAllGrammars
+      fzf-lua
+      outline-nvim
       {
-        plugin = pkgs.vimPlugins.sqlite-lua;
+        plugin = sqlite-lua;
         config = "let g:sqlite_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}'";
       }
-      {
-        plugin = pkgs.vimPlugins.blink-cmp;
-      }
     ];
-    extraLuaConfig = ''
+    extraLuaConfig = 
+    # lua
+    ''
     dofile(vim.fn.stdpath("config") .. "/user-init.lua")
     '';
   };

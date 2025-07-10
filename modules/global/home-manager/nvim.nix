@@ -3,7 +3,7 @@
 
 {
   programs.neovim = {
-    enable = true;
+    enable = false;
     extraLuaPackages = ps: [ ps.magick ];
     extraPackages = [ pkgs.imagemagick ];
     defaultEditor = true;

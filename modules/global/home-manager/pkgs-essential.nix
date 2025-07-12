@@ -41,7 +41,9 @@
     ];
   keyMode = "vi";
   newSession = false;
-  extraConfig = ''
+  extraConfig =
+    # bash
+    ''
     #- [t] - NOTE: Tools
 
     bind "t" switch-client -T "TOOLS" \; display-message "TOOLS: [g]-Lazygit"

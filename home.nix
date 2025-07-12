@@ -25,6 +25,13 @@
     ./modules/hm-global/default-apps.nix
   ];
 
+  stylix = {
+    enable = true;
+    autoEnable = true;
+    targets = {
+      hyprland.enable = true;
+    };
+  };
   programs.zsh = {
     enable = true;
     history = {

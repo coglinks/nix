@@ -46,7 +46,12 @@
       # For wayland, xwayland, display managers, window managers, lockscreens
       ./modules/loq/display.nix
   ];
-  
+
+  stylix = {
+    enable = true;
+    base16Scheme = ./palette.yaml;
+  };
+
 # What follows is base system setup
 
   # Set your time zone.

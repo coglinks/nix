@@ -11,6 +11,10 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,6 +57,7 @@
       self,
       nixpkgs,
       home-manager,
+      stylix,
       hyprland,
       treefmt-nix,
       astal,
@@ -89,6 +94,7 @@
       system = linux64-system;
       modules = [
         ./configuration.nix
+        stylix.nixosModules.stylix
         inputs.home-manager.nixosModules.default
         inputs.sops-nix.nixosModules.sops
         inputs.nix-flatpak.nixosModules.nix-flatpak

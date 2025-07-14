@@ -33,22 +33,22 @@
     dofile(vim.fn.stdpath("config") .. "/user-init.lua")
     '';
   };
-  home.packages = with pkgs; [
-    mercurialFull
-    lua-language-server
-    quarto
-    rocmPackages.llvm.clang # cli #compiler
-    tree-sitter
-    ripgrep
-    aider-chat
-    sqlite
-    libgcc
-    libgcc    deno
-    marksman
-    nodejs
-    python313Packages.pylatexenc
-    luajitPackages.jsregexp
-    lua5_1 # cli #programming-language
-    luarocks # cli #package-manager
-  ];
+#  home.packages = with pkgs; [
+#    mercurialFull
+#    lua-language-server
+#    quarto
+#    rocmPackages.llvm.clang # cli #compiler
+#    tree-sitter
+#    ripgrep
+#    aider-chat
+#    sqlite
+#    libgcc
+#    libgcc    deno
+#    marksman
+#    nodejs
+#    python313Packages.pylatexenc
+#    luajitPackages.jsregexp
+#    lua5_1 # cli #programming-language
+#    luarocks # cli #package-manager
+#  ];
 }

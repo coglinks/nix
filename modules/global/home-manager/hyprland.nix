@@ -19,9 +19,23 @@
     extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
 
-  xdg.configFile."hypr/hyprland-dot-conf" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./hypr/hyprland-dot-conf;
-    recursive = true;
+  xdg.configFile = {
+    "hypr/hyprland-dot-conf" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./hypr/hyprland-dot-conf;
+      recursive = true;
+    };
+    "hypr/hyprlock-conf" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./hypr/hyprlock-conf;
+      recursive = true;
+    };
+    "hypr/scripts" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./hypr/scripts;
+      recursive = true;
+    };
+    "hypr/UserScripts" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./hypr/UserScripts;
+      recursive = true;
+    };
   };
 
   programs.hyprlock = {

@@ -61,6 +61,15 @@
     ## plugin setups
 
     set -g @sessionx-bind 'o'
+
+    # nvim: `escape-time` (500) is higher than 300ms
+    set-option -sg escape-time 10
+
+    # nvim: focus-events` is not enabled. |'autoread'| may not work.
+    set-option -g focus-events on
+
+    # nvim: $TERM should be "screen-256color" or "tmux-256color" in tmux. Colors might look wrong.
+    set-option -g default-terminal "screen-256color"
   '';
   };
 }

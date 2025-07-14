@@ -91,7 +91,6 @@
     topgrade # cli #pkg-management
     tpm2-tss # cli #security
     trash-cli # cli #file-management
-    wallust # gui #wallpaper
     wayland # cli #display-server
     wayland-protocols # cli #dependency
     wget # cli

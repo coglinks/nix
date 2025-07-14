@@ -98,7 +98,6 @@
     pkg-config
     zoxide
     go
-    wallust
     bitwarden-desktop
     cpio
     meson

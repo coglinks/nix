@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   xdg.mimeApps = {
@@ -17,4 +17,6 @@
       "image/gif"="feh.desktop";
     };
   };
+
+  home.file.".config/cava/config".source = config.lib.file.mkOutOfStoreSymlink ./cava/config;
 }

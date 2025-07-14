@@ -2,6 +2,7 @@
   description = "A simple NixOS flake";
 
   inputs = rec {
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -56,6 +57,7 @@
   outputs = {
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       stylix,
       hyprland,
@@ -66,7 +68,9 @@
       ... }@inputs:
   let
     linux64-system = "x86_64-linux";
-    linux64-pkgs = nixpkgs.legacyPackages.${linux64-system};
+    linux64-commonArgs = { system = linux64-system; config.allowUnfree = true; };
+    linux64-pkgs = import nixpkgs linux64-commonArgs;
+    linux64-pkgs-stable = import nixpkgs-stable linux64-commonArgs;
   in {
     packages.${linux64-system}.default = linux64-pkgs.stdenvNoCC.mkDerivation rec {
       name = "my-shell";
@@ -103,6 +107,7 @@
           _module.args = {
             inherit inputs;
             inherit hyprland;
+            pkgs-stable = linux64-pkgs-stable;
             system = linux64-system;
             inherit lanzaboote;
           };

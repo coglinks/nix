@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }:
+{ inputs, pkgs, pkgs-stable, config, ... }:
 
 {
 # Disabled as it's not needed for now 

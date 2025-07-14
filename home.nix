@@ -29,6 +29,7 @@
     enable = true;
     autoEnable = true;
     targets = {
+      lazygit.enable = true;
       hyprland.enable = true;
     };
   };

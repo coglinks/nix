@@ -16,10 +16,12 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 30d --keep 20";
-    flake = "/home/incogshift/st/nix#loq";
+    flake = "/home/incogshift/st/nix";
   };
 
   nix.settings = {
+    max-jobs = 3;
+    cores = 4;
     experimental-features = [
       "nix-command"
       "flakes"

@@ -10,8 +10,6 @@
 
   system.autoUpgrade.enable = true;
 
-  home-manager.backupFileExtension = "hm-backup";
-
   programs.nh = {
     enable = true;
     clean.enable = true;

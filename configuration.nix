@@ -50,6 +50,7 @@
   stylix = {
     enable = true;
     base16Scheme = ./palette.yaml;
+    targets.gnome.enable = false;
   };
 
 # What follows is base system setup

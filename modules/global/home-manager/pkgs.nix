@@ -2,13 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    bat # cli #text-viewer #cat-with-syntax-highlighting
     inputs.iwmenu.packages.${pkgs.system}.default
     wlogout
     xclip
-    chatterino7
     copyq
-    ianny
     inputs.bzmenu.packages.${pkgs.system}.default
     libnotify
     rclone
@@ -21,17 +18,14 @@
     nixd
     thunderbird
     spicetify-cli
+    spotify
     gnome-sound-recorder
     nautilus
-    conda
     htop
     tree
-    spotify
     mpv
     libreoffice
-    devenv
-    mystmd
-    ardour
+    ardour #DAW
     bitwarden-desktop # gui #security
     blueman # gui
     audacity
@@ -46,38 +40,25 @@
     gvfs
     geeqie
     meld # gui #Visual diff and merge tool
-    swaylock
     brightnessctl # cli #system-tools
-    chezmoi # cli #file-management
     cliphist # cli #clipboard-history
-    tmux
     cpio # cli #dependency
     cryptsetup # cli #security #system-tools
     darktable # gui #photo-editing
     ddcutil # cli #monitor-control
     discord # gui #communication
     firewalld # cli #security
-    ghostscript # cli #pdf-tools
     gimp # gui #image-editor
-    gnupg # cli #encryption
     go # cli #programming-language
     google-chrome # gui #browser
     grim # gui #screenshot #wayland
     hypridle # cli #wayland
-    hyprlandPlugins.hyprspace # gui #hyprland
     hyprpicker # cli #color-picker
     hyprpolkitagent # cli #polkit
     imagemagick # cli #image-tools
     inkscape # gui #vector-editor
-    inotify-tools # cli #filesystem
-    jq # cli #json
-    kdePackages.okular # gui
-    kicad # gui #electronics
     kitty # gui #terminal
-    lua-language-server # cli #lsp
-    lua5_1 # cli #programming-language
-    luarocks # cli #package-manager
-    man # cli
+    lua # cli #programming-language
     mellowplayer # gui #music
     mesa # cli #graphics
     mesa-demos # cli #collection-of-demos-and-test-programs-for-opengl-and-mesa
@@ -110,8 +91,6 @@
     topgrade # cli #pkg-management
     tpm2-tss # cli #security
     trash-cli # cli #file-management
-    unzip # cli #compression-tool
-    vscode # gui #ide
     wallust # gui #wallpaper
     wayland # cli #display-server
     wayland-protocols # cli #dependency
@@ -123,10 +102,25 @@
     youtube-music # gui
     zathura # tui
     zip # cli #compression-tool
+    unzip # cli #compression-tool
     zoxide # tui
   ];
   fonts.fontconfig = {
     enable = true;
+  };
+
+
+  documentation = {
+    nixos = {
+      enable = true;
+    };
+    info.enable = true;
+    man = {
+      enable = true;
+      man-dv = {
+        enable = true;
+      };
+    };
   };
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

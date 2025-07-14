@@ -22,7 +22,7 @@
     ./modules/loq/hm-pkgs.nix
 #    ./non-nix/symlink.nix
     ./non-nix/programs/desktop-entries.nix
-    ./modules/hm-global/default-apps.nix
+    ./modules/global/home-manager/general-settings.nix
   ];
 
   stylix = {

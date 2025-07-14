@@ -16,11 +16,7 @@
     # set the Hyprland and XDPH packages to null to use the ones from the NixOS module
     package = null;
     portalPackage = null;
-    extraConfig =
-      # hyprlang
-      ''
-      source = ./hyprland.conf.add-nix
-    '';
+    extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
 
   home.pointerCursor = {

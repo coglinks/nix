@@ -109,16 +109,10 @@
   };
 
 
-  documentation = {
-    nixos = {
-      enable = true;
-    };
+  programs = {
     info.enable = true;
     man = {
       enable = true;
-      man-dv = {
-        enable = true;
-      };
     };
   };
 

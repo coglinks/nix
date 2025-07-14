@@ -30,6 +30,19 @@
     }))
   ];
 
+  documentation = {
+    nixos = {
+      enable = true;
+    };
+    info.enable = true;
+    man = {
+      enable = true;
+      man-db = {
+        enable = true;
+      };
+    };
+  };
+
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka-term
     nerd-fonts.iosevka

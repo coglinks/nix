@@ -79,7 +79,6 @@
     playerctl # cli #media
     powertop # cli #power
     rclone # cli #cloud
-    rofi-wayland # gui #launcher
     slurp # cli #screenshot
     stow # cli #dotfiles
     swappy # gui #screenshot

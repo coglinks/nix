@@ -64,7 +64,6 @@
     stdenvNoCC
     unzip
     wl-clipboard
-    rofi
     python3
     pipx
     python312Packages.pip

@@ -44,7 +44,8 @@
       ./modules/loq/keyboard.nix
 
       # For wayland, xwayland, display managers, window managers, lockscreens
-      ./modules/loq/display.nix
+      ./modules/global/desktop-env/display.nix
+      ./modules/global/desktop-env/hyprland.nix
   ];
 
   stylix = {

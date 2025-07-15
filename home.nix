@@ -16,7 +16,7 @@
 
   imports = [
     ./modules/global/home-manager/git.nix
-    ./modules/global/home-manager/hyprland.nix
+    ./modules/global/desktop-env/hyprland-hm.nix
     ./modules/global/home-manager/pkgs-essential.nix
     ./modules/global/home-manager/pkgs.nix
     ./modules/global/home-manager/nvim.nix

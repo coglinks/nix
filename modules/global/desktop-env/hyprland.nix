@@ -1,7 +1,16 @@
-{ pkgs, hyprland, system, ... }:
+{
+  hyprland,
+  system,
+  pkgs,
+  ...
+}:
 
 {
-
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
   environment = {
     sessionVariables = {
       # Hint electron apps to use wayland
@@ -16,6 +25,7 @@
       xwayland.enable = true;
     };
   };
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -26,25 +36,6 @@
   security.pam.services.hyprland.enableGnomeKeyring = true;
   services.seatd.enable = true;
   security.polkit.enable = true;
-  
+
   security.pam.services.hyprlock = { };
-
-  services.desktopManager.gnome.enable = true;
-
-  services.displayManager.sddm = {
-    enable = true;
-    package = pkgs.kdePackages.sddm;
-    theme = "${import ./sddm.nix { inherit pkgs; }}";
-    extraPackages = [ pkgs.sddm-astronaut ];
-  };
-
-  environment.systemPackages = with pkgs; [sddm-astronaut];
-
-  services.xserver.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 }

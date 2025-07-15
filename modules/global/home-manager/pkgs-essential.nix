@@ -4,18 +4,15 @@
   home.packages = with pkgs; [
     antidote
     bat # cli #text-viewer #cat-with-syntax-highlighting 
-    browsh
-    biome
+    killall
     feh
     tealdeer
-    gnumake
     htop
     file
     vlock
     kitty # gui #terminal
     less
     libsecret
-    mystmd
     nerd-fonts.iosevka # cli #fonts
     nerd-fonts.iosevka-term # cli #fonts
     pandoc # cli #converter
@@ -29,7 +26,5 @@
     vorta
     yazi # tui #file-mgr
     zoxide # tui
-    quarto
-    conda
   ];
 }

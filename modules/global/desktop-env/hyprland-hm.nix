@@ -88,12 +88,11 @@
     size = 16;
   };
 
-    home.packages = with pkgs; [
-      wayfreeze
-      killall
-    ];
+  home.packages = with pkgs; [
+    wayfreeze #Tool to freeze the screen of a Wayland compositor
+  ];
 
-    wayland.windowManager.hyprland.plugins = [
-      inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
-    ];
+  wayland.windowManager.hyprland.plugins = [
+    inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
+  ];
 }

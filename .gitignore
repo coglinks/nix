@@ -10,3 +10,5 @@ non-nix/dotfiles/.config/nvim/lazy-lock.json
 non-nix/dotfiles/.config/nvim/init.lua
 # The following file is now managed by nix
 non-nix/dotfiles/.config/yazi/theme.toml
+non-nix/dotfiles/.config/rofi/config.rasi
+non-nix/dotfiles/.config/yazi/theme.toml

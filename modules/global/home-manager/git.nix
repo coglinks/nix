@@ -1,16 +1,24 @@
 { pkgs, ... }:
 {
-  programs.git = {
-    userName = "incogshift";
-    userEmail = "incog267@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+  programs = {
+    git = {
+      userName = "incogshift";
+      userEmail = "incog267@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+        credential.helper = "${
+            pkgs.git.override { withLibsecret = true; }
+          }/bin/git-credential-libsecret";
+      };
+      enable = true;
+      lfs.enable = true;
     };
-    enable = true;
-    lfs.enable = true;
+    lazygit = {
+      enable = true;
+      settings = {
+        os.editPreset = "nvim";
+      };
+    };
   };
   home.packages = with pkgs; [
     git-crypt # cli #encryption #git-tools

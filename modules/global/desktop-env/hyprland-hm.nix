@@ -8,12 +8,6 @@
 }:
 
 {
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-
   # Optional, hint Electron apps to use Wayland:
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -22,7 +16,26 @@
     # set the Hyprland and XDPH packages to null to use the ones from the NixOS module
     package = null;
     portalPackage = null;
-    extraConfig = builtins.readFile ./hypr/hyprland.conf;
+    extraConfig = ''
+      # Keybinds
+      source = ./hyprland-dot-conf/keybinds.conf
+
+      # general
+      source = ./hyprland-dot-conf/general.conf
+
+      # Startup and environmental variables
+      source = ./hyprland-dot-conf/startup.conf
+
+      # Plugins
+      source = ./hyprland-dot-conf/plugins.conf
+
+      # monitor-rules
+      source = ./hyprland-dot-conf/hardware.conf
+      source = ./monitors.conf
+
+      # Decoration and Animations Settings
+      source = ./hyprland-dot-conf/decor.conf
+      '';
   };
 
   xdg.configFile = {
@@ -90,6 +103,8 @@
 
   home.packages = with pkgs; [
     wayfreeze #Tool to freeze the screen of a Wayland compositor
+    gradia
+    nwg-displays
   ];
 
   wayland.windowManager.hyprland.plugins = [

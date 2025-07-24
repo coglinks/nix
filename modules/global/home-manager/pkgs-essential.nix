@@ -11,6 +11,7 @@
     file
     vlock
     kitty # gui #terminal
+    omnix
     less
     libsecret
     nerd-fonts.iosevka # cli #fonts

@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "github:hyprwm/Hyprland/v0.49.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprtasking = {
@@ -30,7 +30,6 @@
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
-      # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak = {
@@ -107,6 +106,7 @@
           _module.args = {
             inherit inputs;
             inherit hyprland;
+            inherit stylix;
             pkgs-stable = linux64-pkgs-stable;
             system = linux64-system;
             inherit lanzaboote;

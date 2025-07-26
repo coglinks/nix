@@ -1,17 +1,8 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
   home.packages = with pkgs; [
-    inputs.iwmenu.packages.${pkgs.system}.default
-    wlogout
-    xclip
-    copyq
-    inputs.bzmenu.packages.${pkgs.system}.default
-    libnotify
     rclone
-    inputs.astal.packages.${system}.default
-    hyprshot
-    hyprlock # cli #lockscreen
     timewarrior
     veracrypt
     git-annex
@@ -27,7 +18,6 @@
     libreoffice
     ardour #DAW
     bitwarden-desktop # gui #security
-    blueman # gui
     audacity
     nixfmt-rfc-style
     feh
@@ -37,11 +27,10 @@
     vorta
     cava
     sonic-visualiser
-    gvfs
     geeqie
+    gvfs
     meld # gui #Visual diff and merge tool
     brightnessctl # cli #system-tools
-    cliphist # cli #clipboard-history
     cpio # cli #dependency
     cryptsetup # cli #security #system-tools
     darktable # gui #photo-editing
@@ -49,26 +38,14 @@
     discord # gui #communication
     firewalld # cli #security
     gimp # gui #image-editor
-    go # cli #programming-language
     google-chrome # gui #browser
-    grim # gui #screenshot #wayland
-    hypridle # cli #wayland
-    hyprpicker # cli #color-picker
-    hyprpolkitagent # cli #polkit
     imagemagick # cli #image-tools
     inkscape # gui #vector-editor
     kitty # gui #terminal
-    lua # cli #programming-language
-    mellowplayer # gui #music
     mesa # cli #graphics
     mesa-demos # cli #collection-of-demos-and-test-programs-for-opengl-and-mesa
-    meson # cli #build-system
     nerd-fonts.iosevka # cli #fonts
     nerd-fonts.iosevka-term # cli #fonts
-    networkmanager # cli #network
-    networkmanager_dmenu # gui #network
-    networkmanagerapplet # gui #network
-    ninja # cli #build-system
     pamixer # cli #audio
     pandoc # cli #converter
     pavucontrol # gui #audio
@@ -79,11 +56,9 @@
     playerctl # cli #media
     powertop # cli #power
     rclone # cli #cloud
-    slurp # cli #screenshot
     stow # cli #dotfiles
     swappy # gui #screenshot
     swaynotificationcenter # gui #notifications
-    swww # gui #wallpaper
     texlive.combined.scheme-full # cli #programming-language
     tigervnc # gui #screen-share
     tokei # cli #coding
@@ -96,11 +71,8 @@
     win-spice # cli #dependency
     wl-clipboard # cli
     xournalpp # gui
-    yazi # tui #file-mgr
     youtube-music # gui
     zathura # tui
-    zip # cli #compression-tool
-    unzip # cli #compression-tool
     zoxide # tui
   ];
   fonts.fontconfig = {
@@ -115,5 +87,22 @@
     };
   };
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
+      "application/pdf"="org.pwmt.zathura.desktop";
+      "image/jpeg"="feh.desktop";
+      "image/png"="feh.desktop";
+      "image/jpg"="feh.desktop";
+      "image/webp"="feh.desktop";
+      "image/gif"="feh.desktop";
+    };
+  };
+
+  home.file.".config/cava/config".source = config.lib.file.mkOutOfStoreSymlink ./cava/config;
 }

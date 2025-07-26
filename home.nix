@@ -14,20 +14,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  imports = [
-    ./modules/global/home-manager/git.nix
-    ./modules/global/desktop-env/hyprland-hm.nix
-    ./modules/global/home-manager/pkgs-essential.nix
-    ./modules/global/home-manager/tmux.nix
-    ./modules/global/home-manager/rofi.nix
-    ./modules/global/home-manager/yazi.nix
-    ./modules/global/home-manager/pkgs.nix
-    ./modules/global/home-manager/nvim.nix
-#    ./non-nix/symlink.nix
-    ./non-nix/programs/desktop-entries.nix
-    ./modules/global/home-manager/general-settings.nix
-  ];
-
   stylix = {
     enable = true;
     autoEnable = true;

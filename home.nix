@@ -14,14 +14,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  stylix = {
-    enable = true;
-    autoEnable = true;
-    targets = {
-      lazygit.enable = true;
-      hyprland.enable = true;
-    };
-  };
   home.sessionPath = [
     "$HOME/.config/nixCats-nvim/result/bin"
   ];

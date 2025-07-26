@@ -1,9 +1,9 @@
 {
-  lib,
-  self,
-  inputs,
   config,
+  inputs,
+  lib,
   pkgs,
+  self,
   ...
 }:
 

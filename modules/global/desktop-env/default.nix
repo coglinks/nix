@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./display.nix
+    ./display-manager.nix
     ./hyprland.nix
-    ./sddm.nix
   ];
 }

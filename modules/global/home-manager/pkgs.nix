@@ -1,4 +1,11 @@
-{ pkgs, inputs, config, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  self,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -103,5 +110,5 @@
     };
   };
 
-  home.file.".config/cava/config".source = config.lib.file.mkOutOfStoreSymlink ./cava/config;
+  xdg.configFile."cava/config".source = config.lib.file.mkOutOfStoreSymlink ./cava/config;
 }

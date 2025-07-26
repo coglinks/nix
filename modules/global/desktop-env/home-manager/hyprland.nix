@@ -13,9 +13,6 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    # set the Hyprland and XDPH packages to null to use the ones from the NixOS module
-    package = null;
-    portalPackage = null;
     extraConfig = ''
       # Keybinds
       source = ./hyprland-dot-conf/keybinds.conf
@@ -105,6 +102,25 @@
     wayfreeze #Tool to freeze the screen of a Wayland compositor
     gradia
     nwg-displays
+    xclip
+    libnotify
+    inputs.astal.packages.${system}.default
+    blueman # gui
+    cliphist # cli #clipboard-history
+    grim # gui #screenshot #wayland
+    networkmanager # cli #network
+    slurp # cli #screenshot
+    swww # gui #wallpaper
+    networkmanager_dmenu # gui #network
+    networkmanagerapplet # gui #network
+    hyprpicker # cli #color-picker
+    hyprpolkitagent # cli #polkit
+    hyprshot
+    hyprlock # cli #lockscreen
+    inputs.iwmenu.packages.${pkgs.system}.default
+    inputs.bzmenu.packages.${pkgs.system}.default
+    copyq
+    wlogout
   ];
 
   wayland.windowManager.hyprland.plugins = [

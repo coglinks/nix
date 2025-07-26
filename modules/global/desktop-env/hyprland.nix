@@ -6,6 +6,9 @@
 }:
 
 {
+  # The following is used as a backup in case Hyprland stops working
+  services.desktopManager.gnome.enable = true;
+
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
     trusted-substituters = ["https://hyprland.cachix.org"];
@@ -24,6 +27,15 @@
       withUWSM = true;
       xwayland.enable = true;
     };
+  };
+
+  home-manager.users.incogshift = {
+    wayland.windowManager.hyprland = {
+      # set the Hyprland and XDPH packages to null to use the ones from the NixOS module
+      package = null;
+      portalPackage = null;
+    };
+    imports = [ ./home-manager ];
   };
 
   xdg.portal = {

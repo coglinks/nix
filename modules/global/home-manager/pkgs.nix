@@ -31,7 +31,6 @@
     gvfs
     meld # gui #Visual diff and merge tool
     brightnessctl # cli #system-tools
-    cpio # cli #dependency
     cryptsetup # cli #security #system-tools
     darktable # gui #photo-editing
     ddcutil # cli #monitor-control

@@ -1,4 +1,3 @@
-# file: configuration.nix
 { pkgs, lib, lanzaboote, ... }:
 
 {

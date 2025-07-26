@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ nix-flatpak, pkgs, pkgs-stable, ... }:
 
 {
   programs.gamemode.enable = true;
@@ -22,6 +22,7 @@
 
   services.flatpak.packages = [
     "com.github.Matoking.protontricks"
+    "io.itch.itch"
   ];
 
   environment.sessionVariables = {

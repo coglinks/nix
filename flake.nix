@@ -119,8 +119,8 @@
       system = linux64-system;
       pkgs = linux64-pkgs;
       modules = [
-        ./modules/clinc/home.nix
-        ./modules/clinc/pkgs.nix
+        ./modules/devices/clinc/home.nix
+        ./modules/devices/clinc/pkgs.nix
       ];
     };
   };

@@ -4,7 +4,6 @@
   imports = [
     ./desktop-env
     ./hardware
-    ./home-manager
     ./styling
     ./boot.nix
     ./container.nix
@@ -16,4 +15,10 @@
     ./security.nix
     ./user.nix
   ];
+
+  home-manager.users.incogshift = {
+    imports = [
+      ./home-manager
+    ];
+  };
 }

@@ -35,7 +35,6 @@
       package = null;
       portalPackage = null;
     };
-    imports = [ ./home-manager ];
   };
 
   xdg.portal = {

@@ -23,7 +23,7 @@
   programs = {
     hyprland = {
       package = hyprland.packages.${system}.default;
-      enable = true;
+      enable = false;
       withUWSM = true;
       xwayland.enable = true;
     };

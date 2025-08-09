@@ -34,12 +34,12 @@
     vorta
     cava
     sonic-visualiser
-    geeqie
+    # geeqie
     gvfs
     meld # gui #Visual diff and merge tool
     brightnessctl # cli #system-tools
     cryptsetup # cli #security #system-tools
-    darktable # gui #photo-editing
+    # darktable # gui #photo-editing
     ddcutil # cli #monitor-control
     discord # gui #communication
     firewalld # cli #security

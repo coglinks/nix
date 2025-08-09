@@ -2,8 +2,8 @@
   description = "A simple NixOS flake";
 
   nixConfig = {
-    max-jobs = "auto";
-    cores = 0;
+    # max-jobs = "auto";
+    # cores = 0;
     experimental-features = [
       "nix-command"
       "flakes"
@@ -55,12 +55,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland/v0.49.0";
+      url = "github:hyprwm/Hyprland";
+      # url = "github:hyprwm/Hyprland/v0.49.0";
     };
-    hyprtasking = {
-      url = "github:raybbian/hyprtasking";
-      inputs.hyprland.follows = "hyprland";
-    };
+     # hyprtasking = {
+     #   url = "github:raybbian/hyprtasking";
+     #   inputs.hyprland.follows = "hyprland";
+     # };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";

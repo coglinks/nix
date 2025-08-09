@@ -124,6 +124,7 @@
   ];
 
   wayland.windowManager.hyprland.plugins = [
-    inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
+    # inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
+    pkgs.hyprlandPlugins.hyprexpo
   ];
 }

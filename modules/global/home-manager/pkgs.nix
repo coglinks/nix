@@ -9,28 +9,21 @@
 
 {
   home.packages = with pkgs; [
-    rclone
-    timewarrior
+    blender
     veracrypt
-    git-annex
-    nixd
     thunderbird
     spicetify-cli
     spotify
     gnome-sound-recorder
     nautilus
-    htop
-    tree
     mpv
     libreoffice
     ardour #DAW
     bitwarden-desktop # gui #security
     audacity
-    nixfmt-rfc-style
     feh
     qimgv
     reaper
-    borgbackup # cli #backup
     vorta
     cava
     sonic-visualiser
@@ -38,7 +31,6 @@
     gvfs
     meld # gui #Visual diff and merge tool
     brightnessctl # cli #system-tools
-    cryptsetup # cli #security #system-tools
     # darktable # gui #photo-editing
     ddcutil # cli #monitor-control
     discord # gui #communication
@@ -48,10 +40,6 @@
     imagemagick # cli #image-tools
     inkscape # gui #vector-editor
     kitty # gui #terminal
-    mesa # cli #graphics
-    mesa-demos # cli #collection-of-demos-and-test-programs-for-opengl-and-mesa
-    nerd-fonts.iosevka # cli #fonts
-    nerd-fonts.iosevka-term # cli #fonts
     pamixer # cli #audio
     pandoc # cli #converter
     pavucontrol # gui #audio
@@ -61,8 +49,6 @@
     pkg-config # cli #pkg-builder
     playerctl # cli #media
     powertop # cli #power
-    rclone # cli #cloud
-    stow # cli #dotfiles
     swappy # gui #screenshot
     swaynotificationcenter # gui #notifications
     texlive.combined.scheme-full # cli #programming-language
@@ -73,13 +59,10 @@
     trash-cli # cli #file-management
     wayland # cli #display-server
     wayland-protocols # cli #dependency
-    wget # cli
     win-spice # cli #dependency
-    wl-clipboard # cli
     xournalpp # gui
     youtube-music # gui
     zathura # tui
-    zoxide # tui
   ];
   fonts.fontconfig = {
     enable = true;

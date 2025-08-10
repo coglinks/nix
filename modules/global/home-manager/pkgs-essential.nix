@@ -5,6 +5,18 @@
     antidote
     bat # cli #text-viewer #cat-with-syntax-highlighting 
     killall
+    rclone
+    nixd
+    nixfmt-rfc-style
+    borgbackup # cli #backup
+    cryptsetup # cli #security #system-tools
+    stow # cli #dotfiles
+    wget # cli
+    wl-clipboard # cli
+    zoxide # tui
+    htop
+    tree
+    timewarrior
     feh
     tealdeer
     htop

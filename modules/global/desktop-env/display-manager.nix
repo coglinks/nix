@@ -1,20 +1,21 @@
-{ pkgs, system, ... }:
+{ pkgs-stable, system, ... }:
 
 {
   services.displayManager.sddm = {
     enable = true;
-    package = pkgs.kdePackages.sddm;
-    theme = "${import ./sddm.nix { inherit pkgs; }}";
-    extraPackages = [ pkgs.sddm-astronaut ];
+    package = pkgs-stable.kdePackages.sddm;
+    theme = "${import ./sddm.nix { inherit pkgs-stable; }}";
+    extraPackages = [ pkgs-stable.sddm-astronaut ];
   };
 
-  environment.systemPackages = with pkgs; [sddm-astronaut];
+  environment.systemPackages = with pkgs-stable; [sddm-astronaut];
 
-  services.xserver.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    # Configure keymap in X11
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 }

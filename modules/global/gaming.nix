@@ -1,14 +1,16 @@
 { nix-flatpak, pkgs, pkgs-stable, ... }:
 
 {
-  programs.gamemode.enable = true;
+  programs.gamemode = {
+    enable = true;
+  };
   programs.steam = {
     enable = true;
     package = pkgs-stable.steam;
     gamescopeSession.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-stable; [
     mangohud
     protonup
     lumafly

@@ -5,6 +5,7 @@
 {
   config,
   pkgs,
+  pkgs-stable,
   lib,
   inputs,
   ...
@@ -26,6 +27,7 @@
     extraSpecialArgs = {
       inherit inputs;
       inherit pkgs;
+      inherit pkgs-stable;
     };
     users.incogshift = import ./home.nix;
     useUserPackages = true;

@@ -3,6 +3,7 @@
   inputs,
   lib,
   pkgs,
+  pkgs-stable,
   self,
   ...
 }:
@@ -29,6 +30,7 @@
       # monitor-rules
       source = ./hyprland-dot-conf/hardware.conf
       source = ./monitors.conf
+      source = ./workspaces.conf
 
       # Decoration and Animations Settings
       source = ./hyprland-dot-conf/decor.conf
@@ -56,11 +58,13 @@
 
   programs.hyprlock = {
     enable = true;
+    package = pkgs-stable.hyprlock;
     extraConfig = builtins.readFile ./hypr/hyprlock.conf;
   };
 
   services.hypridle = {
     enable = true;
+    package = pkgs-stable.hypridle;
     settings = { # Original config submitted by https://github.com/SherLock707, provided by JaKooLit
       general = {
           lock_cmd = "pidof hyprlock || hyprlock"; # runs hyprlock if it is not already running (this is always run when "loginctl lock-session" is called)
@@ -98,7 +102,7 @@
     size = 16;
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs-stable; [
     wayfreeze #Tool to freeze the screen of a Wayland compositor
     gradia
     nwg-displays
@@ -116,7 +120,6 @@
     hyprpicker # cli #color-picker
     hyprpolkitagent # cli #polkit
     hyprshot
-    hyprlock # cli #lockscreen
     inputs.iwmenu.packages.${pkgs.system}.default
     inputs.bzmenu.packages.${pkgs.system}.default
     copyq
@@ -125,6 +128,7 @@
 
   wayland.windowManager.hyprland.plugins = [
     # inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
-    pkgs.hyprlandPlugins.hyprspace
+    # pkgs.hyprlandPlugins.hyprspace
+    pkgs-stable.hyprlandPlugins.hyprexpo
   ];
 }

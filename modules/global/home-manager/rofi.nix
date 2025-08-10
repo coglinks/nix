@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs-stable, ... }:
 
 {
   programs.rofi = {
-    package = pkgs.rofi-wayland;
     enable = true;
+    package = pkgs-stable.rofi-wayland;
   };
   stylix.targets.rofi.enable = true;
 }

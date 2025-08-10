@@ -1,8 +1,9 @@
-{ lib, ... }:
+{ pkgs-stable, lib, ... }:
 
 {
   programs.zsh = {
     enable = true;
+    package = pkgs-stable.zsh;
     history = {
       size = 10000;
       append = true;
@@ -22,19 +23,6 @@
         zshConfig = lib.mkOrder 1000
           # zsh
           ''
-            # yazi shell wrapper
-            function y() {
-              local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-              yazi "$@" --cwd-file="$tmp"
-              if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-                builtin cd -- "$cwd"
-              fi
-              rm -f -- "$tmp"
-            }
-
-            # zoxide stuff
-            eval "$(zoxide init zsh)"
-
             url() {
                 local link="$1"
                 local name="$2"
@@ -62,6 +50,7 @@
       ];
     antidote = {
       enable = true;
+      package = pkgs-stable.antidote;
       plugins = [
         # set up Zsh completions with plugins
         "mattmc3/ez-compinit"

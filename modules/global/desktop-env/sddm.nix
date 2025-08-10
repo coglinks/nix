@@ -1,8 +1,8 @@
-{ pkgs }:
+{ pkgs-stable, ... }:
 
-pkgs.stdenv.mkDerivation {
+pkgs-stable.stdenv.mkDerivation {
   name = "sddm-theme";
-  src = pkgs.fetchFromGitHub {
+  src = pkgs-stable.fetchFromGitHub {
     owner = "Keyitdev";
     repo = "sddm-astronaut-theme";
     rev = "bf4d01732084be29cedefe9815731700da865956";

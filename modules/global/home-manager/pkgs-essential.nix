@@ -1,8 +1,7 @@
-{ pkgs, config, ... }:
+{ pkgs, pkgs-stable, config, ... }:
 
 {
-  home.packages = with pkgs; [
-    antidote
+  home.packages = with pkgs-stable; [
     bat # cli #text-viewer #cat-with-syntax-highlighting 
     killall
     rclone
@@ -13,7 +12,6 @@
     stow # cli #dotfiles
     wget # cli
     wl-clipboard # cli
-    zoxide # tui
     htop
     tree
     timewarrior
@@ -37,7 +35,10 @@
     trash-cli # cli #file-management
     udiskie
     vorta
-    yazi # tui #file-mgr
-    zoxide # tui
   ];
+  programs.zoxide = {
+    enable = true;
+    package = pkgs-stable.zoxide;
+    enableZshIntegration = true;
+  };
 }

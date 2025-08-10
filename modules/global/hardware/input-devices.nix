@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
   # Select internationalisation properties.
@@ -25,7 +25,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-stable; [
     libinput-gestures
   ];
 }

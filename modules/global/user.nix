@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-stable, ... }:
 
 {
   # Don't forget to set a password with ‘passwd’.
@@ -6,7 +6,6 @@
     isNormalUser = true;
     description = "incogshift";
     extraGroups = [ "networkmanager" "wheel" "adb" "input" ];
-    shell = pkgs.zsh;
+    shell = pkgs-stable.zsh;
   };
-  programs.zsh.enable = true;
 }

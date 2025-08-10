@@ -3,7 +3,6 @@
 {
   imports = [
     ./git.nix
-    ./nvim.nix
     ./pkgs-essential.nix
     ./pkgs.nix
     ./rofi.nix

@@ -1,9 +1,9 @@
-{ pkgs, lib, lanzaboote, ... }:
+{ pkgs-stable, lib, lanzaboote, ... }:
 
 {
   environment.systemPackages = [
     # For debugging and troubleshooting Secure Boot.
-    pkgs.sbctl
+    pkgs-stable.sbctl
   ];
 
   # Lanzaboote currently replaces the systemd-boot module.

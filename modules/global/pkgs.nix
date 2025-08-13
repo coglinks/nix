@@ -1,16 +1,17 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, pkgs-unstable, ... }:
 
 {
   programs.obs-studio = {
     enable = true;
+    package = pkgs-stable.obs-studio;
     enableVirtualCamera = true;
   };
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox;
+    package = pkgs-stable.firefox;
   };
   programs.vim.enable = true;
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-stable; [
     libsForQt5.qt5ct
     kdePackages.qt6ct
     borgbackup
@@ -24,10 +25,7 @@
     libsecret
     pciutils
     git-credential-manager
-
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
+    waybar
   ];
 
   documentation = {
@@ -43,7 +41,7 @@
     };
   };
 
-  fonts.packages = with pkgs; [
+  fonts.packages = with pkgs-unstable; [
     nerd-fonts.iosevka-term
     nerd-fonts.iosevka
   ];

@@ -3,13 +3,13 @@
   inputs,
   lib,
   pkgs,
+  pkgs-stable,
   self,
   ...
 }:
 
 {
-  home.packages = with pkgs; [
-    blender
+  home.packages = with pkgs-stable; [
     veracrypt
     thunderbird
     spicetify-cli

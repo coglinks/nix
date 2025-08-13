@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-stable,
   ...
 }:
 
@@ -17,7 +18,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-stable; [
     vulkan-tools
   ];
 

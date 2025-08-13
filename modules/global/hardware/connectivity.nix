@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs-stable, ... }:
 
 {
   networking.hostName = "loq"; # Define your hostname.
@@ -10,21 +10,32 @@
 
   # Enable networking
   networking = {
-    networkmanager.enable = true;
-    wireless.iwd.enable = true;
+    networkmanager = {
+      enable = true;
+      package = pkgs-stable.networkmanager;
+    };
+    wireless.iwd = {
+      enable = true;
+      package = pkgs-stable.iwd;
+    };
   };
   # Open ports in the firewall.
   #networking.firewall.allowedTCPPorts = [ 22 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    package = pkgs-stable.bluez;
+  };
   services.blueman.enable = true;
 
   # NOTE: SSH setup
 
+  programs.ssh.package = pkgs-stable.openssh;
+
   services.openssh = {
-    enable = true;
+    enable = false;
     ports = [ 22 ];
     settings = {
       PasswordAuthentication = true;
@@ -37,6 +48,7 @@
 
   services.fail2ban = {
     enable = false;
+    package = pkgs-stable.fail2ban;
     # Ban IP after 5 failures
     maxretry = 5;
     ignoreIP = [

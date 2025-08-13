@@ -1,4 +1,4 @@
-{ nix-flatpak, lib, pkgs, ... }:
+{ nix-flatpak, lib, pkgs-stable, ... }:
 
 {
   virtualisation.docker = {
@@ -13,21 +13,27 @@
   };
 
   environment.systemPackages = [
-    pkgs.lazydocker
+    pkgs-stable.lazydocker
   ];
 
   programs = {
     adb.enable = true;
-    virt-manager.enable = true;
-    virt-manager.package = pkgs.virt-manager;
+    virt-manager = {
+      enable = true;
+      package = pkgs-stable.virt-manager;
+    };
   };
 
   services.spice-vdagentd.enable = true;
-  services.qemuGuest.enable = true;
+  services.qemuGuest = {
+    enable = true;
+    package = pkgs-stable.qemu_kvm.ga;
+  };
 
   virtualisation = {
     waydroid = {
       enable = true;
+      package = pkgs-stable.waydroid;
     };
 
     spiceUSBRedirection = {
@@ -36,7 +42,7 @@
 
     libvirtd = {
       enable = true;
-      package = pkgs.libvirt;
+      package = pkgs-stable.libvirt;
       qemu = {
         swtpm = {
           enable = true;

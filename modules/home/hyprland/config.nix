@@ -34,7 +34,7 @@ in
         kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
         repeat_delay = 300;
-        follow_mouse = 0;
+        follow_mouse = 1;
         float_switch_override_focus = 0;
         mouse_refocus = 0;
         sensitivity = 0;
@@ -46,8 +46,8 @@ in
       general = {
         "$mainMod" = "SUPER";
         layout = "dwindle";
-        gaps_in = 6;
-        gaps_out = 12;
+        gaps_in = 0;
+        gaps_out = 0;
         border_size = 2;
         "col.active_border" = "rgb(98971A) rgb(CC241D) 45deg";
         "col.inactive_border" = "0x00000000";

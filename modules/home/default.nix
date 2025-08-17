@@ -4,15 +4,14 @@
     ./aseprite/aseprite.nix           # pixel art editor
     ./audacious.nix                   # music player
     ./bat.nix                         # better cat command
-    ./browser.nix                     # firefox based browser
     ./btop.nix                        # resouces monitor 
     ./cava.nix                        # audio visualizer
     ./discord.nix                     # discord
     ./fastfetch.nix                   # fetch tool
+    ./firefox.nix
     ./flow.nix                        # terminal text editor
     ./fzf.nix                         # fuzzy finder
     ./gaming.nix                      # packages related to gaming
-    ./ghostty.nix                     # terminal
     ./git.nix                         # version control
     ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme

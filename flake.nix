@@ -48,9 +48,10 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
-    ghostty.url = "github:ghostty-org/ghostty";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

@@ -24,8 +24,4 @@
     ldtk
     tiled
   ];
-
-  programs.firefox = {
-    enable = true;
-  };
 }

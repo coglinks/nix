@@ -1,10 +1,20 @@
-{ ... }:
+{ config, ... }:
 let
   browser = "firefox";
   terminal = "kitty";
   screenLock = "hyprlock";
 in
 {
+  xdg.configFile = {
+    "hypr/scripts" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./scripts;
+      recursive = true;
+    };
+    "hypr/UserScripts" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./UserScripts;
+      recursive = true;
+    };
+  };
   wayland.windowManager.hyprland = {
     settings = {
       # autostart
@@ -23,10 +33,6 @@ in
         "swww-daemon &"
 
         "hyprlock"
-
-        "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
-        "[workspace 1 silent] ${browser}"
-        "[workspace 2 silent] ${terminal}"
       ];
 
       input = {
@@ -45,6 +51,8 @@ in
 
       general = {
         "$mainMod" = "SUPER";
+        "$scripts" = "~/.config/hypr/scripts";
+        "$UserScripts" = "~/.config/hypr/UserScripts";
         layout = "dwindle";
         gaps_in = 0;
         gaps_out = 0;
@@ -149,7 +157,7 @@ in
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true"
+        "$mainMod, Return, exec, ${terminal}"
         "ALT, Return, exec, [float; size 1111 700] ${terminal}"
         "$mainMod SHIFT, Return, exec, [fullscreen] ${terminal}"
         "$mainMod, B, exec, [workspace 1 silent] ${browser}"
@@ -159,8 +167,8 @@ in
         "$mainMod, Space, exec, toggle-float"
         "$mainMod, D, exec, rofi -show drun || pkill rofi"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "$mainMod, L, exec, ${screenLock}"
-        "$mainMod SHIFT, Z, exec, "
+        "$mainMod, Escape, exec, ${screenLock}"
+        "$mainMod, Z, exec, $scripts/Wlogout.sh"
         "$mainMod, P, pseudo,"
         "$mainMod, X, togglesplit,"
         "$mainMod, T, exec, toggle-oppacity"

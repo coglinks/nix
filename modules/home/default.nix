@@ -34,6 +34,8 @@
     ./swaylock.nix                    # lock screen
     ./swayosd.nix                     # brightness / volume wiget
     ./swaync/swaync.nix               # notification deamon
+    ./tmux.nix
+    ./yazi.nix
     # ./viewnior.nix                    # image viewer
     ./vscodium                        # vscode fork
     ./waybar                          # status bar

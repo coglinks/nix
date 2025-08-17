@@ -6,6 +6,7 @@
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     grim
     slurp
+    wlogout
     wl-clip-persist
     cliphist
     wf-recorder

@@ -3,8 +3,8 @@
   programs.git = {
     enable = true;
 
-    userName = "Frost-Phoenix";
-    userEmail = "67cyril6767@gmail.com";
+    userName = "incogshift";
+    userEmail = "incog267@gmail.com";
 
     extraConfig = {
       init.defaultBranch = "main";
@@ -12,14 +12,11 @@
       diff.colorMoved = "default";
       pull.ff = "only";
       color.ui = true;
-      url = {
-        "git@github.com:".insteadOf = [
-          "gh:"
-          "https://github.com/"
-        ];
-        "git@github.com:frost-phoenix/".insteadOf = "fp:";
-      };
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
+
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
     };
 
     delta = {
@@ -31,6 +28,8 @@
         navigate = true;
       };
     };
+
+    lfs.enable = true;
   };
 
   home.packages = [ pkgs.gh ]; # pkgs.git-lfs

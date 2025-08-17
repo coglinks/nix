@@ -1,7 +1,8 @@
 { ... }:
 let
-  browser = "zen-beta";
-  terminal = "ghostty";
+  browser = "firefox";
+  terminal = "kitty";
+  screenLock = "hyprlock";
 in
 {
   wayland.windowManager.hyprland = {
@@ -87,7 +88,7 @@ in
         # fullscreen_opacity = 1.0;
 
         blur = {
-          enabled = true;
+          enabled = false;
           size = 3;
           passes = 2;
           brightness = 1;
@@ -99,7 +100,7 @@ in
         };
 
         shadow = {
-          enabled = true;
+          enabled = false;
 
           ignore_window = true;
           offset = "0 2";
@@ -110,7 +111,7 @@ in
       };
 
       animations = {
-        enabled = true;
+        enabled = false;
 
         bezier = [
           "fluent_decel, 0, 0.2, 0.4, 1"
@@ -157,11 +158,9 @@ in
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, Space, exec, toggle-float"
         "$mainMod, D, exec, rofi -show drun || pkill rofi"
-        "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "$mainMod, Escape, exec, swaylock"
-        "ALT, Escape, exec, hyprlock"
-        "$mainMod SHIFT, Escape, exec, power-menu"
+        "$mainMod, L, exec, ${screenLock}"
+        "$mainMod SHIFT, Z, exec, "
         "$mainMod, P, pseudo,"
         "$mainMod, X, togglesplit,"
         "$mainMod, T, exec, toggle-oppacity"
@@ -177,9 +176,9 @@ in
         # "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
-        ",Print, exec, screenshot --copy"
-        "$mainMod, Print, exec, screenshot --save"
-        "$mainMod SHIFT, Print, exec, screenshot --swappy"
+        "SUPER SHIFT, S, exec, screenshot --copy"
+        ", Print, exec, gradia --screenshot=INTERACTIVE"  # screenshot area
+        "SHIFT, Print, exec, gradia --screenshot=FULL" # screenshot full desktop
 
         # switch focus
         "$mainMod, left,  movefocus, l"
@@ -214,6 +213,8 @@ in
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
+        "$mainMod, mouse_down, workspace, e-1"
+        "$mainMod, mouse_up, workspace, e+1"
 
         # same as above, but switch to the workspace
         "$mainMod SHIFT, 1, movetoworkspacesilent, 1" # movetoworkspacesilent
@@ -262,9 +263,6 @@ in
         ",XF86AudioNext,exec, playerctl next"
         ",XF86AudioPrev,exec, playerctl previous"
         ",XF86AudioStop,exec, playerctl stop"
-
-        "$mainMod, mouse_down, workspace, e-1"
-        "$mainMod, mouse_up, workspace, e+1"
 
         # clipboard manager
         "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy"
@@ -326,7 +324,6 @@ in
         "workspace 5, class:^(Spotify)$"
         "workspace 8, class:^(com.obsproject.Studio)$"
         "workspace 10, class:^(discord)$"
-        "workspace 10, class:^(WebCord)$"
         "idleinhibit focus, class:^(mpv)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "float,class:^(org.gnome.Calculator)$"

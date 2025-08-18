@@ -3,6 +3,7 @@
   system,
   pkgs,
   pkgs-stable,
+  pkgs-unstable,
   ...
 }:
 
@@ -24,7 +25,7 @@
   programs = {
     hyprland = {
       # package = hyprland.packages.${system}.default;
-      package = pkgs-stable.hyprland;
+      package = pkgs-unstable.hyprland;
       enable = true;
       withUWSM = true;
       xwayland.enable = true;

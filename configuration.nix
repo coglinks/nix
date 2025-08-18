@@ -6,6 +6,7 @@
   config,
   pkgs,
   pkgs-stable,
+  pkgs-unstable,
   lib,
   inputs,
   ...
@@ -28,6 +29,7 @@
       inherit inputs;
       inherit pkgs;
       inherit pkgs-stable;
+      inherit pkgs-unstable;
     };
     users.incogshift = import ./home.nix;
     useUserPackages = true;

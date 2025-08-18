@@ -4,6 +4,7 @@
   lib,
   pkgs,
   pkgs-stable,
+  pkgs-unstable,
   self,
   ...
 }:
@@ -129,6 +130,6 @@
   wayland.windowManager.hyprland.plugins = [
     # inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
     # pkgs.hyprlandPlugins.hyprspace
-    pkgs-stable.hyprlandPlugins.hyprexpo
+    pkgs-unstable.hyprlandPlugins.hyprexpo
   ];
 }

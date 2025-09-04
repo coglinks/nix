@@ -1,4 +1,8 @@
-0;0o0## File structure
+# Deprecated
+
+## Currently using  repository is [github:coglinks/nixos-config](https://github.com/coglinks/nixos-config)
+
+## File structure
 
 - `./modules/global`: contains common modules made to be used by many systems
 - `./modules/<hostname>`: contains modules made to be used by specific hosts
